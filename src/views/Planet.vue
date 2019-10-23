@@ -1,14 +1,14 @@
 <template>
-  <div class="container">
-    <h1>hello</h1>
+  <div id="planet">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: "home"
+  name: "Planet"
   // components: {
-  //   HelloWorld
+
   // }
 };
 </script>
