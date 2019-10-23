@@ -11,8 +11,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="shortcut icon" href="../assets/logo.ico" />
 
-    <title>Mars | Solar System</title>
+    <title>Earth | Solar System</title>
   </head>
   <body>
     <div class="d-flex h-100 w-100 mx-auto flex-column">
@@ -35,12 +36,12 @@
                   <img src="../assets/venus_mini.png"></img>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                 <a class="nav-link" href="./earth.html">
                   <img src="../assets/earth_mini.png"></img>
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="./mars.html">
                   <img src="../assets/mars_mini.png"></img>
                 </a>
@@ -69,6 +70,22 @@
           </div>
         </nav>
       </header>
+
+      <div class="overlay mt-5 p-5 text-center bottom z-index-100">
+        <div class="text-planet">
+          <h1>โลก</h1>
+          <hr>
+          <p>
+            “ ... ”
+          </p>
+        </div>
+      </div>
+      <div class="overlay text-center bottom">
+        <img class="planet-pic" src="../assets/mercury1.png" />
+      </div>
+
+      <div id="content" role="main"></div>
+
     </div>
   </body>
 </html>

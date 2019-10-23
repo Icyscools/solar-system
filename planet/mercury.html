@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../css/style.css" />
-
+    <link rel="shortcut icon" href="../assets/logo.ico" />
     <title>Mercury | Solar System</title>
   </head>
   <body>
@@ -73,6 +73,7 @@
       <div class="overlay mt-5 p-5 text-center bottom z-index-100">
         <div class="text-planet">
           <h1>ดาวพุธ</h1>
+          <hr>
           <p>
             “ดาวเคราะห์ที่อยู่ใกล้ดวงอาทิตย์มากที่สุด และเล็กที่สุดในระบบสุริยะ
             แต่ใหญ่กว่าดวงจันทร์บริวารของโลก
@@ -110,8 +111,44 @@
               </p>
             </div>
           </div>
+<!-- Button trigger modal -->
+<div class="modal-btm">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  อ่านเพิ่มเติม
+</button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: black;">รายละเอียด</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="color: black;">ชื่ออื่น: เทพแห่งความเร็ว - Mercury<br>
+        ประเภท: Terrestrial planet / ดาวเคราะห์หิน<br>
+        อายุ: ประมาณ 4.5 ล้านปี<br>
+        รัศมี: 2,439.7 kilometers<br>
+        ระยะห่างจากดวงอาทิตย์: 149.60 million kilometers | 0.4 AU <br>[AU - astronomical unit: ระยะทางจากดวงอาทิตย์ถึงโลก]<br>
+        ดวงจันทร์บริวาร: ไม่มี<br>
+		    วงแหวน: ไม่มี</P>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>

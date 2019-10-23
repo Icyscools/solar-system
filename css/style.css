@@ -10,7 +10,7 @@ body {
   justify-content: center;
 
   color: #fff;
-  background: url("../assets/milky-way-background.jpg") #222222ea;
+  background: url("../assets/milky-way-background.jpg") #2f2f2fea;
   background-size: cover;
   background-blend-mode: multiply;
   text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, .5);
@@ -29,6 +29,10 @@ body {
   margin-top: auto;
   margin-bottom: auto;
 }
+
+/*
+ * Navbar
+ */
 
 #nav,
 #nav-planet {
@@ -62,13 +66,23 @@ body {
   cursor: pointer;
 }
 
+@media (min-width: 992px) {
+  #nav-planet img {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+  }
+}
+
 #footer {
   margin-top: auto;
 }
 
+
 .overlay {
   position: absolute;
   width: 100%;
+  z-index: -1;
 }
 
 .bottom {
@@ -90,6 +104,11 @@ body {
   z-index: 100;
   color: white;
   margin: 0 auto;
+}
+
+.text-planet hr {
+  width: 80%;
+  border-color: white;
 }
 
 /*

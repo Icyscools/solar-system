@@ -10,10 +10,10 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="shortcut icon" href="../assets/logo.ico" />
 
-    <title>Sun | Solar System</title>
+    <title>Mars | Solar System</title>
   </head>
   <body>
     <div class="d-flex h-100 w-100 mx-auto flex-column">
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand navbar-dark">
           <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="./sun.html">
                   <img src="../assets/sun.png"></img>
                 </a>
@@ -41,7 +41,7 @@
                   <img src="../assets/earth_mini.png"></img>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                 <a class="nav-link" href="./mars.html">
                   <img src="../assets/mars_mini.png"></img>
                 </a>
@@ -70,15 +70,22 @@
           </div>
         </nav>
       </header>
-      <div id="content" class="container-fluid"></div>
+
+      <div class="overlay mt-5 p-5 text-center bottom z-index-100">
+        <div class="text-planet">
+          <h1>ดาวอังคาร</h1>
+          <hr>
+          <p>
+            “ ... ”
+          </p>
+        </div>
+      </div>
+      <div class="overlay text-center bottom">
+        <img class="planet-pic" src="../assets/mercury1.png" />
+      </div>
+
+      <div id="content" role="main"></div>
+
     </div>
   </body>
 </html>
-<!-- <iframe
-              is="x-frame-bypass"
-              src="https://solarsystem.nasa.gov/gltf_embed/2352"
-              width="100%"
-              height="450px"
-              frameborder="0"
-            >
-            </iframe> -->
