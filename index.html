@@ -11,12 +11,13 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style_index.css" />
     <title>Solar System</title>
   </head>
   <body>
     <div class="d-flex h-100 w-100 mx-auto flex-column">
       <!-- inject container here -->
-      <header id="nav" class="header" role="navigation">
+      <!-- <header id="nav" role="navigation">
         <nav class="navbar navbar-expand-md navbar-dark">
           <button
             class="navbar-toggler"
@@ -29,22 +30,97 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-
           <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
               <li class="nav-item active">
-                <a href="#">Home</a>
+                <a class="nav-link" href="./index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a href="#">Planet</a>
+                <a class="nav-link" href="./planetchoice.html">Planet</a>
               </li>
             </ul>
           </div>
         </nav>
-      </header>
+      </header> -->
 
-      <div id="pages" role="main">
-        <h1>Hello, Galaxy!</h1>
+      <div class="overlay mt-5">
+        <ul class="solarsystem">
+          <li class="sun">
+            <a href="planets\sun.html">
+              <span>Sun</span>
+            </a>
+          </li>
+          <li class="mercury">
+            <a href="planets\mercury.html">
+              <span>Mercury</span>
+            </a>
+          </li>
+          <li class="venus">
+            <a href="planets\venus.html">
+              <span>Venus</span>
+            </a>
+          </li>
+          <li class="earth">
+            <a href="planets\earth.html">
+              <span>
+                Earth
+                <span class="moon">&amp; Moon</span>
+              </span>
+            </a>
+          </li>
+          <li class="mars">
+            <a href="planets\mars.html">
+              <span>Mars</span>
+            </a>
+          </li>
+          <li class="asteroids_meteorids">
+            <span>Asteroids&amp; Meteorids</span>
+          </li>
+          <li class="jupiter">
+            <a href="planets\jupiter.html">
+              <span>Jupiter</span>
+            </a>
+          </li>
+          <li class="saturn">
+            <a href="planets\saturn.html">
+              <span>
+                Saturn&amp;
+              </span>
+            </a>
+          </li>
+          <li class="uranus">
+            <a href="planets\uranus.html">
+              <span>Uranus</span>
+            </a>
+          </li>
+          <li class="neptune">
+            <a href="planets\neptune.html">
+              <span>Neptune</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="content" role="main">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 topic">
+              <div class="container">
+                <ul>
+                  <li class="origin">
+                    <a href=""><span>กำเนิดเอกภพ</span></a>
+                  </li>
+                  <li class="bigbang">
+                    <a href=""><span>ทฤษฎีบิ๊กแบง</span></a>
+                  </li>
+                  <li class="blackhole">
+                    <a href="./blackhole.html"><span>หลุมดำ</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
