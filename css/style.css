@@ -114,10 +114,12 @@ body {
 .text-planet {
   z-index: 100;
   color: white;
-  text-shadow: 2px 2px 5px violet, -2px -2px 5px blue;
+  /* text-shadow: 2px 2px 5px violet, -2px -2px 5px blue; */
   margin: 0 auto;
 }
-
+.planet-pic {
+  filter:opacity(70%);
+}
 .text-planet hr {
   width: 80%;
   border-color: white;
