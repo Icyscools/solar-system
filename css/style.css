@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Sarabun&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Athiti|Chonburi&display=swap');
 
 body {
   display: -ms-flexbox;
@@ -118,7 +119,7 @@ body {
   margin: 0 auto;
 }
 .planet-pic {
-  filter:opacity(70%);
+  filter:opacity(80%);
 }
 .text-planet hr {
   width: 80%;
