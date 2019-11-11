@@ -118,7 +118,7 @@ body {
   margin: 0 auto;
 }
 .planet-pic {
-  filter:opacity(70%);
+  filter:opacity(100%);
 }
 .text-planet hr {
   width: 80%;
