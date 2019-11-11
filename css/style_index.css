@@ -387,8 +387,14 @@ ul.solarsystem li.neptune {
   padding: 0;
 }
 
-#lists a {
-  z-index: 999;
+
+a {
+  color: #fafafa;
+}
+
+a:hover {
+  color: #aaa;
+  text-decoration: none;
 }
 
 .topic div.container {
@@ -404,7 +410,7 @@ ul.solarsystem li.neptune {
     text-align: right !important;
     margin-left: auto;
     margin-right: 0;
-    padding-right: 30px;
+    padding-right: 100px;
   }
 }
 
