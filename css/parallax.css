@@ -2,6 +2,9 @@
   margin-top: auto;
 }
 
-#scene .planet-pic {
-  top: -80%;
+@media screen and (min-width: 1178px) {
+  #scene .planet-pic {
+    top: -60%;
+  }
 }
+
