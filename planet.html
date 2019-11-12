@@ -10,8 +10,8 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/parallax.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/parallax.css" />
     <link rel="shortcut icon" href="./assets/logo.ico" />
     <title>Planets | Solar System</title>
   </head>
@@ -23,55 +23,80 @@
             <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
               <li class="nav-item active">
                 <a id="first" class="nav-link" data-planet="sun">
-                  <img src="../assets/sun_full.png"></img>
+                  <img src="./assets/sun_full.png"></img>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-planet="mercury">
-                  <img src="../assets/mercury_mini.png"></img>
+                  <img src="./assets/mercury_mini.png"></img>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-planet="venus">
-                  <img src="../assets/venus_mini.png"></img>
+                  <img src="./assets/venus_mini.png"></img>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-planet="earth">
-                  <img src="../assets/earth_mini.png"></img>
+                  <img src="./assets/earth_mini.png"></img>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-planet="mars">
-                  <img src="../assets/mars_mini.png"></img>
+                  <img src="./assets/mars_mini.png"></img>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-planet="jupiter">
-                  <img src="../assets/jupiter_mini.png"></img>
+                  <img src="./assets/jupiter_mini.png"></img>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-planet="saturn">
-                  <img src="../assets/saturn_mini.png"></img>
+                  <img src="./assets/saturn_mini.png"></img>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-planet="uranus">
-                  <img src="../assets/uranus_mini.png"></img>
+                  <img src="./assets/uranus_mini.png"></img>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-planet="nepturn">
-                  <img src="../assets/neptune_mini.png"></img>
+                  <img src="./assets/neptune_mini.png"></img>
                 </a>
               </li>
             </ul>
           </div>
         </nav>
       </header>
-
-      <div id="scene" role="main">
+      <div class="row">
+        <div class="col-sm-4 mt-5">
+          <div class="card-body text-center mt-4">
+            <h5 class="card-title"><b>ใหญ่ที่สุด</b></h5>
+            <p class="card-text">
+              เทียบกันโดยขนาด ถ้าดวงอาทิตย์เป็นประตู โลกก็จะมีขนาดเท่าเหรียญบาท
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card-body text-center">
+            <h5 class="card-title"><b>มีมวลมากที่สุด</b></h5>
+            <p class="card-text">
+              ดวงอาทิตย์เป็นศูนย์กลางของระบบสุริยะ โดยมวลของดวงอาทิตย์คิดเป็น 99.8% ของระบบสุริยะ
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-4 mt-5">
+          <div class="card-body text-center mt-4">
+            <h5 class="card-title"><b>เราไม่สามารถยืนบนดวงอาทิตย์ได้</b></h5>
+            <p class="card-text">
+              เพราะดวงอาทิตย์เป็นเหมือนลูกบอลแก๊ส (92.1% - hydrogen, 7.8% - helium)
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="scene" role="main" class="mt-auto">
         <div
           data-depth="0.035"
           class="overlay mt-auto p-5 text-center bottom z-index-100"
@@ -88,13 +113,13 @@
           </div>
         </div>
         <div data-depth="0.125" data-origin-y="0" class="overlay text-center bottom">
-          <img id="img-src" class="planet-pic lazy" data-src="../assets/sun.png" />
+          <img id="img-src" class="planet-pic lazy" data-src="./assets/sun.png" />
         </div>
       </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.3.0/dist/lazyload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <script src="../js/parallaxScene.js"></script>
+    <script src="./js/parallaxScene.js"></script>
   </body>
 </html>

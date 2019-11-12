@@ -1,4 +1,8 @@
 /* Solar System Styles */
+body {
+  background-image: url(../assets/astronaut.jpg);
+}
+
 ul.solarsystem {
   position: relative;
   height: 640px;
