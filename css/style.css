@@ -1,7 +1,3 @@
-html {
-  overflow: hidden;
-}
-
 body {
   display: -ms-flexbox;
   display: -webkit-box;
@@ -137,6 +133,10 @@ body {
 .text-planet hr {
   width: 80%;
   border-color: white;
+}
+
+#text-topic{
+  text-shadow: 2px 2px black;
 }
 
 /*

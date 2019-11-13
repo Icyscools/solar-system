@@ -11,114 +11,68 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/fonts.css">
     <link rel="shortcut icon" href="../assets/logo.ico" />
 
-    <title>Nepturn | Solar System</title>
+    <title>Nepturn In-Depth | Solar System</title>
+    <style>      
+      html {
+        overflow: hidden;
+      }
+
+      .indepth-pic {
+        position: absolute;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        transform: rotate(90deg);
+        height: 100%;
+        left: -500px;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      #box-content {
+        background: #FFFFFF11;
+        border-radius: 6px;
+      }
+    </style>
   </head>
   <body>
-    <div class="d-flex h-100 w-100 mx-auto flex-column">
-      <header id="nav-planet" role="navigation">
+    <div id="scene" class="h-100 w-100">
+      <header data-depth="0.02" id="nav-planet" role="navigation" class="position-absolute w-100 h-100 p-3 z-index-100" style="pointer-events: auto!important;">
         <nav class="navbar navbar-expand navbar-dark">
-          <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="./sun.html">
-                  <img src="../assets/sun.png"></img>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./mercury.html">
-                  <img src="../assets/mercury_mini.png"></img>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./venus.html">
-                  <img src="../assets/venus_mini.png"></img>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./earth.html">
-                  <img src="../assets/earth_mini.png"></img>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./mars.html">
-                  <img src="../assets/mars_mini.png"></img>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./jupiter.html">
-                  <img src="../assets/jupiter_mini.png"></img>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./saturn.html">
-                  <img src="../assets/saturn_mini.png"></img>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./uranus.html">
-                  <img src="../assets/uranus_mini.png"></img>
-                </a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="./nepturn.html">
-                  <img src="../assets/neptune_mini.png"></img>
-                </a>
-              </li>
-            </ul>
+          <div class="nav-item ml-auto">
+            <a href="../planet.html#neptune" class="nav-link badge text-white"><h3>< กลับไปหน้าสำรวจดาว</h3></a>
           </div>
         </nav>
       </header>
-      
-      <div id="content" role="main">
-        <div id="content" class="container-fluid">
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="card-body text-center mt-3">
-                <h5 class="card-title"><b>ดาวเคราะห์ยักษ์</b></h5>
-                <p class="card-text">
-                  ถ้าให้โลกมีขนาดเท่ากับแอปเปิ้ล
-                  ดาวเนปจูนจะมีขนาดเท่ากับลูกบาส
-                </p>
+      <div data-depth="0.125" class="position-fixed h-100 w-100">
+        <img class="indepth-pic h-100 img-fluid" src="../assets/neptune.png" />
+      </div>
+      <section data-depth="0.275" id="content" class="w-100 mt-5" role="main">
+        <div class="row justify-content-center ml-5">
+          <div id="box-content" class="col-6 p-3 mt-5">
+            <h1 class="text-center">ดาวเนปจูน</h1>
+              <hr style="border-color: white">
+              <div class="container p-3">
+                <h5><b>ชื่ออื่น : </b>เทพโรมันแห่งท้องทะเล - ROMAN GOD OF THE SEA</h5>
+                <h5><b>ประเภท : </b>Ice Giant planet / ดาวเคราะห์น้ำแข็งยักษ์</h5>
+                <h5><b>อายุ : </b> ประมาณ 4.5 ล้านปี</h5>
+                <h5><b>รัศมี : </b>24,622 กิโลเมตร</h5>
+                <h5><b>ระยะห่างจากดวงอาทิตย์ : </b>2,782,536,386 million kilometers</h5>
+                <h5><b>ดวงจันทร์บริวาร : </b> 14 ดวง</h5>
+                <h5><b>ดาวเนปจูนมีวงแหวน</b></h5>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card-body text-center">
-                <h5 class="card-title"><b>มีวันที่สั้น แต่มีปีที่ยาวนานมาก</b></h5>
-                <p class="card-text">
-                  1 วันบนดาวเนปจูน เทียบเท่า 16 ชั่วโมงบนโลก<br>
-                  แต่ 1 ปีของดาวยูเรนัส เท่ากับ 165 ปีบนโลก
-                </p>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card-body text-center mt-3">
-                <h5 class="card-title"><b>มีผู้มาเยือนเพียงหนึ่งเดียว</b></h5>
-                <p class="card-text">
-                  Voyager 2 เป็นยานอวกาศดวงเดียวของมนุษย์<br>
-                  ที่เคยไปเยี่ยมดาวเนปจูน
-                </p>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="overlay mt-auto p-5 text-center bottom z-index-100">
-        <div class="text-planet">
-          <h1>ดาวเนปจูน</h1>
-          <hr>
-          <p>
-            “ ดาวเคราะห์ดวงที่ 8 ของระบบสุริยะ อยู่ห่างไกลจากดวงอาทิตย์มากที่สุด ดาวเนปจูนมืดมิด <br>มีอากาศที่หนาวเย็น และมีลมความเร็วเหนือเสียงพัดพาอยู่ตลอดเวลา ”
-          </p>
-        </div>
-      </div>
-      <div class="overlay text-center bottom">
-        <img class="planet-pic" src="../assets/neptune1.png" />
-      </div>
-
-      
+      </section>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.3.0/dist/lazyload.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="../js/indepthScene.js"></script>
   </body>
 </html>
