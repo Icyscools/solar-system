@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/fonts.css">
     <link rel="shortcut icon" href="./assets/logo.ico" />
     <title>Big Bang | Solar System</title>
     <style>
+      html {
+        overflow: scroll;
+      }
+
       body {
         background: black;
         scroll-behavior: smooth;
@@ -19,6 +24,7 @@
         min-height: 100vh;
         width: 100%;
         overflow: hidden;
+        transition: all 1.25s ease-in-out;
       }
 
       header * {
@@ -68,6 +74,10 @@
         z-index: 100;
       }
 
+      #content p {
+        text-indent: 2rem;
+      }
+
       .full {
         min-width: 100%;
         height: 100%;
@@ -77,59 +87,66 @@
   </head>
 
   <body>
-    <header>
-      <div class="fullscreen-bg">
-        <video id="bigbang" autoplay muted>
-          <source src="./assets/Big_Bang_4k.m4v" type="video/mp4" />
-        </video>
-      </div>
-      <div class="container h-100">
-        <div class="d-flex h-100 text-center align-items-center">
-          <div class="w-100 text-white">
-            <div id="header" class="container" style="transform: translateY(40%);">
-              <h1 class="display-3">Big Bang</h1>
-              <p class="lead mb-0">What Is the Big Bang?</p>
+    <header id="header" class="row" style="opacity: 0;">
+      <div class="col-12">
+        <div class="fullscreen-bg">
+          <video id="bigbang" autoplay muted>
+            <source src="./assets/Big_Bang_4k.m4v" type="video/mp4" />
+          </video>
+        </div>
+        <div class="container h-100">
+          <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+              <div id="heading" class="container" style="opacity: 0;transform: translateY(40%);">
+                <h1 class="display-3">กำเนิดเอกภพ</h1>
+                <p class="lead mb-0">จุดเริ่มต้นของทุกสรรพสิ่ง<p>
+              </div>
+              <h1 id="arrow" class="display-4 mt-5" style="opacity: 0;transform:translateY(-100%);cursor: pointer;" onclick="scrollToElement(content)">▼</h1>
             </div>
-            <h1 id="arrow" class="mt-5" style="opacity: 0;transform:translateY(-100%);">▼</h1>
           </div>
         </div>
       </div>
     </header>
-
-    <section id="content" class="d-flex h-100 w-100 mx-auto flex-column py-3" style="display: none!important;opacity: 0;" role="main">
-      <section class="my-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 mx-auto">
-              <p>ทฤษฎีบิ๊กแบง (Big Bang Theory) คือ แบบจำลองในจักรวาลวิทยาที่ใช้อธิบายถึงการกำเนิดและวิวัฒนาการของเอกภพ (Universe)</p>
-              <p>ซึ่งเป็นทฤษฎีที่ได้รับการยอมรับและกล่าวถึงมากที่สุด จากหลักฐานทางวิทยาศาสตร์หลายชิ้นและการสังเกตการณ์ของเหล่านักดาราศาสตร์ ทำให้เกิดข้อสรุปร่วมกันว่า ขณะนี้ เอกภพ หรือจักรวาล กำลังขยายตัวออกไป ดวงดาวและกาแล็กซีกำลังเคลื่อนที่ออกห่างจากกันทุกวินาที</p>
-              <p>ดังนั้น เมื่อย้อนเวลากลับไปหลายพันล้านปีก่อนจนถึงจุดเริ่มต้นของทุกสรรพสิ่ง ทุกสสารและพลังงานในจักรวาล ต้องอยู่ใกล้ชิดกันยิ่งกว่านี้ ทุกสสารและพลังงานในจักรวาล ต้องอยู่ใกล้ชิดกันยิ่งกว่านี้ และมีจุดกำเนิดมาจากจุดเดียวกัน นั่นคือ การระเบิดครั้งใหญ่ หรือ บิ๊กแบง</p>
-              <p>จากจุดที่มีขนาดเล็กยิ่งกว่าอะตอมเป็นพันล้านเท่า จุดที่มีอุณหภูมิและความหนาแน่นเป็นอนันต์ (Singularity) จุดที่รวมแรงทั้ง 4 ในธรรมชาติไว้เป็นหนึ่งเดียว (แรงโน้มถ่วง แรงแม่เหล็กไฟฟ้า แรงนิวเคลียร์เข้มและแรงนิวเคลียร์อ่อน) ก่อนจะเกิดการขยายตัว หรือ การระเบิดออกอย่างรวดเร็วและรุนแรง ซึ่งเป็นจุดเริ่มต้นของเอกภพ สสาร และพลังงาน รวมถึงที่ว่าง (Space) และกาลเวลา (Time)</p>
-              <p>ส่งสสารและพลังงานไปในห้วงอวกาศ ให้กำเนิดดวงดาวและกาแล็กซี จนเป็นจักรวาลอย่างที่เราเห็นอยู่ในทุกวันนี้</p>
-            </div>
-          </div>
+    <section id="content" class="d-block container mt-5 mb-0 py-5" style="display: none!important;opacity: 0;" role="main">
+      <div class="row">
+        <div class="col-6">
+          <p>ทฤษฎีบิ๊กแบง (Big Bang Theory) คือ แบบจำลองในจักรวาลวิทยาที่ใช้อธิบายถึงการกำเนิดและวิวัฒนาการของเอกภพ (Universe)</p>
+          <p>ซึ่งเป็นทฤษฎีที่ได้รับการยอมรับและกล่าวถึงมากที่สุด จากหลักฐานทางวิทยาศาสตร์หลายชิ้นและการสังเกตการณ์ของเหล่านักดาราศาสตร์ ทำให้เกิดข้อสรุปร่วมกันว่า ขณะนี้ เอกภพ หรือจักรวาล กำลังขยายตัวออกไป ดวงดาวและกาแล็กซีกำลังเคลื่อนที่ออกห่างจากกันทุกวินาที</p>
+          <p>ดังนั้น เมื่อย้อนเวลากลับไปหลายพันล้านปีก่อนจนถึงจุดเริ่มต้นของทุกสรรพสิ่ง ทุกสสารและพลังงานในจักรวาล ต้องอยู่ใกล้ชิดกันยิ่งกว่านี้ ทุกสสารและพลังงานในจักรวาล ต้องอยู่ใกล้ชิดกันยิ่งกว่านี้ และมีจุดกำเนิดมาจากจุดเดียวกัน นั่นคือ การระเบิดครั้งใหญ่ หรือ บิ๊กแบง</p>
+          <p>จากจุดที่มีขนาดเล็กยิ่งกว่าอะตอมเป็นพันล้านเท่า จุดที่มีอุณหภูมิและความหนาแน่นเป็นอนันต์ (Singularity) จุดที่รวมแรงทั้ง 4 ในธรรมชาติไว้เป็นหนึ่งเดียว (แรงโน้มถ่วง แรงแม่เหล็กไฟฟ้า แรงนิวเคลียร์เข้มและแรงนิวเคลียร์อ่อน) ก่อนจะเกิดการขยายตัว หรือ การระเบิดออกอย่างรวดเร็วและรุนแรง ซึ่งเป็นจุดเริ่มต้นของเอกภพ สสาร และพลังงาน รวมถึงที่ว่าง (Space) และกาลเวลา (Time)</p>
+          <p>ส่งสสารและพลังงานไปในห้วงอวกาศ ให้กำเนิดดวงดาวและกาแล็กซี จนเป็นจักรวาลอย่างที่เราเห็นอยู่ในทุกวันนี้</p>
         </div>
-      </section>
+      </div>
     </section>
 
     <script>
-      var arrowLoad = false,
+      var headingLoad = false,
+        arrowLoad = false,
         contentLoad = false;
       window.onload = function () {
         let video = document.getElementsByTagName("video")[0];
+
+        video.oncanplaythrough = function (ev) {
+          console.log("finish loading video")
+          let header = document.getElementById("header");
+          header.style.opacity = "1";
+        }
+
         video.ontimeupdate = function (ev) {
-          // console.log(ev)
-          if (ev.timeStamp > 8 * 1000 && !arrowLoad) {
-            arrowLoad = true
-            let heading = document.getElementById("header");
+          console.log(ev.target.currentTime)
+          if (ev.target.currentTime > 5.5 && !headingLoad) {
+            headingLoad = true
+            let heading = document.getElementById("heading");
             let arrow = document.getElementById("arrow");
-            setTimeout(function () {
-              heading.style.opacity = "1";
-              heading.style.transform = "translateY(0%)";
-              arrow.style.opacity = "1";
-              arrow.style.transform = "translateY(0%)";
-            }, 1000);
-          } else if (ev.timeStamp > 9.5 * 1000 && !contentLoad) {
+            heading.style.opacity = "1";
+          } else if (ev.target.currentTime > 8.5 && !arrowLoad) {
+            arrowLoad = true
+            let heading = document.getElementById("heading");
+            let arrow = document.getElementById("arrow");
+            heading.style.transform = "translateY(0%)";
+            arrow.style.opacity = "1";
+            arrow.style.transform = "translateY(0%)";
+          } else if (ev.target.currentTime > 10.5 && !contentLoad) {
             contentLoad = true
             let content = document.getElementById("content");
             content.style.display = "block"
