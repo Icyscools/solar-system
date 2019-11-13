@@ -10,18 +10,24 @@ h1 {
 }
 
 a {
-  color: white;
+  font-size: 16pt;
+  color:#fff;
 }
-
+.btn {
+  background-color: transparent;
+  border: 1px solid white;
+}
 .btn span {
-  color: white;
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
-
+.btn:hover {
+  border: 2px solid white;
+}
 .btn span:after {
+  color: #fff;
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -40,11 +46,11 @@ a {
 }
 
 a {
-  color: #fafafa;
+  color:#fff;
 }
 
 a:hover {
-  color: #aaa;
+  color:#fff;
   text-decoration: none;
 }
 
