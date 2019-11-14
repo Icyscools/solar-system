@@ -11,16 +11,26 @@
     <title>Blackhole | Solar System</title>
 
     <style>
+      html {
+        overflow: scroll;
+      }
+
       body {
         background: black;
         scroll-behavior: smooth;
+        background-size: cover;
+        background-blend-mode: multiply;
       }
 
       header {
+        background: url("../assets/blackhole.jpg");
         position: relative;
         min-height: 100vh;
         width: 100%;
         overflow: hidden;
+        transition: all 1.25s ease-in-out;
+
+        background-size: cover;
       }
 
       header * {
@@ -75,110 +85,175 @@
         height: 100%;
       }
 
+      #hole {
+        padding-top: 4%;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      #arrow {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        transform: translateY(15%);
+        transition: 0.25s all;
+      }
+
+      #arrow span {
+        display: inline-block;
+      }
+
+      #arrow>span:hover {
+        transform: translateY(30%);
+      }
     </style>
   </head>
 
   <body>
+
     <header>
-      <div class="fullscreen-bg">
-        <video id="bigbang" autoplay muted>
-          <source src="./assets/blackhole.mp4" type="video/mp4" />
-        </video>
-      </div>
       <div class="container h-100">
-        <div class="d-flex h-100 text-center align-items-center">
-          <div class="w-100 text-white">
-            <div id="header" class="container" style="opacity: 0;transform: translateY(40%);">
+        <div class="d-flex h-100 text-center align-items-center" style="transform: translateY(-5%);">
+          <div class="w-100 text-white" style="text-shadow: 0px 3px 9px #333;">
+            <div class="container" style="transform: translateY(25%);">
               <h1 class="display-3">หลุมดำ</h1>
               <p class="lead mb-0">ปีศาจจอมกระหายแห่งจักรวาล</p>
             </div>
-            <h1 id="arrow" class="display-4 mt-5" style="opacity: 0;transform:translateY(-100%);cursor: pointer;" onclick="scrollToElement(content)">▼</h1>
+            <h1 id="arrow" class="display-4 mt-5">
+              <span style="cursor: pointer;" onclick="scrollToElement(content)">▼</span>
+            </h1>
           </div>
         </div>
       </div>
     </header>
 
+
+
     <section id="content" class="d-flex h-100 w-100 mx-auto flex-column py-3" role="main">
       <section class="my-5">
         <div class="container">
           <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-9 text-center border-bottom p-3" style="margin: 0 auto;">
+              <h2 class="display-4">หลุมดำคืออะไร?</h2>
               <p>
-                หลุมดำคือสถานที่ในอวกาศซึ่งมีแรงโน้มถ่วงสูงมาก ซึ่งแม้แต่แสงยังไม่สามารถออกไป ทำให้ไม่สามารถมองเห็นหลุมดำได้ กล้องโทรทรรศน์ที่มีอุปกรณ์พิเศษสามารถช่วยค้นหาหลุมดำ
-                หลุมดำสามารถมีขนาดใหญ่หรือเล็ก นักวิทยาศาสตร์คิดว่าหลุมดำที่มีขนาดเล็กที่สุดมีขนาดเล็กเท่าหนึ่งอะตอม หลุมดำเหล่านี้มีขนาดเล็กมากแต่มีมวลเท่าภูเขาที่มีขนาดใหญ่ อีกหนึ่งชนิดของหลุมดำเรียกว่า สเตลลาร์ (stellar) มีมวลเป็น 20 เท่ามากกว่ามวลของดวงอาทิตย์ อาจมีหลาย stellar ในทางช้างเผือก หลุมดำที่ใหญ่ที่สุดเรียกว่า ซูเปอร์แมสซีฟ (supermassive) หลุมดำเหล่านี้มีมวลมากกว่าหนึ่งล้านดวงอาทิตย์รวมกัน นักวิทยาศาสตร์มีหลักฐานว่าทุกๆ ทางช้างเผือกขนาดใหญ่จะมีหลุมดำชนิด supermasive อยู่ตรงกลาง เรียกหลุมดำนี้ว่า ซาจิททาเรียส เอ (Sagittarius A) มีมวลเท่ากับประมาณสี่ล้านดวงอาทิตย์และจะสามารถเข้าไปอยู่ข้างในลูกบอลขนาดใหญ่มากพอดี ซึ่งสามารถบรรจุสองสามล้านโลกภายใน
-                นักวิทยาศาสตร์คิดว่าหลุมดำขนาดเล็กที่สุดเกิดขึ้นเมื่อจักรวาลเริ่มต้น หลุมดำ stellar เกิดขึ้นเมื่อศูนย์กลางของดวงดาวขนาดใหญ่มากพังลง ส่วนหลุมดำ supermassive เกิดขึ้นในเวลาเดียวกับทางช้างเผือก
+                หลุมดำ หรือ Black hole หมายถึงเทหวัตถุในเอกภพที่มีแรงโน้มถ่วงสูงมากbr ไม่มีอะไรออกจากบริเวณนี้ได้แม้แต่แสง ยกเว้นหลุมดำด้วยกัน
+                เราจึงมองไม่เห็นใจกลางของหลุมดำ หลุมดำจะมีพื้นที่หนึ่งที่เป็นขอบเขตของตัวเองเรียกว่าขอบฟ้าเหตุการณ์ ที่ตำแหน่งรัศมีชวาร์สชิลด์
+                ถ้าหากวัตถุหลุดเข้าไปในขอบฟ้าเหตุการณ์ วัตถุจะต้องเร่งความเร็วให้มากกว่าความเร็วแสงจึงจะหลุดออกจากขอบฟ้าเหตุการณ์ได้
+                แต่เป็นไปไม่ได้ที่วัตถุใดจะมีความเร็วมากกว่าแสง วัตถุนั้นจึงไม่สามารถออกมาได้อีกต่อไป
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <video id="hole" autoplay muted loop>
+          <source src="./assets/blackhole.mp4" type="video/mp4" />
+        </video>
+        <div class="container">
+          <div class="row p-5">
+            <div class="col text-center">
+              <h1>ประเภทของหลุมดำ</h1>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <p><b>1. หลุมดำจิ๋ว (Mini black holes)</b> มีขนาดราว 10-15 เมตร เป็นหลุมดำที่มีมวลเพียงไม่กี่ร้อยล้านตัน
+                มีขนาดเล็กเพียงขนาดของอะตอมเท่านั้น เกิดขึ้นหลังจากเกิดบิ๊กแบงได้ไม่นาน หลุมดำจิ๋วจะมีอายุสั้นและจะสลายตัวด้วยการระเบิด แล้วปลดปล่อยรังสีแกมมาออกมา</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <p><b>2. หลุมดำที่เกิดจากวิวัฒนาการของดวงดาวหรือดาวฤกษ์ที่ตายแล้ว (Stellar black holes)</b> เมื่อดาวฤกษ์ที่มวลมาก ๆ ถึงเวลาหมดอายุไข จะเกิดการระเบิดเป็น "ซูเปอร์โนวา"
+                หากหลังการระเบิดยังหลงเหลือมวลสารที่ใจกลางของดาวมากกว่า 3 เท่าของดวงอาทิตย์ มวลใจกลางดาวนั้นจะยุบตัวต่อลงเป็นหลุมดำ
+                หลุมดำประเภทนี้เกิดจากดาวยักษ์แดง (Red giant stars)
+                ส่วนดาวที่มีมวลน้อยกว่านี้ก็จะวิวัฒนาการไปสู่ ดาวแคระขาว (white dwarfs) หรือ ดาวนิวตรอน (neutron stars) หลุมดำประเภทนี้เกิดจากการที่ดาวฤกษ์เผาผลาญพลังงานทุกอย่าง
+                จนหมดสิ้นทำให้เกิดการยุบตัวเป็น singularity (หมายถึงบริเวณที่เป็นอนันต์)</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p><b>3. หลุมดำยักษ์หรือหลุมดำมวลยิ่งยวด (Supermassive black holes) </b> หลุมดำจำพวกนี้จะมีมวลมากมายมหาศาล อาจมีมวลมากนับเป็นหลายพันล้านเท่าของดวงอาทิตย์
+                ส่วนใหญ่จะพบหลุมดำมวลยิ่งยวดอยู่ใจกลางของควอซ่าร์ (Quasars) ซึ่งเป็นใจกลางของ galaxy ที่มีการระเบิดเกิดขึ้น และมันดูดดาวจำนวนนับพันล้านดวง
+                รวมถึงก๊าซและฝุ่น ในอวกาศ หรือแม้กระทั่งดาวเคราะห์เข้าไป ด้วยเหตุนี้จึงเรียกว่าหลุมดำมวลยิ่งยวด
               </p>
             </div>
           </div>
         </div>
+
       </section>
-      <script>
-        var headingLoad = false,
-          arrowLoad = false,
-          contentLoad = false;
-        window.onload = function () {
-          let video = document.getElementsByTagName("video")[0];
+    </section>
+    <script>
+      var headingLoad = false,
+        arrowLoad = false,
+        contentLoad = false;
+      window.onload = function () {
+        let video = document.getElementsByTagName("video")[0];
 
-          video.oncanplaythrough = function (ev) {
-            console.log("finish loading video")
-            let header = document.getElementById("header");
-            header.style.opacity = "1";
-          }
-
-          video.ontimeupdate = function (ev) {
-            console.log(ev.target.currentTime)
-            if (ev.target.currentTime > 5.5 && !headingLoad) {
-              headingLoad = true
-              let heading = document.getElementById("heading");
-              let arrow = document.getElementById("arrow");
-              heading.style.opacity = "1";
-            } else if (ev.target.currentTime > 8.5 && !arrowLoad) {
-              arrowLoad = true
-              let heading = document.getElementById("heading");
-              let arrow = document.getElementById("arrow");
-              heading.style.transform = "translateY(0%)";
-              arrow.style.opacity = "1";
-              arrow.style.transform = "translateY(0%)";
-            } else if (ev.target.currentTime > 10.5 && !contentLoad) {
-              contentLoad = true
-              let content = document.getElementById("content");
-              content.style.display = "block"
-              setTimeout(function () {
-                content.style.opacity = "1";
-              }, 1000);
-            }
-          }
+        video.oncanplaythrough = function (ev) {
+          console.log("finish loading video")
+          let header = document.getElementById("header");
+          header.style.opacity = "1";
         }
 
-        var triggerScroll = false;
-        var lastScrollTop = 0;
-        window.onscroll = function (ev) {
-          let content = document.getElementById("content");
-          var _top = window.pageYOffset || document.documentElement.scrollTop;
-          if (_top > lastScrollTop) {
-            // downscroll code
-            if (window.scrollY >= 50 && window.scrollY < 150 && !triggerScroll) {
-              scrollToElement(content)
-            }
-          } else {
-            // upscroll code
+        video.ontimeupdate = function (ev) {
+          console.log(ev.target.currentTime)
+          if (ev.target.currentTime > 5.5 && !headingLoad) {
+            headingLoad = true
+            let heading = document.getElementById("heading");
+            let arrow = document.getElementById("arrow");
+            heading.style.opacity = "1";
+          } else if (ev.target.currentTime > 8.5 && !arrowLoad) {
+            arrowLoad = true
+            let heading = document.getElementById("heading");
+            let arrow = document.getElementById("arrow");
+            heading.style.transform = "translateY(0%)";
+            arrow.style.opacity = "1";
+            arrow.style.transform = "translateY(0%)";
+          } else if (ev.target.currentTime > 10.5 && !contentLoad) {
+            contentLoad = true
+            let content = document.getElementById("content");
+            content.style.display = "block"
+            setTimeout(function () {
+              content.style.opacity = "1";
+            }, 1000);
           }
-          lastScrollTop = _top <= 0 ? 0 : _top;
         }
+      }
 
-        function scrollToElement(el) {
-          triggerScroll = true;
-          window.scrollTo({
-            'behavior': 'smooth',
-            'left': 0,
-            'top': el.offsetTop
-          });
-          setTimeout(() => {
-            triggerScroll = false
-          }, 1000)
+      var triggerScroll = false;
+      var lastScrollTop = 0;
+      window.onscroll = function (ev) {
+        let content = document.getElementById("content");
+        var _top = window.pageYOffset || document.documentElement.scrollTop;
+        if (_top > lastScrollTop) {
+          // downscroll code
+          if (window.scrollY >= 50 && window.scrollY < 150 && !triggerScroll) {
+            scrollToElement(content)
+          }
+        } else {
+          // upscroll code
         }
+        lastScrollTop = _top <= 0 ? 0 : _top;
+      }
 
-      </script>
+      function scrollToElement(el) {
+        triggerScroll = true;
+        window.scrollTo({
+          'behavior': 'smooth',
+          'left': 0,
+          'top': el.offsetTop
+        });
+        setTimeout(() => {
+          triggerScroll = false
+        }, 1000)
+      }
+
+    </script>
   </body>
 
 </html>
