@@ -13,7 +13,7 @@
     <style>
       .card {
         position: absolute;
-        background: transparent!important;
+        background: transparent !important;
         top: calc(50% - 75px);
         left: calc(50% - 75px);
         width: 150px;
@@ -38,12 +38,14 @@
 
       @keyframes rotate {
         0% {
-          transform: rotate(0deg) translateX(200px) rotate(0deg); 
+          transform: rotate(0deg) translateX(200px) rotate(0deg);
         }
+
         100% {
           transform: rotate(360deg) translateX(200px) rotate(-360deg);
         }
       }
+
     </style>
   </head>
 
@@ -55,9 +57,9 @@
             <div class="col">
               <ul class="navbar-nav mx-auto mt-2 mt-lg-0 pt-2">
                 <h5>
-                  <a href="index.html" class="text-white">Home</a> | 
-                  <a href="bigbang.html" class="text-white">Bigbang</a> | 
-                  <a href="galaxies.html" class="text-white">Galaxy</a> | 
+                  <a href="index.html" class="text-white">Home</a> |
+                  <a href="bigbang.html" class="text-white">Bigbang</a> |
+                  <a href="galaxies.html" class="text-white">Galaxy</a> |
                   <a href="solarsystem.html" class="text-white">Solar System</a> |
                   <a href="planet.html" class="text-white">Planets</a>
                 </h5>
@@ -69,48 +71,49 @@
       <div id="content" class="container-fluid d-sm-block d-lg-flex h-75 main-content justify-content-center" role="main">
         <div class="container w-50 h-75" id="orbit">
           <div class="card border-0">
-              <img src="/assets/members/kun.jpg" class="card-img rounded-circle">
-              <h6 class="overlay z-index-100 bottom text-center text-body pb-1 font-weight-bold bg-white mw-100">
-                61070337<br>กันต์ วงษ์อุบล
-              </h6>
+            <img src="/assets/members/asyn.jpg" class="card-img rounded-circle">
+            <h6 class="overlay z-index-100 bottom text-center text-body pb-1 font-weight-bold bg-white mw-100">
+              61070004<br>กฤติมา จันทะชาลี
+            </h6>
           </div>
           <div class="card border-0">
-              <img src="/assets/members/kpang.jpg" class="card-img rounded-circle">
-              <h6 class="overlay z-index-100 bottom text-center text-body pb-1 font-weight-bold bg-white mw-100">
-                61070059<br>ณิชาพัฒน์ คาชาชีวะ
-              </h6>
+            <img src="/assets/members/dukes.jpg" class="card-img rounded-circle">
+            <h6 class="overlay z-index-100 bottom text-center text-body pb-1 font-weight-bold bg-white rounded-25">
+              61070016<br>กิตติวัชร์ บุญเพียร
+            </h6>
           </div>
           <div class="card border-0">
-              <img src="/assets/members/asyn.jpg" class="card-img rounded-circle">
-              <h6 class="overlay z-index-100 bottom text-center text-body pb-1 font-weight-bold bg-white mw-100">
-                61070004<br>กฤติมา จันทะชาลี
-              </h6>
+            <img src="/assets/members/kpang.jpg" class="card-img rounded-circle">
+            <h6 class="overlay z-index-100 bottom text-center text-body pb-1 font-weight-bold bg-white mw-100">
+              61070059<br>ณิชาพัฒน์ คาชาชีวะ
+            </h6>
           </div>
           <div class="card border-0">
-              <img src="/assets/members/icys.jpg" class="card-img rounded-circle">
-              <h6 class="overlay z-index-100 bottom text-center text-body pb-1 font-weight-bold bg-white rounded-25">
-                61070200<br>วรเมธ งามขำ
-              </h6>
+            <img src="/assets/members/icys.jpg" class="card-img rounded-circle">
+            <h6 class="overlay z-index-100 bottom text-center text-body pb-1 font-weight-bold bg-white rounded-25">
+              61070200<br>วรเมธ งามขำ
+            </h6>
           </div>
           <div class="card border-0">
-              <img src="/assets/members/dukes.jpg" class="card-img rounded-circle">
-              <h6 class="overlay z-index-100 bottom text-center text-body pb-1 font-weight-bold bg-white rounded-25">
-                61070016<br>กิตติวัชร์ บุญเพียร
-              </h6>
+            <img src="/assets/members/kun.jpg" class="card-img rounded-circle">
+            <h6 class="overlay z-index-100 bottom text-center text-body pb-1 font-weight-bold bg-white mw-100">
+              61070337<br>กันต์ วงษ์อุบล
+            </h6>
           </div>
         </div>
       </div>
     </div>
     <script>
-    window.onload = function() {
-      let orbit = document.getElementById("orbit");
-      let element = [...orbit.getElementsByTagName("div")];
-      element.forEach((el, i) => {
-        el.style.transitionDelay = (8 * i / 5) + "s";
-        el.style.opacity = "1";
-        el.style.animationDelay = (8 * i / 5) + "s";
-      });
-    }
+      window.onload = function () {
+        let orbit = document.getElementById("orbit");
+        let element = [...orbit.getElementsByTagName("div")];
+        element.forEach((el, i) => {
+          el.style.transitionDelay = (8 * i / 5) + "s";
+          el.style.opacity = "1";
+          el.style.animationDelay = (8 * i / 5) + "s";
+        });
+      }
+
     </script>
   </body>
 
