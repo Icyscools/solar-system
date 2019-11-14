@@ -1,7 +1,11 @@
 /* Solar System Styles */
+html {
+  overflow: hidden;
+}
+
 body {
-  background-image: url(../assets/astronaut.jpg);
-  background-blend-mode: unset;
+  background-image: #000;
+  background-blend-mode: multiply;
   background-size: cover;
 }
 
@@ -31,7 +35,7 @@ a {
   content: '\00bb';
   position: absolute;
   opacity: 0;
-  top: 0;
+  top: 20%;
   right: -20px;
   transition: 0.5s;
 }
@@ -73,4 +77,28 @@ a:hover {
 
 li {
   list-style-type: none;
+}
+
+#scene {
+  pointer-events: auto!important;
+}
+
+#bgpallarax {
+  display: absolute;
+  top: -3%!important;
+  left: -3%!important;
+  background-image: url(../assets/astronaut.jpg);
+  background-blend-mode: unset;
+  background-size: cover;
+  min-width: 105%;
+  min-height: 105%;
+}
+
+#overlay {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.925);
+  transition: 1.125s all ease-in-out;
 }

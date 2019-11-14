@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="shortcut icon" href="./assets/logo.ico" />
     <title>Big Bang | Solar System</title>
     <style>
       html {
-        overflow: scroll;
+        overflow: hidden;
       }
 
       body {
@@ -82,29 +82,88 @@
         min-width: 100%;
         height: 100%;
       }
-      .btn-glx {
-        border: 1px solid white;
-        border-radius: 3px;
-        background-color:transparent;
-      }
-      .btn-glx:hover {
-        cursor: pointer;
-        background-color: white;
-      }
+
       span {
         font-size: 14pt;
         color: white;
       }
+
       span:hover {
         padding: 10px;
         transition: 0.3s;
-        color: black;
+        color: white;
       }
-  </style>
+
+      a {
+        font-size: 16pt;
+        color: #fff;
+      }
+
+      .btn {
+        background-color: transparent;
+        border: 1px solid white;
+      }
+
+      .btn span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .btn:hover {
+        border: 2px solid white;
+      }
+
+      .btn span:after {
+        color: #fff;
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 20%;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      .btn:hover span {
+        padding-right: 25px;
+      }
+
+      .btn:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+
+      a {
+        color: #fff;
+      }
+
+      a:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      #overlay {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.925);
+        transition: 1.125s all ease-in-out;
+      }
+    </style>
   </head>
 
   <body>
-    <header id="header" class="row" style="opacity: 0;">
+    <header id="header" class="row m-0" style="opacity: 0;">
+      <div id="overlay" class="d-flex w-100 h-100">
+        <div id="loading" class="container my-auto text-center">
+          <span class="spinner-grow spinner-grow-md" role="status" aria-hidden="true"></span>
+          <span class="spinner-grow spinner-grow-md" role="status" aria-hidden="true"></span>
+          <span class="sr-only">Loading...</span>
+          <span class="spinner-grow spinner-grow-md" role="status" aria-hidden="true"></span>
+        </div>
+      </div>
       <div class="col-12">
         <div class="fullscreen-bg">
           <video id="bigbang" autoplay muted>
@@ -117,7 +176,7 @@
               <div id="heading" class="container" style="opacity: 0;transform: translateY(40%);">
                 <h1 class="display-3">กำเนิดเอกภพ</h1>
                 <p class="lead mb-0">จุดเริ่มต้นของทุกสรรพสิ่ง<p>
-                
+
               </div>
               <h1 id="arrow" class="display-4 mt-5" style="opacity: 0;transform:translateY(-100%);cursor: pointer;" onclick="scrollToElement(content)">▼</h1>
             </div>
@@ -126,86 +185,89 @@
       </div>
     </header>
     <section id="content" class="d-block container mt-5 mb-0 py-5" style="display: none!important;opacity: 0;" role="main">
-        <nav class="navbar navbar-expand navbar-dark">
-          <div class="row mx-auto">
-            <div class="col">
-              <ul class="navbar-nav mx-auto mt-2 mt-lg-0 pt-2">
-                <h5>
-                  <a href="index.html" class="text-white">Home</a>
-                </h5>
-              </ul>
-            </div>
+      <nav class="navbar navbar-expand navbar-dark">
+        <div class="row mx-auto">
+          <div class="col">
+            <ul class="navbar-nav mx-auto mt-2 mt-lg-0 pt-2">
+              <h5>
+                <a href="index.html" class="text-white">Home</a>
+              </h5>
+            </ul>
           </div>
-        </nav>
+        </div>
+      </nav>
       <div class="row mt-5">
         <div class="col text-center">
-          <h2 class="display-4" >เอกภพกำเนิดได้อย่างไร</h2>
+          <h2 class="display-4">เอกภพกำเนิดได้อย่างไร</h2>
           <p>กำเนิดเอกภพเริ่มนับจากจุดที่เรียกว่า ” บิกแบง (BigBang) ” บิกแบง เป็นชื่อที่ใช้เรียกทฤษฎีกำเนิดเอกภพทฤษฎีหนึ่ง</p>
           <p>ปัจจุบันบิกแบงเป็นที่ยอมรับมากขึ้น เพราะมีปรากฏการณ์หลายอย่างที่สอดคล้อง หรือเป็นไปตามทฤษฎีบิกแบง</p>
           <p>ก่อนการเกิดบิกแบง เอกภพเป็นพลังงานล้วนๆภายใต้อุณหภูมิที่สูงยิ่ง จุดบิกแบงจึงเป็นจุดที่พลังงานเริ่มเปลี่ยนเป็นสสารครั้งแรก</p>
           <p>เป็นจุดเริ่มต้นของเวลาและเอกภพ</p>
         </div>
       </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col-6" style="line-height: 2rem;">
-        <h1>ทฤษฎีบิกแบง</h1>
-        <p>ทฤษฎีบิ๊กแบง (Big Bang Theory) คือ แบบจำลองในจักรวาลวิทยาที่ใช้อธิบายถึงการกำเนิดและวิวัฒนาการของเอกภพ (Universe)</p>
-        <p>ซึ่งเป็นทฤษฎีที่ได้รับการยอมรับและกล่าวถึงมากที่สุด จากหลักฐานทางวิทยาศาสตร์หลายชิ้นและการสังเกตการณ์ของเหล่านักดาราศาสตร์ ทำให้เกิดข้อสรุปร่วมกันว่า ขณะนี้ เอกภพ หรือจักรวาล กำลังขยายตัวออกไป ดวงดาวและกาแล็กซีกำลังเคลื่อนที่ออกห่างจากกันทุกวินาที</p>
-        <p>ดังนั้น เมื่อย้อนเวลากลับไปหลายพันล้านปีก่อนจนถึงจุดเริ่มต้นของทุกสรรพสิ่ง ทุกสสารและพลังงานในจักรวาล ต้องอยู่ใกล้ชิดกันยิ่งกว่านี้ ทุกสสารและพลังงานในจักรวาล ต้องอยู่ใกล้ชิดกันยิ่งกว่านี้ และมีจุดกำเนิดมาจากจุดเดียวกัน นั่นคือ การระเบิดครั้งใหญ่ หรือ บิ๊กแบง</p>
-        <p>จากจุดที่มีขนาดเล็กยิ่งกว่าอะตอมเป็นพันล้านเท่า จุดที่มีอุณหภูมิและความหนาแน่นเป็นอนันต์ (Singularity) จุดที่รวมแรงทั้ง 4 ในธรรมชาติไว้เป็นหนึ่งเดียว (แรงโน้มถ่วง แรงแม่เหล็กไฟฟ้า แรงนิวเคลียร์เข้มและแรงนิวเคลียร์อ่อน) ก่อนจะเกิดการขยายตัว หรือ การระเบิดออกอย่างรวดเร็วและรุนแรง ซึ่งเป็นจุดเริ่มต้นของเอกภพ สสาร และพลังงาน รวมถึงที่ว่าง (Space) และกาลเวลา (Time)</p>
-        <p>ส่งสสารและพลังงานไปในห้วงอวกาศ ให้กำเนิดดวงดาวและกาแล็กซี จนเป็นจักรวาลอย่างที่เราเห็นอยู่ในทุกวันนี้</p>
-      </div>
-      <div class="col-6 text-center align-self-center">
-        <img src="./assets/bigbang2.jpg" class="mw-100 center-block">
       </div>
       <div class="row mt-5">
-        <div class="col-4">
+        <div class="col-6" style="line-height: 2rem;">
+          <h1>ทฤษฎีบิกแบง</h1>
+          <p>ทฤษฎีบิ๊กแบง (Big Bang Theory) คือ แบบจำลองในจักรวาลวิทยาที่ใช้อธิบายถึงการกำเนิดและวิวัฒนาการของเอกภพ (Universe)</p>
+          <p>ซึ่งเป็นทฤษฎีที่ได้รับการยอมรับและกล่าวถึงมากที่สุด จากหลักฐานทางวิทยาศาสตร์หลายชิ้นและการสังเกตการณ์ของเหล่านักดาราศาสตร์ ทำให้เกิดข้อสรุปร่วมกันว่า ขณะนี้ เอกภพ หรือจักรวาล กำลังขยายตัวออกไป ดวงดาวและกาแล็กซีกำลังเคลื่อนที่ออกห่างจากกันทุกวินาที</p>
+          <p>ดังนั้น เมื่อย้อนเวลากลับไปหลายพันล้านปีก่อนจนถึงจุดเริ่มต้นของทุกสรรพสิ่ง ทุกสสารและพลังงานในจักรวาล ต้องอยู่ใกล้ชิดกันยิ่งกว่านี้ ทุกสสารและพลังงานในจักรวาล ต้องอยู่ใกล้ชิดกันยิ่งกว่านี้ และมีจุดกำเนิดมาจากจุดเดียวกัน นั่นคือ การระเบิดครั้งใหญ่ หรือ บิ๊กแบง</p>
+          <p>จากจุดที่มีขนาดเล็กยิ่งกว่าอะตอมเป็นพันล้านเท่า จุดที่มีอุณหภูมิและความหนาแน่นเป็นอนันต์ (Singularity) จุดที่รวมแรงทั้ง 4 ในธรรมชาติไว้เป็นหนึ่งเดียว (แรงโน้มถ่วง แรงแม่เหล็กไฟฟ้า แรงนิวเคลียร์เข้มและแรงนิวเคลียร์อ่อน) ก่อนจะเกิดการขยายตัว หรือ การระเบิดออกอย่างรวดเร็วและรุนแรง ซึ่งเป็นจุดเริ่มต้นของเอกภพ สสาร และพลังงาน รวมถึงที่ว่าง (Space) และกาลเวลา (Time)</p>
+          <p>ส่งสสารและพลังงานไปในห้วงอวกาศ ให้กำเนิดดวงดาวและกาแล็กซี จนเป็นจักรวาลอย่างที่เราเห็นอยู่ในทุกวันนี้</p>
+        </div>
+        <div class="col-6 text-center align-self-center">
+          <img src="./assets/bigbang2.jpg" class="mw-100 center-block">
+        </div>
+        <div class="row mt-5">
+          <div class="col-4">
             <img src="./assets/galaxies.png" class="" height="100%" width="100%">
+          </div>
+
+          <div class="col-8" style="border-bottom: 1px solid white; border-top: 1px solid white;">
+            <h2>ภายหลังเกิดบิกแบง</h2>
+            <p>เมื่อเอกภพมีอายุเพียง 1 ล้านปี สสารในรูปของไฮโดรเจนและฮีเลียมก็เริ่มยึดเหนี่ยวกันเป็นก้อน เรียกว่า <b>กาแล็กซีที่ยังไม่คลอด(protogalaxy)</b>
+              นี่คือจุดเริ่มต้นของการเกิดกาแล็กซีต่อไป ก้อนก๊าซขนาดเล็กที่อยู่ภายในกลายเป็นดาวฤกษ์</p>
+            <p>กาแล็กซีที่ยังไม่คลอดก็เหมือนกระจุดดาวฤกษ์ขนาดมหิมาหรือกาแล็กซีแคระ อยู่กันเป็นกลุ่มและเป็นโครงสร้างหลักของกาแล็กซี
+              กาแล็กซีที่ยังไม่คลอดทั้งหลายถูกยึดเหนี่ยวเข้าด้วยกัน ด้วยแรงโน้มถ่วงจึงเกิดการรวมกันเป็นกาแล็กซีในช่วงแรกจะมีขนาดเล็กและมีรูปร่างแปลก</p>
+            <p>ในที่สุดกาแล็กซีที่ยังไม่คลอดหลายแห่งก็รวมกันกลายเป็นกาแล็กซีแบบสไปรัสหรือรูปไข่อย่างที่เป็นอยู่ในปัจจุบัน
+              แต่มันยังไม่สิ้นสุดแค่นี้ ภายในกาแล็กซีต่าง ๆ ยังมีดาวฤกษ์เกิดขึ้นอยู่เรื่อย ๆ ตัวกาแล็กซีเองก็อาจชนกันหรือรวมกัน
+              ทุกวันนี้ภายในกาแล็กซีทางช้างแผือกยังมีดาวฤกษ์จำนวนมากกำลังเกิดใหม่และกำลังดึงกาแล็กซีเล็กๆข้างเคียงเข้ามา</p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-3 border-right">
+            <h2 class="display-4">ข้อสังเกตที่สนับสนุนทฤษฎีบิกแบง</h2>
+          </div>
+          <div class="col-9 align-self-center" style="line-height: 2rem;">
+            <p>
+              <b>1. การขยายตัวของเอกภพ</b> ฮับเบิล นักดาราศาสตร์ชาวอเมริกันค้นพบว่า กาแล็กซีเคลื่อนที่ไกลออกไปด้วยความเร็วที่เพิ่มขึ้นตามระยะห่าง
+              กาแล็กซีที่อยู่ไกลยิ่งเคลื่อนที่ห่างออกไปเร็วกว่ากาแล็กซีที่อยู่ใกล้ นั่นคือ เอกภพกำลังขยายตัว
+              จากความเข้าใจในเรื่องนี้ทำให้นักดาราศาสตร์สามารถคำนวณอายุของเอกภพได้
+            </p>
+            <p>
+              <b>2. อุณหภูมิพื้นหลังอวกาศซึ่งปัจจุบันลดลงเหลือ 2.73 เคลวิน</b> การค้นพบอุณหภูมิของเอกภพในปัจจุบัน หรืออุณหภูมิพื้นหลัง
+              เป็นการค้นพบโดยบังเอิญโดยนักวิทยาศาสตร์ชาวอเมริกา 2 คน คือ อาร์โน เพนเซียส และ โรเบิร์ต วิลสันขณะนักวิทยาศาสตร์ทั้งสองคน กำลังทดสอบระบบเครื่องรับสัญญาณของกล้อง โทรทรรศน์วิทยุ
+              ปรากฏว่ามีสัญญาณรบกวนตลอดเวลา ต่อมาทราบภายหลังว่าเป็นสัญญาณที่เหลืออยู่ในอวกาศเทียบได้กับพลังงานของการแผ่รังสีของวัตถุดำ
+              ที่มีอุณหภูมิประมาณ 2.73 เคลวิน
+            </p>
+          </div>
         </div>
 
-      <div class="col-8" style="border-bottom: 1px solid white; border-top: 1px solid white;">
-        <h2>ภายหลังเกิดบิกแบง</h2>
-        <p>เมื่อเอกภพมีอายุเพียง 1 ล้านปี สสารในรูปของไฮโดรเจนและฮีเลียมก็เริ่มยึดเหนี่ยวกันเป็นก้อน เรียกว่า <b>กาแล็กซีที่ยังไม่คลอด(protogalaxy)</b>
-          นี่คือจุดเริ่มต้นของการเกิดกาแล็กซีต่อไป ก้อนก๊าซขนาดเล็กที่อยู่ภายในกลายเป็นดาวฤกษ์</p>
-          <p>กาแล็กซีที่ยังไม่คลอดก็เหมือนกระจุดดาวฤกษ์ขนาดมหิมาหรือกาแล็กซีแคระ อยู่กันเป็นกลุ่มและเป็นโครงสร้างหลักของกาแล็กซี
-          กาแล็กซีที่ยังไม่คลอดทั้งหลายถูกยึดเหนี่ยวเข้าด้วยกัน ด้วยแรงโน้มถ่วงจึงเกิดการรวมกันเป็นกาแล็กซีในช่วงแรกจะมีขนาดเล็กและมีรูปร่างแปลก</p>
-          <p>ในที่สุดกาแล็กซีที่ยังไม่คลอดหลายแห่งก็รวมกันกลายเป็นกาแล็กซีแบบสไปรัสหรือรูปไข่อย่างที่เป็นอยู่ในปัจจุบัน
-          แต่มันยังไม่สิ้นสุดแค่นี้ ภายในกาแล็กซีต่าง ๆ ยังมีดาวฤกษ์เกิดขึ้นอยู่เรื่อย ๆ ตัวกาแล็กซีเองก็อาจชนกันหรือรวมกัน
-          ทุกวันนี้ภายในกาแล็กซีทางช้างแผือกยังมีดาวฤกษ์จำนวนมากกำลังเกิดใหม่และกำลังดึงกาแล็กซีเล็กๆข้างเคียงเข้ามา</p>
-      </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col-3 border-right">
-        <h2 class="display-4">ข้อสังเกตที่สนับสนุนทฤษฎีบิกแบง</h2>
-      </div>
-      <div class="col-9 align-self-center" style="line-height: 2rem;">
-      <p>
-           <b>1. การขยายตัวของเอกภพ</b> ฮับเบิล นักดาราศาสตร์ชาวอเมริกันค้นพบว่า กาแล็กซีเคลื่อนที่ไกลออกไปด้วยความเร็วที่เพิ่มขึ้นตามระยะห่าง 
-            กาแล็กซีที่อยู่ไกลยิ่งเคลื่อนที่ห่างออกไปเร็วกว่ากาแล็กซีที่อยู่ใกล้ นั่นคือ เอกภพกำลังขยายตัว 
-            จากความเข้าใจในเรื่องนี้ทำให้นักดาราศาสตร์สามารถคำนวณอายุของเอกภพได้
-        </p>
-        <p>
-             <b>2. อุณหภูมิพื้นหลังอวกาศซึ่งปัจจุบันลดลงเหลือ 2.73 เคลวิน</b>  การค้นพบอุณหภูมิของเอกภพในปัจจุบัน หรืออุณหภูมิพื้นหลัง  
-              เป็นการค้นพบโดยบังเอิญโดยนักวิทยาศาสตร์ชาวอเมริกา  2  คน คือ อาร์โน เพนเซียส  และ   โรเบิร์ต วิลสันขณะนักวิทยาศาสตร์ทั้งสองคน กำลังทดสอบระบบเครื่องรับสัญญาณของกล้อง โทรทรรศน์วิทยุ 
-              ปรากฏว่ามีสัญญาณรบกวนตลอดเวลา ต่อมาทราบภายหลังว่าเป็นสัญญาณที่เหลืออยู่ในอวกาศเทียบได้กับพลังงานของการแผ่รังสีของวัตถุดำ
-               ที่มีอุณหภูมิประมาณ 2.73 เคลวิน
-          </p>
-      </div>
-    </div>
-
-    <div style="margin: auto">
-      <div class="col text-center">
-        <a id="togalaxy" style="cursor: pointer;" href="galaxies.html">
-        <button class="btn-glx">
-        <span class="display-5">ไปสำรวจกาแลกซีกันเลย</span>
-        </button>
-        </a>
-      </div>
-    </div>
+        <div style="margin: auto">
+          <div class="col text-center">
+            <a id="togalaxy" style="cursor: pointer;" href="galaxies.html">
+              <button class="btn btn-lg">
+                <span class="display-5">ไปสำรวจกาแลกซีกันเลย</span>
+              </button>
+            </a>
+          </div>
+        </div>
     </section>
-    
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.3.0/dist/lazyload.min.js"></script>
     <script>
       var headingLoad = false,
         arrowLoad = false,
@@ -214,9 +276,14 @@
         let video = document.getElementsByTagName("video")[0];
 
         video.oncanplaythrough = function (ev) {
+          video.pause();
           console.log("finish loading video")
           let header = document.getElementById("header");
           header.style.opacity = "1";
+          hideLoadingOverlay();
+          setTimeout(function () {
+            video.play();
+          }, 1750);
         }
 
         video.ontimeupdate = function (ev) {
@@ -235,6 +302,7 @@
             arrow.style.transform = "translateY(0%)";
           } else if (ev.target.currentTime > 10.5 && !contentLoad) {
             contentLoad = true
+            document.getElementsByTagName("html")[0].style.overflow = "scroll"
             let content = document.getElementById("content");
             content.style.display = "block"
             setTimeout(function () {
@@ -272,6 +340,17 @@
         }, 1000)
       }
 
+      function hideLoadingOverlay() {
+        let overlay = document.getElementById("overlay");
+        overlay.style.opacity = "0";
+        overlay.style.zIndex = "-1";
+      }
+
+      function showLoadingOverlay() {
+        let overlay = document.getElementById("overlay");
+        overlay.style.opacity = "1";
+        overlay.style.zIndex = "1000";
+      }
     </script>
   </body>
 

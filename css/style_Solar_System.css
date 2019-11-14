@@ -1,9 +1,7 @@
 /* Solar System Styles */
 
 ul.solarsystem {
-  
-  height: 600px;
-  width: 600px;
+  width: 100%;
   list-style: none;
   -webkit-transition: all 0.09s ease-in;
   -moz-transition: all 0.09s ease-in;
@@ -37,13 +35,6 @@ ul.solarsystem li {
      opacity: 0.9;
     
 }
-
-ul.solarsystem a {
-  cursor: pointer;
-  
-}
-
-
 
 ul.solarsystem li span {
   display: block;
@@ -248,11 +239,11 @@ ul.solarsystem li.saturn {
 }
 
 ul.solarsystem li.saturn span {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   background: url("../assets/saturn_mini.png")center;
   background-size: cover;
-  top: 40px;
+  top: 20px;
   left: 300px;
 }
 
@@ -413,15 +404,6 @@ ul.solarsystem li.neptune {
 }
 
 
-a {
-  color: #fafafa;
-}
-
-a:hover {
-  color: #aaa;
-  text-decoration: none;
-}
-
 .topic div.container {
   text-align: left !important;
   margin-left: 0;
@@ -441,4 +423,64 @@ a:hover {
 
 li {
   list-style-type: none;
+}
+
+span {
+  font-size: 14pt;
+  color: white;
+}
+
+span:hover {
+  padding: 10px;
+  transition: 0.3s;
+  color: white;
+}
+
+a {
+  font-size: 16pt;
+  color: #fff;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  border: 2px solid white;
+}
+
+.btn span:after {
+  color: #fff;
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 20%;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn:hover span {
+  padding-right: 25px;
+}
+
+.btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
 }
