@@ -93,6 +93,25 @@
         #arrow > span:hover {
             transform: translateY(30%);
         }
+
+        .btn-sols {
+            border: 1px solid white;
+            border-radius: 3px;
+            background-color:transparent;
+        }
+        .btn-sols:hover {
+            cursor: pointer;
+            background-color: white;
+         }
+        span {
+            font-size: 14pt;
+            color: white;
+         }
+      span:hover {
+            padding: 10px;
+            transition: 0.3s;
+            color: black;
+      }
     </style>
 </head>
 
@@ -222,7 +241,16 @@
             </div>
             
         </div>
-        
+
+        <div style="margin: auto">
+                <div class="col text-center">
+                  <a id="sols" style="cursor: pointer;" href="solarsystem.html">
+                  <button class="btn-sols">
+                  <span class="display-5">ไปท่องระบบสุริยะ</span>
+                  </button>
+                  </a>
+                </div>
+              </div>
     </section>
 
     <script>
