@@ -119,6 +119,308 @@
     filter: grayscale(0);
     transform: scale(1.1);
     }
+    /* timeline */
+    .hexa{
+    border: 0px;
+    float: left;
+    text-align: center;
+    height: 35px;
+    width: 60px;
+    font-size: 22px;
+    background: #ffe4f2;
+    color: #3c3c3c;
+    position: relative;
+    margin-top: 15px;
+}
+
+.hexa:before{
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    width: 0; 
+    height: 0;
+    border-bottom: 15px solid #ffe4f2;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    top: -15px;
+}
+
+.hexa:after{
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    width: 0; 
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 15px solid #ffe4f2;
+    bottom: -15px;
+}
+
+.timeline {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+.timeline:before {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    content: ' ';
+    display: block;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    background: rgb(213,213,213);
+    background: -moz-linear-gradient(top, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(100%,rgba(125,185,232,1)));
+    background: -webkit-linear-gradient(top, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
+    background: -o-linear-gradient(top, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
+    background: -ms-linear-gradient(top, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
+    background: linear-gradient(to bottom, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
+  z-index: 5;
+}
+
+.timeline li {
+  padding: 2em 0;
+}
+
+.timeline .hexa{
+  width: 16px;
+  height: 10px;
+  position: absolute;
+  background: #ffe4f2;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  margin-left:auto;
+  margin-right:auto;
+  top: -30px;
+  margin-top: 0;
+}
+
+.timeline .hexa:before {
+  border-bottom: 4px solid #ffe4f2;
+  border-left-width: 8px;
+  border-right-width: 8px;
+  top: -4px;
+}
+
+.timeline .hexa:after {
+  border-left-width: 8px;
+  border-right-width: 8px;
+  border-top: 4px solid #ffe4f2;
+  bottom: -4px;
+}
+
+.direction-l,
+.direction-r {
+  float: none;
+  width: 100%;
+  text-align: center;
+}
+
+.flag-wrapper {
+  text-align: center;
+  position: relative;
+}
+
+.flag {
+  position: relative;
+  display: inline;
+  background: rgb(255,255,255);
+  font-weight: 600;
+  z-index: 15;
+  padding: 6px 10px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.direction-l .flag:after,
+.direction-r .flag:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -15px;
+  height: 0;
+  width: 0;
+  margin-left: -8px;
+  border: solid transparent;
+  border-bottom-color: rgb(255,255,255);
+  border-width: 8px;
+  pointer-events: none;
+}
+
+.direction-l .flag {
+  -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+}
+
+.direction-r .flag {
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+}
+
+.time-wrapper {
+  display: block;
+  position: relative;
+  margin: 4px 0 0 0;
+  z-index: 14;
+  line-height: 1em;
+  vertical-align: middle;
+  color: #fff;
+}
+
+.direction-l .time-wrapper {
+  float: none;
+}
+
+.direction-r .time-wrapper {
+  float: none;
+}
+
+.time {
+  background: #44008b;
+  display: inline-block;
+  padding: 8px;
+}
+
+.desc {
+  position: relative;
+  margin: 1em 0 0 0;
+  padding: 1em;
+  background: rgb(254,254,254);
+  -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+  -moz-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+  box-shadow: 0 0 1px rgba(0,0,0,0.20);
+  z-index: 15;
+}
+
+.direction-l .desc,
+.direction-r .desc {
+  position: relative;
+  margin: 1em 1em 0 1em;
+  padding: 1em;
+  z-index: 15;
+}
+
+@media(min-width: 768px){
+  .timeline {
+    width: 660px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .timeline li:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  
+  .timeline .hexa {
+    left: -28px;
+    right: auto;
+    top: 8px;
+  }
+
+  .timeline .direction-l .hexa {
+    left: auto;
+    right: -28px;
+  }
+
+  .direction-l {
+    position: relative;
+    width: 310px;
+    float: left;
+    text-align: right;
+  }
+
+  .direction-r {
+    position: relative;
+    width: 310px;
+    float: right;
+    text-align: left;
+  }
+
+  .flag-wrapper {
+    display: inline-block;
+  }
+  
+  .flag {
+    font-size: 18px;
+  }
+
+  .direction-l .flag:after {
+    left: auto;
+    right: -16px;
+    top: 50%;
+    margin-top: -8px;
+    border: solid transparent;
+    border-left-color: rgb(254,254,254);
+    border-width: 8px;
+  }
+
+  .direction-r .flag:after {
+    top: 50%;
+    margin-top: -8px;
+    border: solid transparent;
+    border-right-color: rgb(254,254,254);
+    border-width: 8px;
+    left: -8px;
+  }
+
+  .time-wrapper {
+    display: inline;
+    vertical-align: middle;
+    margin: 0;
+  }
+
+  .direction-l .time-wrapper {
+    float: left;
+  }
+
+  .direction-r .time-wrapper {
+    float: right;
+  }
+
+  .time {
+    padding: 5px 10px;
+  }
+
+  .direction-r .desc {
+    margin: 1em 0 0 0.75em;
+  }
+}
+
+@media(min-width: 992px){
+  .timeline {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .direction-l {
+    position: relative;
+    width: 380px;
+    float: left;
+    text-align: right;
+  }
+
+  .direction-r {
+    position: relative;
+    width: 380px;
+    float: right;
+    text-align: left;
+  }
+}
+    /* end of timeline */
     </style>
 </head>
 
@@ -142,9 +444,8 @@
         <div class="blockquote text-center">
             <div class="blockquote-footer mb-5">
                 <p class="mb-0">
-                    เอกภพกว้างใหญ่ไพศาล มีสิ่งที่เหล่ามนุษย์ยังไม่ค้นพบอีกมากมาย แต่การส่งยานอวกาศออกไปสำรวจดาวเพื่อนบ้าน ถือเป็นความสำเร็จอันยิ่งใหญ่ของมนุษย์<br>
-                    กล่าวคือ ถือเป็นพัฒนาการของการสำรวจอีกขั้น ในอนาคตเราอาจจะสำรวจพบดาวเคราะห์ที่มีมนุษย์อาศัยอยู่ หรือพบสิ่งที่น่าสนใจอื่น<br> 
-                    แต่ในหน้านี้เราจะนำเสนอยานอวกาศที่ถูกส่งไปทำภารกิจที่ดาวเคราะห์ต่างๆ
+                    ยานอวกาศคือสะพานเชื่อมระหว่างเรากับดวงดาว ในชั่วชีวิตนี้เราได้เห็น ได้สัมผัสและจะได้ร่วมเป็นพยานในอีกหลาย ๆ สิ่งที่จะเกิดขึ้น
+                    พูดได้ว่าเป็นยุคที่น่าตื่นเต้นที่สุด<br> และเมื่อมนุษย์ย้อนมองกลับมา นี่จะเป็นยุคที่น่าจดจำไม่แพ้ยุคเรเรซองส์ หรือการปฏิวัติอุตสาหกรรม
                 </p>
             </div>
         </div>
@@ -160,7 +461,8 @@
                     โดยดาวเทียมดวงนี้ใช้เวลาโคจรรอบโลกนาน 92 วัน ก่อนจะลดวงโคจรต่ำลงเรื่อยๆ จนหลุดเข้าสู่ชั้นบรรยากาศโลกและลุกไหม้ในวันที่ 3 มกราคม พ.ศ. 2501 
                 </p>
                 <p>สปุตนิก 1 เป็นดาวเทียมในโครงการสปุตนิก (Sputnik Program) ของสหภาพโซเวียต ซึ่งเป็นโครงการส่งยานอวกาศไร้คนขับขึ้นสู่วงโคจรรอบโลก 
-                    และสปุตนิก 1 คือสุดยอดความสำเร็จในการเป็นผู้นำทางด้านอวกาศของสหภาพโซเวียตในขณะนั้น โดยมีภารกิจในการทดสอบการโคจรของดาวเทียมรอบโลก ตรวจวัดความหนาแน่นของชั้นบรรยากาศโลกจากการคำนวณการเปลี่ยนแปลงวงโคจร 
+                    และสปุตนิก 1 คือสุดยอดความสำเร็จในการเป็นผู้นำทางด้านอวกาศของสหภาพโซเวียตในขณะนั้น โดยมีภารกิจในการทดสอบการโคจรของดาวเทียมรอบโลก 
+                    ตรวจวัดความหนาแน่นของชั้นบรรยากาศโลกจากการคำนวณการเปลี่ยนแปลงวงโคจร 
                     ทดสอบการส่งข้อมูลข่าวสารเป็นสัญญาณวิทยุผ่านชั้นบรรยากาศโลกและทดสอบหลักการของความดันในอวกาศว่าเป็นไปตามที่สังเกตการณ์ได้หรือไม่</p>
             </div>
         </div>
@@ -182,10 +484,12 @@
         <div class="row">
             <div class="col" style="line-height: 2rem;">
                 <p>
-                    กาแล็กซีมีรูปทรงแตกต่างกันหลายประเภท ซึ่งสามารถแบ่งเป็นประเภทใหญ่ๆ ได้ 2 ประเภทคือ กาแล็กซีปกติ (Regular galaxy)
-                    ที่มีสัณฐานรูปทรงชัดเจนสามารถแบ่งได้ตามแผนภาพส้อมเสียง (Hubble Turning Fork) ตามที่แสดงในภาพที่ 1
-                    และกาแล็กซีไม่มีรูปแบบ (Irregular Galaxy) ที่ไม่มีรูปทรงสัณฐานชัดเลย เช่น เมฆแมกเจลแลนใหญ่ เมฆแมกเจลแลนเล็ก
-                    ซึ่งเป็นกาแล็กซีบริวารของทางช้างเผือก
+                        การสำรวจอวกาศเริ่มต้นมานานตั้งแต่สมัยโบราณชาวมายาได้วาดภาพปรากฏการณ์ทางดาราศาสตร์ต่างๆ 
+                        ชาวอียิปต์โบราณได้สร้างพีระมิดที่ชี้ถึงดวงดาวต่างๆ <br>ที่ประเทศอังกฤษมีการสร้างสโตนเฮจซึ่งคาดการณ์ว่า 
+                        สร้างขึ้นเพื่อบอกตำแหน่งของดวงอาทิตย์และมีการเสนอข้อมูลของดวงอาทิตย์ขึ้นมาได้แก่ 
+                        ดวงอาทิตย์เป็นลูกไฟกลม <br>และมีการเสนอแนวคิดว่าดวงอาทิตย์หมุนรอบโลกและแนวคิดของนิโคลัส 
+                        โคเปอร์นิคัสที่เสนอว่าความจริงแล้วโลกหมุนรอบดวงอาทิตย์และมีการประดิษฐ์กล้องโทรทรรศน์สำหรับสังเกตการณ์วัตถุท้องฟ้าต่างๆและไขปริศนาต่างๆของวัตถุท้องฟ้าได้ 
+                        แต่เพิ่งจะมีการเดินทางไปสู่อวกาศสำเร็จเป็นครั้งแรกและจริงจัง ในปีค.ศ.1957 หรือเมื่อ 62 ปีที่ผ่านมานี้เอง
                 </p>
             </div>
         </div>
@@ -252,7 +556,46 @@
             </div>
             
         </div>
-
+        <div class="row">
+                <ul class="timeline">
+                        <!-- Item 1 -->
+                        <li>
+                          <div class="direction-r">
+                            <div class="flag-wrapper">
+                              <span class="hexa"></span>
+                              <span class="flag">Lorem ipsum.</span>
+                              <span class="time-wrapper"><span class="time">Feb 2015</span></span>
+                            </div>
+                            <div class="desc">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt proident.</div>
+                          </div>
+                        </li>
+                      
+                        <!-- Item 2 -->
+                        <li>
+                          <div class="direction-l">
+                            <div class="flag-wrapper">
+                              <span class="hexa"></span>
+                              <span class="flag">Lorem ipsum Anim.</span>
+                              <span class="time-wrapper"><span class="time">Dec 2014</span></span>
+                            </div>
+                            <div class="desc">Lorem ipsum In ut sit in dolor nisi ex magna eu anim anim tempor dolore aliquip enim cupidatat laborum dolore.</div>
+                          </div>
+                        </li>
+                      
+                        <!-- Item 3 -->
+                        <li>
+                          <div class="direction-r">
+                            <div class="flag-wrapper">
+                              <span class="hexa"></span>
+                              <span class="flag">Lorem Occaecat.</span>
+                              <span class="time-wrapper"><span class="time">July 2014</span></span>
+                            </div>
+                            <div class="desc">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
+                          </div>
+                        </li>
+                      </ul>
+        </div>
+            
         <div style="margin: auto">
                 <div class="col text-center">
                   <a id="sols" style="cursor: pointer;" href="solarsystem.html">
