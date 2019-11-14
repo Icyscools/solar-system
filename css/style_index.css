@@ -53,9 +53,10 @@ a:hover {
   content: '\00bb';
   position: absolute;
   opacity: 0;
-  top: 12%;
+  top: 12 %;
   right: -20px;
-  transition: 0.3s all;
+  font-size: 1.5rem;
+  transition: 0.5s all;
 }
 
 .btn:hover span:after {
@@ -85,13 +86,13 @@ li {
 }
 
 #scene {
-  pointer-events: auto!important;
+  pointer-events: auto !important;
 }
 
 #bgpallarax {
   display: absolute;
-  top: -3%!important;
-  left: -3%!important;
+  top: -3% !important;
+  left: -3% !important;
   background-image: url(../assets/astronaut.jpg);
   background-blend-mode: unset;
   background-size: cover;
