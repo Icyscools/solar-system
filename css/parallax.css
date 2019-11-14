@@ -17,13 +17,20 @@ html {
 }
 
 #read-more .btn {
-  background: white;
-  color: black;
+  background: white!important;
   transition: 0.25s all ease-in-out;
 }
 
+#read-more .btn span {  
+  color: black;
+}
+
 #read-more .btn:hover {
-  background: black;
+  background: black!important;
+  border-color: black!important;
+}
+
+#read-more .btn:hover span {
   color: white;
 }
 

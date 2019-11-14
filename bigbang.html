@@ -1,210 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/fonts.css">
-    <link rel="shortcut icon" href="./assets/logo.ico" />
-    <title>Big Bang | Solar System</title>
-    <style>
-      html {
-        overflow: hidden;
-      }
-
-      body {
-        background: black;
-        scroll-behavior: smooth;
-      }
-
-      header {
-        position: relative;
-        min-height: 100vh;
-        width: 100%;
-        overflow: hidden;
-        transition: all 1.25s ease-in-out;
-      }
-
-      header * {
-        transition: all 0.8s ease-in-out;
-      }
-
-      .fullscreen-bg {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        overflow: hidden;
-        z-index: -100;
-      }
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="shortcut icon" href="./assets/logo.ico" />
+  <title>Big Bang | Solar System</title>
+  <style>
+    html {
+      overflow: hidden;
+    }
+    
+    body {
+      background: black;
+      scroll-behavior: smooth;
+    }
+    
+    header {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      transition: all 1.25s ease-in-out;
+    }
+    
+    header * {
+      transition: all 0.8s ease-in-out;
+    }
+    
+    .fullscreen-bg {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -100;
+    }
+    
+    .fullscreen-bg video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    @media (min-aspect-ratio: 16/9) {
       .fullscreen-bg video {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
+        height: auto;
+      }
+    }
+    
+    @media (max-aspect-ratio: 16/9) {
+      .fullscreen-bg video {
+        width: auto;
         height: 100%;
       }
+    }
+    
+    header div.h-100 {
+      min-height: 100vh;
+    }
+    
+    #content {
+      color: white;
+      min-height: 100vh;
+      transition: all 0.8s;
+      z-index: 100;
+    }
+    
+    #content p {
+      text-indent: 2rem;
+    }
+    
+    .full {
+      min-width: 100%;
+      height: 100%;
+    }
+    
+    span {
+      color: white;
+    }
+    
+    a {
+      font-size: 16pt;
+      color: #fff;
+    }
+    
+    a:hover {
+      text-decoration: none;
+    }
+    
+    .btn {
+      background-color: transparent;
+      border: 1px solid white;
+      transition: 0.5s all;
+    }
+    
+    .btn span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+    }
+    
+    .btn:hover {
+      border: 2px solid white;
+      color: white;
+    }
+    
+    .btn:hover span {
+      padding: 5px;
+      padding-right: 25px;
+    }
+    
+    .btn span:after {
+      color: #fff;
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 12%;
+      right: -20px;
+      transition: 0.3s all;
+    }
+    
+    .btn:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    
+    #arrow span {
+      display: inline-block;
+      cursor: pointer;
+    }
+    
+    #arrow>span:hover {
+      transform: translateY(30%);
+    }
+    
+    #overlay {
+      position: absolute;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.925);
+      transition: 1.125s all ease-in-out;
+    }
+  </style>
+</head>
 
-      @media (min-aspect-ratio: 16/9) {
-        .fullscreen-bg video {
-          width: 100%;
-          height: auto;
-        }
-      }
-
-      @media (max-aspect-ratio: 16/9) {
-        .fullscreen-bg video {
-          width: auto;
-          height: 100%;
-        }
-      }
-
-      header div.h-100 {
-        min-height: 100vh;
-      }
-
-      #content {
-        color: white;
-        min-height: 100vh;
-        transition: all 0.8s;
-        z-index: 100;
-      }
-
-      #content p {
-        text-indent: 2rem;
-      }
-
-      .full {
-        min-width: 100%;
-        height: 100%;
-      }
-
-      span {
-        font-size: 14pt;
-        color: white;
-      }
-
-      span:hover {
-        padding: 10px;
-        transition: 0.3s;
-        color: white;
-      }
-
-      a {
-        font-size: 16pt;
-        color: #fff;
-      }
-
-      .btn {
-        background-color: transparent;
-        border: 1px solid white;
-      }
-
-      .btn span {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-      }
-
-      .btn:hover {
-        border: 2px solid white;
-      }
-
-      .btn span:after {
-        color: #fff;
-        content: '\00bb';
-        position: absolute;
-        opacity: 0;
-        top: 20%;
-        right: -20px;
-        transition: 0.5s;
-      }
-
-      .btn:hover span {
-        padding-right: 25px;
-      }
-
-      .btn:hover span:after {
-        opacity: 1;
-        right: 0;
-      }
-
-      a {
-        color: #fff;
-      }
-
-      a:hover {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      #overlay {
-        position: absolute;
-        min-width: 100%;
-        min-height: 100%;
-        z-index: 1000;
-        background: rgba(0, 0, 0, 0.925);
-        transition: 1.125s all ease-in-out;
-      }
-    </style>
-  </head>
-
-  <body>
-    <header id="header" class="row m-0" style="opacity: 0;">
-      <div id="overlay" class="d-flex w-100 h-100">
-        <div id="loading" class="container my-auto text-center">
-          <span class="spinner-grow spinner-grow-md" role="status" aria-hidden="true"></span>
-          <span class="spinner-grow spinner-grow-md" role="status" aria-hidden="true"></span>
-          <span class="sr-only">Loading...</span>
-          <span class="spinner-grow spinner-grow-md" role="status" aria-hidden="true"></span>
-        </div>
+<body>
+  <header id="header" class="row m-0" style="opacity: 0;">
+    <div id="overlay" class="d-flex w-100 h-100">
+      <div id="loading" class="container my-auto text-center">
+        <span class="spinner-grow spinner-grow-md" role="status" aria-hidden="true"></span>
+        <span class="spinner-grow spinner-grow-md" role="status" aria-hidden="true"></span>
+        <span class="sr-only">Loading...</span>
+        <span class="spinner-grow spinner-grow-md" role="status" aria-hidden="true"></span>
       </div>
-      <div class="col-12">
-        <div class="fullscreen-bg">
-          <video id="bigbang" autoplay muted>
-            <source src="./assets/bigbang.webm" type="video/webm" />
-          </video>
-        </div>
-        <div class="container h-100">
-          <div class="d-flex h-100 text-center align-items-center">
-            <div class="w-100 text-white">
-              <div id="heading" class="container" style="opacity: 0;transform: translateY(40%);">
-                <h1 class="display-3">กำเนิดเอกภพ</h1>
-                <p class="lead mb-0">จุดเริ่มต้นของทุกสรรพสิ่ง<p>
-
+    </div>
+    <div class="col-12">
+      <div class="fullscreen-bg">
+        <video id="bigbang" autoplay muted>
+          <source src="./assets/bigbang.webm" type="video/webm"/>
+        </video>
+      </div>
+      <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+          <div class="w-100 text-white">
+            <div id="heading" class="container" style="opacity: 0;transform: translateY(40%);">
+              <h1 class="display-3">กำเนิดเอกภพ</h1>
+              <p class="lead mb-0">จุดเริ่มต้นของทุกสรรพสิ่ง<p>
               </div>
-              <h1 id="arrow" class="display-4 mt-5" style="opacity: 0;transform:translateY(-100%);cursor: pointer;" onclick="scrollToElement(content)">▼</h1>
+              <h1 id="arrow" class="mt-5" style="opacity: 0;transform:translateY(-100%);">
+                <span class="display-4" onclick="scrollToElement(content)">▼</span>
+              </h1>
             </div>
           </div>
         </div>
       </div>
     </header>
     <section id="content" class="d-block container mt-5 mb-0 py-5" style="display: none!important;opacity: 0;" role="main">
-      <nav class="navbar navbar-expand navbar-dark">
-        <div class="row mx-auto">
-          <div class="col">
-            <ul class="navbar-nav mx-auto mt-2 mt-lg-0 pt-2">
-              <h5>
-                <a href="index.html" class="text-white">Home</a>
-              </h5>
-            </ul>
-          </div>
-        </div>
-      </nav>
       <div class="row mt-5">
         <div class="col text-center">
           <h2 class="display-4">เอกภพกำเนิดได้อย่างไร</h2>
-          <p>กำเนิดเอกภพเริ่มนับจากจุดที่เรียกว่า ” บิกแบง (BigBang) ” บิกแบง เป็นชื่อที่ใช้เรียกทฤษฎีกำเนิดเอกภพทฤษฎีหนึ่ง</p>
-          <p>ปัจจุบันบิกแบงเป็นที่ยอมรับมากขึ้น เพราะมีปรากฏการณ์หลายอย่างที่สอดคล้อง หรือเป็นไปตามทฤษฎีบิกแบง</p>
-          <p>ก่อนการเกิดบิกแบง เอกภพเป็นพลังงานล้วนๆภายใต้อุณหภูมิที่สูงยิ่ง จุดบิกแบงจึงเป็นจุดที่พลังงานเริ่มเปลี่ยนเป็นสสารครั้งแรก</p>
-          <p>เป็นจุดเริ่มต้นของเวลาและเอกภพ</p>
+          <p>
+            กำเนิดเอกภพเริ่มนับจากจุดที่เรียกว่า ” บิกแบง (BigBang) ” บิกแบง เป็นชื่อที่ใช้เรียกทฤษฎีกำเนิดเอกภพทฤษฎีหนึ่ง
+            ปัจจุบันบิกแบงเป็นที่ยอมรับมากขึ้น เพราะมีปรากฏการณ์หลายอย่างที่สอดคล้อง หรือเป็นไปตามทฤษฎีบิกแบง
+            ก่อนการเกิดบิกแบง เอกภพเป็นพลังงานล้วนๆภายใต้อุณหภูมิที่สูงยิ่ง จุดบิกแบงจึงเป็นจุดที่พลังงานเริ่มเปลี่ยนเป็นสสารครั้งแรก
+            เป็นจุดเริ่มต้นของเวลาและเอกภพ
+          </p>
         </div>
-      </div>
       </div>
       <div class="row mt-5">
         <div class="col-6" style="line-height: 2rem;">
@@ -218,140 +208,158 @@
         <div class="col-6 text-center align-self-center">
           <img src="./assets/bigbang2.jpg" class="mw-100 center-block">
         </div>
-        <div class="row mt-5">
-          <div class="col-4">
-            <img src="./assets/galaxies.png" class="" height="100%" width="100%">
-          </div>
-
-          <div class="col-8" style="border-bottom: 1px solid white; border-top: 1px solid white;">
-            <h2>ภายหลังเกิดบิกแบง</h2>
-            <p>เมื่อเอกภพมีอายุเพียง 1 ล้านปี สสารในรูปของไฮโดรเจนและฮีเลียมก็เริ่มยึดเหนี่ยวกันเป็นก้อน เรียกว่า <b>กาแล็กซีที่ยังไม่คลอด(protogalaxy)</b>
-              นี่คือจุดเริ่มต้นของการเกิดกาแล็กซีต่อไป ก้อนก๊าซขนาดเล็กที่อยู่ภายในกลายเป็นดาวฤกษ์</p>
-            <p>กาแล็กซีที่ยังไม่คลอดก็เหมือนกระจุดดาวฤกษ์ขนาดมหิมาหรือกาแล็กซีแคระ อยู่กันเป็นกลุ่มและเป็นโครงสร้างหลักของกาแล็กซี
-              กาแล็กซีที่ยังไม่คลอดทั้งหลายถูกยึดเหนี่ยวเข้าด้วยกัน ด้วยแรงโน้มถ่วงจึงเกิดการรวมกันเป็นกาแล็กซีในช่วงแรกจะมีขนาดเล็กและมีรูปร่างแปลก</p>
-            <p>ในที่สุดกาแล็กซีที่ยังไม่คลอดหลายแห่งก็รวมกันกลายเป็นกาแล็กซีแบบสไปรัสหรือรูปไข่อย่างที่เป็นอยู่ในปัจจุบัน
-              แต่มันยังไม่สิ้นสุดแค่นี้ ภายในกาแล็กซีต่าง ๆ ยังมีดาวฤกษ์เกิดขึ้นอยู่เรื่อย ๆ ตัวกาแล็กซีเองก็อาจชนกันหรือรวมกัน
-              ทุกวันนี้ภายในกาแล็กซีทางช้างแผือกยังมีดาวฤกษ์จำนวนมากกำลังเกิดใหม่และกำลังดึงกาแล็กซีเล็กๆข้างเคียงเข้ามา</p>
-          </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-4">
+          <img src="./assets/galaxies.png" class="" height="100%" width="100%">
         </div>
-        <div class="row mt-5">
-          <div class="col-3 border-right">
-            <h2 class="display-4">ข้อสังเกตที่สนับสนุนทฤษฎีบิกแบง</h2>
-          </div>
-          <div class="col-9 align-self-center" style="line-height: 2rem;">
-            <p>
-              <b>1. การขยายตัวของเอกภพ</b> ฮับเบิล นักดาราศาสตร์ชาวอเมริกันค้นพบว่า กาแล็กซีเคลื่อนที่ไกลออกไปด้วยความเร็วที่เพิ่มขึ้นตามระยะห่าง
-              กาแล็กซีที่อยู่ไกลยิ่งเคลื่อนที่ห่างออกไปเร็วกว่ากาแล็กซีที่อยู่ใกล้ นั่นคือ เอกภพกำลังขยายตัว
-              จากความเข้าใจในเรื่องนี้ทำให้นักดาราศาสตร์สามารถคำนวณอายุของเอกภพได้
-            </p>
-            <p>
-              <b>2. อุณหภูมิพื้นหลังอวกาศซึ่งปัจจุบันลดลงเหลือ 2.73 เคลวิน</b> การค้นพบอุณหภูมิของเอกภพในปัจจุบัน หรืออุณหภูมิพื้นหลัง
-              เป็นการค้นพบโดยบังเอิญโดยนักวิทยาศาสตร์ชาวอเมริกา 2 คน คือ อาร์โน เพนเซียส และ โรเบิร์ต วิลสันขณะนักวิทยาศาสตร์ทั้งสองคน กำลังทดสอบระบบเครื่องรับสัญญาณของกล้อง โทรทรรศน์วิทยุ
-              ปรากฏว่ามีสัญญาณรบกวนตลอดเวลา ต่อมาทราบภายหลังว่าเป็นสัญญาณที่เหลืออยู่ในอวกาศเทียบได้กับพลังงานของการแผ่รังสีของวัตถุดำ
-              ที่มีอุณหภูมิประมาณ 2.73 เคลวิน
-            </p>
-          </div>
+        <div class="col-8">
+          <h2>ภายหลังเกิดบิกแบง</h2>
+          <p>
+            เมื่อเอกภพมีอายุเพียง 1 ล้านปี สสารในรูปของไฮโดรเจนและฮีเลียมก็เริ่มยึดเหนี่ยวกันเป็นก้อน เรียกว่า <b>กาแล็กซีที่ยังไม่คลอด (protogalaxy)</b>
+            นี่คือจุดเริ่มต้นของการเกิดกาแล็กซีต่อไป ก้อนก๊าซขนาดเล็กที่อยู่ภายในกลายเป็นดาวฤกษ์
+          </p>
+          <p>
+            กาแล็กซีที่ยังไม่คลอดก็เหมือนกระจุดดาวฤกษ์ขนาดมหิมาหรือกาแล็กซีแคระ อยู่กันเป็นกลุ่มและเป็นโครงสร้างหลักของกาแล็กซี
+            กาแล็กซีที่ยังไม่คลอดทั้งหลายถูกยึดเหนี่ยวเข้าด้วยกัน ด้วยแรงโน้มถ่วงจึงเกิดการรวมกันเป็นกาแล็กซีในช่วงแรกจะมีขนาดเล็กและมีรูปร่างแปลก
+          </p>
+          <p>
+            ในที่สุดกาแล็กซีที่ยังไม่คลอดหลายแห่งก็รวมกันกลายเป็นกาแล็กซีแบบสไปรัสหรือรูปไข่อย่างที่เป็นอยู่ในปัจจุบัน
+            แต่มันยังไม่สิ้นสุดแค่นี้ ภายในกาแล็กซีต่าง ๆ ยังมีดาวฤกษ์เกิดขึ้นอยู่เรื่อย ๆ ตัวกาแล็กซีเองก็อาจชนกันหรือรวมกัน
+            ทุกวันนี้ภายในกาแล็กซีทางช้างแผือกยังมีดาวฤกษ์จำนวนมากกำลังเกิดใหม่และกำลังดึงกาแล็กซีเล็กๆข้างเคียงเข้ามา
+          </p>
         </div>
-
-        <div style="margin: auto">
-          <div class="col text-center">
-            <a id="togalaxy" style="cursor: pointer;" href="galaxies.html">
-              <button class="btn btn-lg">
-                <span class="display-5">ไปสำรวจกาแลกซีกันเลย</span>
-              </button>
-            </a>
-          </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-3 border-right">
+          <h2 class="display-4">ข้อสังเกตที่สนับสนุนทฤษฎีบิกแบง</h2>
         </div>
-    </section>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.3.0/dist/lazyload.min.js"></script>
-    <script>
-      var headingLoad = false,
-        arrowLoad = false,
-        contentLoad = false;
-      window.onload = function () {
-        let video = document.getElementsByTagName("video")[0];
-
-        video.oncanplaythrough = function (ev) {
-          video.pause();
-          console.log("finish loading video")
-          let header = document.getElementById("header");
-          header.style.opacity = "1";
-          hideLoadingOverlay();
+        <div class="col-9 align-self-center" style="line-height: 2rem;">
+          <p>
+            <b>1. การขยายตัวของเอกภพ</b> ฮับเบิล นักดาราศาสตร์ชาวอเมริกันค้นพบว่า กาแล็กซีเคลื่อนที่ไกลออกไปด้วยความเร็วที่เพิ่มขึ้นตามระยะห่าง
+            กาแล็กซีที่อยู่ไกลยิ่งเคลื่อนที่ห่างออกไปเร็วกว่ากาแล็กซีที่อยู่ใกล้ นั่นคือ เอกภพกำลังขยายตัว
+            จากความเข้าใจในเรื่องนี้ทำให้นักดาราศาสตร์สามารถคำนวณอายุของเอกภพได้
+          </p>
+          <p>
+            <b>2. อุณหภูมิพื้นหลังอวกาศซึ่งปัจจุบันลดลงเหลือ 2.73 เคลวิน</b> การค้นพบอุณหภูมิของเอกภพในปัจจุบัน หรืออุณหภูมิพื้นหลัง
+            เป็นการค้นพบโดยบังเอิญโดยนักวิทยาศาสตร์ชาวอเมริกา 2 คน คือ อาร์โน เพนเซียส และ โรเบิร์ต วิลสันขณะนักวิทยาศาสตร์ทั้งสองคน กำลังทดสอบระบบเครื่องรับสัญญาณของกล้อง โทรทรรศน์วิทยุ
+            ปรากฏว่ามีสัญญาณรบกวนตลอดเวลา ต่อมาทราบภายหลังว่าเป็นสัญญาณที่เหลืออยู่ในอวกาศเทียบได้กับพลังงานของการแผ่รังสีของวัตถุดำ
+            ที่มีอุณหภูมิประมาณ 2.73 เคลวิน
+          </p>
+        </div>
+      </div>
+      <div class="row py-3 m-auto">
+        <div class="col text-center">
+          <a id="togalaxy" style="cursor: pointer;" href="galaxies.html">
+            <button class="btn btn-lg">
+              <span class="display-5">ไปสำรวจกาแลกซีกันเลย</span>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="row pt-3 mb-0 justify-content-center">
+        <div class="col-6 border-top">
+          <nav class="navbar navbar-expand navbar-dark">
+            <ul class="navbar-nav mx-auto mt-2 mt-lg-0 pt-2">
+              <h5>
+                <a href="index.html" class="text-white">Home</a>
+              </h5>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.3.0/dist/lazyload.min.js"></script>
+  <script>
+    var headingLoad = false,
+    arrowLoad = false,
+    contentLoad = false;
+    window.onload = function () {
+      let video = document.getElementsByTagName("video")[0];
+      
+      video.oncanplaythrough = function (ev) {
+        console.log(video)
+        video.pause();
+        console.log("finish loading video")
+        let header = document.getElementById("header");
+        header.style.opacity = "1";
+        hideLoadingOverlay();
+        setTimeout(function () {
+          video.play();
+        }, 1);
+      }
+      
+      video.ontimeupdate = function (ev) {
+        console.log(ev.target.currentTime)
+        if (ev.target.currentTime > 5.5 && !headingLoad) {
+          headingLoad = true
+          let heading = document.getElementById("heading");
+          let arrow = document.getElementById("arrow");
+          heading.style.opacity = "1";
+        } else if (ev.target.currentTime > 8.5 && !arrowLoad) {
+          arrowLoad = true
+          let heading = document.getElementById("heading");
+          let arrow = document.getElementById("arrow");
+          heading.style.transform = "translateY(10%)";
+          arrow.style.opacity = "1";
+          arrow.style.transform = "translateY(0%)";
+        } else if (ev.target.currentTime > 9.25 && !contentLoad) {
+          contentLoad = true
+          document.getElementsByTagName("html")[0].style.overflow = "overlay"
+          let content = document.getElementById("content");
+          content.style.display = "block"
           setTimeout(function () {
-            video.play();
-          }, 1750);
-        }
-
-        video.ontimeupdate = function (ev) {
-          console.log(ev.target.currentTime)
-          if (ev.target.currentTime > 5.5 && !headingLoad) {
-            headingLoad = true
-            let heading = document.getElementById("heading");
-            let arrow = document.getElementById("arrow");
-            heading.style.opacity = "1";
-          } else if (ev.target.currentTime > 8.5 && !arrowLoad) {
-            arrowLoad = true
-            let heading = document.getElementById("heading");
-            let arrow = document.getElementById("arrow");
-            heading.style.transform = "translateY(0%)";
-            arrow.style.opacity = "1";
-            arrow.style.transform = "translateY(0%)";
-          } else if (ev.target.currentTime > 10.5 && !contentLoad) {
-            contentLoad = true
-            document.getElementsByTagName("html")[0].style.overflow = "scroll"
-            let content = document.getElementById("content");
-            content.style.display = "block"
-            setTimeout(function () {
-              content.style.opacity = "1";
-            }, 1000);
-          }
+            content.style.opacity = "1";
+          }, 1000);
         }
       }
-
-      var triggerScroll = false;
-      var lastScrollTop = 0;
-      window.onscroll = function (ev) {
-        let content = document.getElementById("content");
-        var _top = window.pageYOffset || document.documentElement.scrollTop;
-        if (_top > lastScrollTop) {
-          // downscroll code
-          if (window.scrollY >= 50 && window.scrollY < 150 && !triggerScroll) {
-            scrollToElement(content)
-          }
-        } else {
-          // upscroll code
+    }
+    
+    var triggerScroll = false;
+    var lastScrollTop = 0;
+    window.onscroll = function (ev) {
+      let content = document.getElementById("content");
+      var _top = window.pageYOffset || document.documentElement.scrollTop;
+      if (_top > lastScrollTop) {
+        // downscroll code
+        if (window.scrollY >= 50 && window.scrollY < 150 && !triggerScroll) {
+          scrollToElement(content)
         }
-        lastScrollTop = _top <= 0 ? 0 : _top;
+      } else {
+        // upscroll code
       }
-
-      function scrollToElement(el) {
-        triggerScroll = true;
-        window.scrollTo({
-          'behavior': 'smooth',
-          'left': 0,
-          'top': el.offsetTop
-        });
-        setTimeout(() => {
-          triggerScroll = false
-        }, 1000)
-      }
-
-      function hideLoadingOverlay() {
-        let overlay = document.getElementById("overlay");
-        overlay.style.opacity = "0";
-        overlay.style.zIndex = "-1";
-      }
-
-      function showLoadingOverlay() {
-        let overlay = document.getElementById("overlay");
-        overlay.style.opacity = "1";
-        overlay.style.zIndex = "1000";
-      }
-    </script>
-  </body>
+      lastScrollTop = _top <= 0 ? 0 : _top;
+    }
+    
+    function scrollToElement(el) {
+      triggerScroll = true;
+      window.scrollTo({
+        'behavior': 'smooth',
+        'left': 0,
+        'top': el.offsetTop
+      });
+      setTimeout(() => {
+        triggerScroll = false
+      }, 1000)
+    }
+    
+    function hideLoadingOverlay() {
+      let overlay = document.getElementById("overlay");
+      overlay.style.opacity = "0";
+      overlay.style.zIndex = "-1";
+    }
+    
+    function showLoadingOverlay() {
+      let overlay = document.getElementById("overlay");
+      overlay.style.opacity = "1";
+      overlay.style.zIndex = "1000";
+    }
+  </script>
+</body>
 
 </html>

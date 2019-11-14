@@ -139,35 +139,49 @@ body {
   text-shadow: 2px 2px black;
 }
 
+span {
+  color: white;
+}
+
 a {
   font-size: 16pt;
-  color:#fff;
+  color: #fff;
 }
+
+a:hover {
+  text-decoration: none;
+}
+
 .btn {
   background-color: transparent;
   border: 1px solid white;
+  transition: 0.5s all;
 }
+
 .btn span {
   cursor: pointer;
   display: inline-block;
   position: relative;
-  transition: 0.5s;
 }
+
 .btn:hover {
   border: 2px solid white;
+  color: white;
 }
+
+.btn:hover span {
+  padding: 5px;
+  padding-right: 25px;
+}
+
 .btn span:after {
   color: #fff;
   content: '\00bb';
   position: absolute;
   opacity: 0;
-  top: 20%;
+  top: 12%;
   right: -20px;
-  transition: 0.5s;
-}
-
-.btn:hover span {
-  padding-right: 25px;
+  transition: 0.3s all;
 }
 
 .btn:hover span:after {
@@ -175,15 +189,9 @@ a {
   right: 0;
 }
 
-a {
-  color:#fff;
+a:hover{
+  color:white;
 }
-
-a:hover {
-  color:#fff;
-  text-decoration: none;
-}
-
 /*
  * z-index
  */
