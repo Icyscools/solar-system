@@ -102,23 +102,23 @@
             cursor: pointer;
             background-color: white;
          }
-        span {
+        .flag span, .time-wrapper span {
             font-size: 14pt;
             color: white;
          }
-      span:hover {
+        .flag span:hover, .time-wrapper span:hover {
             padding: 10px;
             transition: 0.3s;
-            color: #C7CAD0;
-      }
-      .zoom-bright img {
+            /* color: #C7CAD0; */
+        }
+        .zoom-bright img {
             transition: transform .3s, filter 1s ease-in-out;
             filter: grayscale(50%);
-    }
-    .zoom-bright:hover img {
-    filter: grayscale(0);
-    transform: scale(1.1);
-    }
+        }
+        .zoom-bright:hover img {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
     /* timeline */
     .hexa{
     border: 0px;
@@ -127,7 +127,7 @@
     height: 35px;
     width: 60px;
     font-size: 22px;
-    background: #ffe4f2;
+    background: #44008b;
     color: #3c3c3c;
     position: relative;
     margin-top: 15px;
@@ -139,7 +139,7 @@
     left: 0; 
     width: 0; 
     height: 0;
-    border-bottom: 15px solid #ffe4f2;
+    border-bottom: 15px solid #44008b;
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
     top: -15px;
@@ -153,7 +153,7 @@
     height: 0;
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
-    border-top: 15px solid #ffe4f2;
+    border-top: 15px solid #44008b;
     bottom: -15px;
 }
 
@@ -181,132 +181,126 @@
     background: -o-linear-gradient(top, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
     background: -ms-linear-gradient(top, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
     background: linear-gradient(to bottom, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
-  z-index: 5;
+    z-index: 5;
 }
 
 .timeline li {
-  padding: 2em 0;
+    padding: 2em 0;
 }
 
 .timeline .hexa{
-  width: 16px;
-  height: 10px;
-  position: absolute;
-  background: #ffe4f2;
-  z-index: 5;
-  left: 0;
-  right: 0;
-  margin-left:auto;
-  margin-right:auto;
-  top: -30px;
-  margin-top: 0;
+    width: 16px;
+    height: 10px;
+    position: absolute;
+    background: #44008b;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    margin-left:auto;
+    margin-right:auto;
+    top: -30px;
+    margin-top: 0;
 }
 
 .timeline .hexa:before {
-  border-bottom: 4px solid #ffe4f2;
-  border-left-width: 8px;
-  border-right-width: 8px;
-  top: -4px;
+    border-bottom: 4px solid #44008b;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    top: -4px;
 }
 
 .timeline .hexa:after {
-  border-left-width: 8px;
-  border-right-width: 8px;
-  border-top: 4px solid #ffe4f2;
-  bottom: -4px;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top: 4px solid #44008b;
+    bottom: -4px;
 }
 
-.direction-l,
-.direction-r {
-  float: none;
-  width: 100%;
-  text-align: center;
+.direction-l, .direction-r {
+    float: none;
+    width: 100%;
+    text-align: center;
 }
 
 .flag-wrapper {
-  text-align: center;
-  position: relative;
+    text-align: center;
+    position: relative;
 }
 
 .flag {
-  position: relative;
-  display: inline;
-  background: rgb(255,255,255);
-  font-weight: 600;
-  z-index: 15;
-  padding: 6px 10px;
-  text-align: left;
-  border-radius: 5px;
+    color: 	#665385;
+    position: relative;
+    display: inline;
+    background: rgb(255,255,255);
+    z-index: 15;
+    padding: 6px 10px;
+    text-align: left;
+    border-radius: 5px;
 }
 
-.direction-l .flag:after,
-.direction-r .flag:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: -15px;
-  height: 0;
-  width: 0;
-  margin-left: -8px;
-  border: solid transparent;
-  border-bottom-color: rgb(255,255,255);
-  border-width: 8px;
-  pointer-events: none;
+.direction-l .flag:after, .direction-r .flag:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    height: 0;
+    width: 0;
+    margin-left: -8px;
+    border: solid transparent;
+    border-bottom-color: rgb(255,255,255);
+    border-width: 8px;
+    pointer-events: none;
 }
 
 .direction-l .flag {
-  -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-  -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-  box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
 }
 
 .direction-r .flag {
-  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
 }
 
 .time-wrapper {
-  display: block;
-  position: relative;
-  margin: 4px 0 0 0;
-  z-index: 14;
-  line-height: 1em;
-  vertical-align: middle;
-  color: #fff;
+    display: block;
+    position: relative;
+    margin: 4px 0 0 0;
+    z-index: 14;
+    line-height: 1em;
+    vertical-align: middle;
+    color: #fff;
 }
 
 .direction-l .time-wrapper {
-  float: none;
+    float: none;
 }
 
 .direction-r .time-wrapper {
-  float: none;
+    float: none;
 }
 
 .time {
-  background: #44008b;
-  display: inline-block;
-  padding: 8px;
+    background: #44008b;
+    display: inline-block;
+    padding: 8px;
 }
 
 .desc {
-  position: relative;
-  margin: 1em 0 0 0;
-  padding: 1em;
-  background: rgb(254,254,254);
-  -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.20);
-  -moz-box-shadow: 0 0 1px rgba(0,0,0,0.20);
-  box-shadow: 0 0 1px rgba(0,0,0,0.20);
-  z-index: 15;
+    color: white;
+    position: relative;
+    margin: 1em 0 0 0;
+    padding: 1em;
+    z-index: 15;
 }
 
-.direction-l .desc,
-.direction-r .desc {
-  position: relative;
-  margin: 1em 1em 0 1em;
-  padding: 1em;
-  z-index: 15;
+.direction-l .desc, .direction-r .desc {
+    position: relative;
+    margin: 1em 1em 0 1em;
+    padding: 1em;
+    z-index: 15;
 }
 
 @media(min-width: 768px){
@@ -494,79 +488,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 text-center">
-                <img src="./assets/type.jpg" alt="" width=60% style="margin-bottom: 4%; margin-top: 4%;">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p> ในต้นคริสศตวรรษที่ 20 เอ็ดวิน ฮับเบิล (Edwin Hubble) นักดาราศาสตร์ชาวอเมริกันได้ทำการศึกษากาแล็กซีด้วยกล้องโทรทรรศน์ขนาดใหญ่ และจำแนกประเภทของกาแล็กซีตามรูปทรงสัณฐานออกเป็น 4 ประเภท ได้แก่</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6 p-3 border-right border-bottom">
-                <h5>
-                    1. กาแล็กซีรี (Elliptical Galaxy)
-                </h5>
-                <p>
-                    มีสัณฐานเป็นทรงรี แบ่งย่อยได้ 8 แบบ ตั้งแต่ E0 - E7 โดย E0 มีความรีน้อยที่สุด และ E7 มีความรีมากที่สุด
-                </p>
-            </div>
-            <div class="col-6 p-3 border-bottom border-left">
-                <h5>
-                    2. กาแล็กซีกังหัน (Spiral Galaxy)
-                </h5>
-                <p>
-                    แบ่งย่อยเป็น 3 แบบ กาแล็กซีกังหัน Sa มีส่วนป่องหนาแน่น แขนไม่ชัดเจน, กาแล็กซีกังหัน Sb มีส่วนป่องใหญ่ แขนยาวปานกลาง, กาแล็กซีกังหัน Sc มีส่วนป่องเล็ก แขนยาวหนาแน่น
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6 p-3 border-right border-top">
-                <h5>
-                    3. กาแล็กซีกังหันแบบมีคาน หรือ กาแล็กซีกังหันบาร์ (Barred Spiral Galaxy)
-                </h5>
-                <p>
-                    แบ่งย่อยเป็น 3 แบบ กาแล็กซีกังหัน Sa มีส่วนป่องหนาแน่น แขนไม่ชัดเจน, กาแล็กซีกังหัน Sb มีส่วนป่องใหญ่ แขนยาวปานกลาง, กาแล็กซีกังหัน Sc มีส่วนป่องเล็ก แขนยาวหนาแน่น
-                </p>
-            </div>
-            <div class="col-6 p-3 border-left border-top">
-                <h5>
-                    4. กาแล็กซีลูกสะบ้า หรือ กาแล็กซีเลนส์ (Lenticular Galaxy)
-                </h5>
-                <p>
-                    เป็นกาแล็กซีที่ไม่มีลักษณะก้ำกึ่งระหว่างกาแล็กซีรีและกาแล็กซีกังหัน กล่าวคือ ส่วนโป่งขนาดใหญ่และไม่มีแขนกังหัน (แบบ S0 หรือ SB0)
-                </p>
-            </div>
-        </div>
-        
-        
-        <div class="row mt-5">
-            <div class="col-9 text-center">
-                <img src="./assets/galaxies-1.jpg" alt="" width=50%>
-            </div>
-            <div class="col-3">
-                <h1 class="display-3 border-left">การวิวัฒนาการของกาแล็กซี</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-9">
-                
-                <p>การแบ่งประเภทกาแล็กซีของฮับเบิลนำไปสู่ความเชื่อว่ากาแล็กซีรูปไข่ ( Ellipti Galaxies ) ค่อยๆวิวัฒนาการกลายเป็นกาแล็กซีรูปวงกลม ( Spiral Galaxies ) ที่มีวงแขนโค้งยื่นออกมา นอนจากนั้นรูปร่างของกาแล็กซีรูปร่างชนิดแปลกๆได้มีวิวัฒนาการกลายมาเป็นกาแล็กซีรูปทรงกลมเช่นกัน และเมื่อฝุ่นละอองและแก๊สในกาแล็กซีประเภทนี้ได้เปลี่ยนเป็นดวงดาวก็จะกลายเป็นกาแล็กซีรูปไข่ไป </p>
-            </div>
-            
-        </div>
-        <div class="row">
                 <ul class="timeline">
                         <!-- Item 1 -->
                         <li>
                           <div class="direction-r">
                             <div class="flag-wrapper">
                               <span class="hexa"></span>
-                              <span class="flag">Lorem ipsum.</span>
-                              <span class="time-wrapper"><span class="time">Feb 2015</span></span>
+                              <span class="flag">สปุตนิก 1</span>
+                              <span class="time-wrapper"><span class="time">4 ต.ค. 1957 </span></span>
                             </div>
-                            <div class="desc">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt proident.</div>
+                            <div class="desc">สหภาพโซเวียตได้สร้างดาวเทียมดวงแรกของโลก<br>
+                                <i>" สปุตนิก 1 "</i> และโซเวียตได้ส่งไปอวกาศเป็นครั้งแรก</div>
+                                <div class="text-right">
+                                   <img src="../assets/sputnik_vision.jpg" style="width: 90%; height: 90%; filter: grayscale(0.5);"> 
+                                </div>
+                                
                           </div>
                         </li>
                       
@@ -575,10 +511,14 @@
                           <div class="direction-l">
                             <div class="flag-wrapper">
                               <span class="hexa"></span>
-                              <span class="flag">Lorem ipsum Anim.</span>
-                              <span class="time-wrapper"><span class="time">Dec 2014</span></span>
+                              <span class="flag">สปุตนิก 2</span>
+                              <span class="time-wrapper"><span class="time">3 พ.ย. 1957</span></span>
                             </div>
-                            <div class="desc">Lorem ipsum In ut sit in dolor nisi ex magna eu anim anim tempor dolore aliquip enim cupidatat laborum dolore.</div>
+                            <div class="desc">สหภาพโซเวียตได้ประดิษฐ์ดาวเทียม <i>" สปุตนิก 2 "</i>
+                                พร้อมกับได้ส่งสุนัข <i>" ไลก้า "</i> ไปกับดาวเทียมด้วย ซึ่งไลก้าเป็นสิ่งมีชีวิตชนิดแรกของโลกที่ขึ้นสู่อวกาศเป็นครั้งแรก</div>
+                                <div class="text-right">
+                                    <img src="../assets/laika.png" style="width: 80%; height: 80%;"> 
+                                </div>
                           </div>
                         </li>
                       
@@ -587,15 +527,131 @@
                           <div class="direction-r">
                             <div class="flag-wrapper">
                               <span class="hexa"></span>
-                              <span class="flag">Lorem Occaecat.</span>
-                              <span class="time-wrapper"><span class="time">July 2014</span></span>
+                              <span class="flag">ลูน่า 1</span>
+                              <span class="time-wrapper"><span class="time">2 ม.ค. 1959</span></span>
                             </div>
-                            <div class="desc">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
+                            <div class="desc">สหภาพโซเวียตได้ประดิษฐ์ดาวเทียม <i>" ลูน่า 1 "</i> <br>และส่งขึ้นสู่อวกาศเพื่อให้ลงจอดที่พื้นผิวดวงจันทร์ 
+                                และนำข้อมูลของพื้นผิวดวงจันทร์กลับมายังโลก<br> แต่ล้มเหลวเนื่องจากดาวเทียมลูน่า 1 หลุดไปโคจรรอบดวงอาทิตย์แทน</div>
+                            <div class="text-right">
+                                    <img src="../assets/luna-1.jpg" style="width: 90%; height: 90%;"> 
+                            </div>
                           </div>
+                        </li>
+
+                        <li>
+                            <div class="direction-l">
+                                <div class="flag-wrapper">
+                                    <span class="hexa"></span>
+                                    <span class="flag">ลูน่า 2</span>
+                                    <span class="time-wrapper"><span class="time">14 ก.ย. 1959</span></span>
+                                </div>
+                                <div class="desc">หลังจากลูน่า 1 ล้มเหลวโซเวียตได้ประดิษฐ์ <br><i>" ลูน่า 2 "</i> และได้ส่งขึ้นสู่อวกาศอีกครั้ง โดยครั้งนี้ลงจอดที่พื้นผิวของดวงจันทร์ได้สำเร็จ<br>
+                                    และนำข้อมูลกลับมายังโลก เป็นครั้งแรกของโลก<br>ที่ดาวเทียมไปถึงพื้นผิวของดาวดวงอื่นที่ไม่ใช่โลก</div>
+                                <div class="text-right">
+                                        <img src="../assets/luna-2.jpg" style="width: 90%; height: 30%;"> 
+                                </div>
+                                </div>
+                        </li>
+
+                        <li>
+                            <div class="direction-r">
+                              <div class="flag-wrapper">
+                                <span class="hexa"></span>
+                                <span class="flag">วอสต็อก 1</span>
+                                <span class="time-wrapper"><span class="time">12 เม.ย. 1961</span></span>
+                              </div>
+                              <div class="desc">สหภาพโซเวียตได้สร้างยาน <i>" วอสต็อก 1 "</i><br>แล้วส่งขึ้นไปโคจรรอบโลกพร้อมกับ <i>" ยูริ กาการิน "</i>
+                                  ไปโคจรรอบโลกพร้อมกับยานวอสต็อก 1 ด้วย<br> ยูริ กาการินจึงเป็นนักบินอวกาศคนแรกของโลกที่ออกไปนอกโลก
+                                </div>                                
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="direction-l">
+                                <div class="flag-wrapper">
+                                    <span class="hexa"></span>
+                                    <span class="flag">มารีเนอร์ 4</span>
+                                    <span class="time-wrapper"><span class="time">1964</span></span>
+                                </div>
+                                <div class="desc">สหรัฐอเมริกาส่งยานสำรวจอวกาศ <br><i>" มารีเนอร์ 4 "</i>
+                                    ไปสำรวจดาวอังคารและถ่ายภาพพื้นผิวดาวอังคารกลับมายังโลก ซึ่งทำให้รู้ว่าดาวอังคารมีหลุมอุกกาบาตจำนวนมาก เช่นเดียวกับดวงจันทร์ และพบปากปล่องภูเขาไฟจำนวนมาก
+                                </div>
+                                </div>
+                        </li>
+
+                        <li>
+                            <div class="direction-r">
+                              <div class="flag-wrapper">
+                                <span class="hexa"></span>
+                                <span class="flag">อพอลโล 11</span>
+                                <span class="time-wrapper"><span class="time">20 ก.ค. 1969</span></span>
+                              </div>
+                              <div class="desc">สหรัฐอเมริกาได้ส่งยาน <i>" อพอลโล 11 "</i> พร้อมกับนักบินอวกาศคนแรกของโลกที่ได้เหยียบพื้นผิวของดวงจันทร์ <i>" นีล อาร์มสตรอง "</i>
+                                </div>                                
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="direction-l">
+                                <div class="flag-wrapper">
+                                    <span class="hexa"></span>
+                                    <span class="flag">มาร์ 3</span>
+                                    <span class="time-wrapper"><span class="time">1971</span></span>
+                                </div>
+                                <div class="desc">สหภาพโซเวียตได้ส่งยานสำรวจอวกาศ <i>" มาร์ 3 "</i> ลงจอดบนดาวอังคารเพื่อวิเคราะห์สภาพพื้นผิว อุณหภูมิ ภูมิศาสตร์ ชั้นบรรยากาศ รวมถึง สนามแม่เหล็กบนดาวอังคาร
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="direction-r">
+                              <div class="flag-wrapper">
+                                <span class="hexa"></span>
+                                <span class="flag">มารีเนอร์ 9</span>
+                                <span class="time-wrapper"><span class="time">1971</span></span>
+                              </div>
+                              <div class="desc">สหรัฐอเมริกาได้ส่งยาน <i>" มารีเนอร์ 9 "</i> ไปสำรวจดาวอังคารอีกครั้ง พบภูเขาไฟน้ำแข็งที่ขั้วดาว<br> และตรวจพบดาวบริวารของดาวอังคาร 2 ดวงซึ่งได้รับการตั้งชื่อ ในเวลาต่อมาว่า " โฟบอส " <br>และ " ดีมอส "</i>
+                                </div>                                
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="direction-l">
+                              <div class="flag-wrapper">
+                                <span class="hexa"></span>
+                                <span class="flag">ไวกิ้ง 1, ไวกิ้ง 2</span>
+                                <span class="time-wrapper"><span class="time">1975</span></span>
+                              </div>
+                              <div class="desc">สหรัฐอเมริกาได้ส่งยาน " ไวกิ้ง 1 " ไปดาวอังคาร พร้อมกับได้ส่งยาน " ไวกิ้ง 2 " ตามไปเพื่อสำรวจพื้นผิวหุบเขา ร่องรอยของสิ่งมีชีวิตบนดาวอังคาร
+                                </div>                                
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="direction-r">
+                              <div class="flag-wrapper">
+                                <span class="hexa"></span>
+                                <span class="flag">เมียร์</span>
+                                <span class="time-wrapper"><span class="time">ก.พ. 1986</span></span>
+                              </div>
+                              <div class="desc">สหภาพโซเวียตได้ส่งสถานีอวกาศที่ชื่อว่า <i>" เมียร์ "</i> ออกไปโคจรรอบโลกได้สำเร็จ มีการทดลองและสังเกตการณ์ทางวิทยาศาสตร์ต่างๆมากมายซึ่งเป็นสถานีอวกาศสถานีแรกของโลก
+                                </div>                                
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="direction-l">
+                              <div class="flag-wrapper">
+                                <span class="hexa"></span>
+                                <span class="flag">โซเจอร์เนอร์</span>
+                                <span class="time-wrapper"><span class="time">1997</span></span>
+                              </div>
+                              <div class="desc">สหรัฐอเมริกาปล่อยหุ่นยนต์สี่ล้อ <i>" โซเจอร์เนอร์ "</i> จากยานพาทไฟน์เดอร์ลงสู่พื้นผิวดาวอังคารข้อมูล ถ่ายภาพ วิเคราะห์ส่วนประกอบของหิน และดินบนดาวอังคารส่งกลับมายังโลก
+                                </div>                                
+                            </div>
                         </li>
                       </ul>
         </div>
-            
         <div style="margin: auto">
                 <div class="col text-center">
                   <a id="sols" style="cursor: pointer;" href="solarsystem.html">
