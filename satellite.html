@@ -19,7 +19,7 @@
 
       body {
         scroll-behavior: smooth;
-        background: url("../assets/milky-way-background.jpg") #141618;
+        background: url("./assets/milky-way-background.jpg") #141618;
         background-size: cover;
         background-blend-mode: multiply;
       }
@@ -30,7 +30,7 @@
         width: 100%;
         overflow: hidden;
         transition: all 1.25s ease-in-out;
-        background: url(../assets/spacecraft.jpg);
+        background: url(./assets/spacecraft.jpg);
         background-size: cover;
       }
 
@@ -458,26 +458,38 @@
         }
       }
 
+      /* end of timeline */
+
       a {
         font-size: 16pt;
         color: #fff;
       }
 
+      a:hover {
+        text-decoration: none;
+      }
+
       .btn {
         background-color: transparent;
         border: 1px solid white;
-        color: white;
+        transition: 0.5s all;
       }
 
       .btn span {
+        color: white;
         cursor: pointer;
         display: inline-block;
         position: relative;
-        transition: 0.5s;
       }
 
       .btn:hover {
         border: 2px solid white;
+        color: white;
+      }
+
+      .btn:hover span {
+        padding: 5px;
+        padding-right: 25px;
       }
 
       .btn span:after {
@@ -485,13 +497,10 @@
         content: '\00bb';
         position: absolute;
         opacity: 0;
-        top: 20%;
+        top: 2%;
         right: -20px;
-        transition: 0.5s;
-      }
-
-      .btn:hover span {
-        padding-right: 25px;
+        font-size: 1.5rem;
+        transition: 0.5s all;
       }
 
       .btn:hover span:after {
@@ -499,16 +508,6 @@
         right: 0;
       }
 
-      a {
-        color: #fff;
-      }
-
-      a:hover {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      /* end of timeline */
     </style>
   </head>
 
@@ -571,7 +570,7 @@
       <div class="row">
         <div class="col-12 text-center">
           <div class="zoom-bright">
-            <img src="../assets/spacecraft/sputnik1.jpg" style="margin-top: 4%" />
+            <img src="./assets/spacecraft/sputnik1.jpg" style="margin-top: 4%" />
           </div>
         </div>
       </div>
@@ -611,7 +610,7 @@
                 <i>" สปุตนิก 1 "</i> และโซเวียตได้ส่งไปอวกาศเป็นครั้งแรก
               </div>
               <div class="text-right">
-                <img src="../assets/spacecraft/sputnik_vision.jpg" style="width: 90%; height: 90%; filter: grayscale(0.5);" />
+                <img src="./assets/spacecraft/sputnik_vision.jpg" style="width: 90%; height: 90%; filter: grayscale(0.5);" />
               </div>
             </div>
           </li>
@@ -634,10 +633,10 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="../assets/spacecraft/sputnik2.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/sputnik2.jpg" style="width: 380px; height: 250px;" />
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="../assets/spacecraft/laika.png" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/laika.png" style="width: 380px; height: 250px;" />
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -668,7 +667,7 @@
                 แต่ล้มเหลวเนื่องจากดาวเทียมลูน่า 1 หลุดไปโคจรรอบดวงอาทิตย์แทน
               </div>
               <div class="text-right">
-                <img src="../assets/spacecraft/luna-1.jpg" style="width: 90%; height: 90%;" />
+                <img src="./assets/spacecraft/luna-1.jpg" style="width: 90%; height: 90%;" />
               </div>
             </div>
           </li>
@@ -687,7 +686,7 @@
                 และนำข้อมูลกลับมายังโลก เป็นครั้งแรกของโลก<br />ที่ดาวเทียมไปถึงพื้นผิวของดาวดวงอื่นที่ไม่ใช่โลก
               </div>
               <div class="text-right">
-                <img src="../assets/spacecraft/luna-2.jpg" style="width: 90%; height: 30%;" />
+                <img src="./assets/spacecraft/luna-2.jpg" style="width: 90%; height: 30%;" />
               </div>
             </div>
           </li>
@@ -708,10 +707,10 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="../assets/spacecraft/vostok1.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/vostok1.jpg" style="width: 380px; height: 250px;" />
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="../assets/spacecraft/yuri.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/yuri.jpg" style="width: 380px; height: 250px;" />
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -745,10 +744,10 @@
                   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img class="d-block w-100" src="../assets/spacecraft/Mariner4.jpg" style="width: 380px; height: 250px;" />
+                        <img class="d-block w-100" src="./assets/spacecraft/Mariner4.jpg" style="width: 380px; height: 250px;" />
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100" src="../assets/spacecraft/frommariner4.jpg" style="width: 380px; height: 250px;" />
+                        <img class="d-block w-100" src="./assets/spacecraft/frommariner4.jpg" style="width: 380px; height: 250px;" />
                       </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -782,13 +781,13 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="../assets/spacecraft/apollo11.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/apollo11.jpg" style="width: 380px; height: 250px;" />
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="../assets/spacecraft/apollo11-moon.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/apollo11-moon.jpg" style="width: 380px; height: 250px;" />
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="../assets/spacecraft/neil-armstrong.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/neil-armstrong.jpg" style="width: 380px; height: 250px;" />
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -820,10 +819,10 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="../assets/spacecraft/Mars3_iki.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/Mars3_iki.jpg" style="width: 380px; height: 250px;" />
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="../assets/spacecraft/mars_surface_frommars3.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/mars_surface_frommars3.jpg" style="width: 380px; height: 250px;" />
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -857,16 +856,16 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="../assets/spacecraft/mariner9.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/mariner9.jpg" style="width: 380px; height: 250px;" />
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="../assets/spacecraft/mars_from_mariner9.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/mars_from_mariner9.jpg" style="width: 380px; height: 250px;" />
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="../assets/spacecraft/phobos.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/phobos.jpg" style="width: 380px; height: 250px;" />
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="../assets/spacecraft/demos.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/demos.jpg" style="width: 380px; height: 250px;" />
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -898,10 +897,10 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="../assets/spacecraft/viking1.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/viking1.jpg" style="width: 380px; height: 250px;" />
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="../assets/spacecraft/viking2.jpg" style="width: 380px; height: 250px;" />
+                      <img class="d-block w-100" src="./assets/spacecraft/viking2.jpg" style="width: 380px; height: 250px;" />
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -929,7 +928,7 @@
                 <i>" เมียร์ "</i> ออกไปโคจรรอบโลกได้สำเร็จ
                 มีการทดลองและสังเกตการณ์ทางวิทยาศาสตร์ต่างๆมากมายซึ่งเป็นสถานีอวกาศสถานีแรกของโลก
                 <div class="text-right">
-                  <img src="../assets/spacecraft/mir.jpg" style="width: 90%; height: 90%;" />
+                  <img src="./assets/spacecraft/mir.jpg" style="width: 90%; height: 90%;" />
                 </div>
               </div>
             </div>
@@ -948,7 +947,7 @@
                 จากยานพาทไฟน์เดอร์ลงสู่พื้นผิวดาวอังคารข้อมูล ถ่ายภาพ
                 วิเคราะห์ส่วนประกอบของหิน และดินบนดาวอังคารส่งกลับมายังโลก
               </div>
-              <img src="../assets/spacecraft/sojourner.jpg" style="width: 90%; height: 90%;" />
+              <img src="./assets/spacecraft/sojourner.jpg" style="width: 90%; height: 90%;" />
             </div>
           </li>
         </ul>
@@ -972,6 +971,7 @@
           left: 0
         });
       }
+
     </script>
   </body>
 
