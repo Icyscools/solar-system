@@ -1,248 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./css/fonts.css">
-    <link rel="shortcut icon" href="./assets/logo.ico" />
-    <title>Galaxies | Solar System</title>
-    <style>
-        html {
-            overflow: scroll;
-        }
-        
-        body {
-            scroll-behavior: smooth;
-            background: url("../assets/milky-way-background.jpg") #141618;
-            background-size: cover;
-            background-blend-mode: multiply;
-        }
-        
-        header {
-            position: relative;
-            min-height: 100vh;
-            width: 100%;
-            overflow: hidden;
-            transition: all 1.25s ease-in-out;
-            
-            background: url(../assets/galaxies-bg.jpg);
-            background-size: cover;
-        }
-        
-        header * {
-            transition: all 0.8s ease-in-out;
-        }
-        
-        @media (min-aspect-ratio: 16/9) {
-            .fullscreen-bg video {
-                width: 100%;
-                height: auto;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+        <link rel="stylesheet" href="./css/fonts.css">
+        <link rel="shortcut icon" href="./assets/logo.ico" />
+        <title>Galaxies | Solar System</title>
+        <style>
+            html {
+                overflow: scroll;
             }
-        }
-        
-        @media (max-aspect-ratio: 16/9) {
-            .fullscreen-bg video {
-                width: auto;
+
+            body {
+                scroll-behavior: smooth;
+                background: url("../assets/milky-way-background.jpg") #141618;
+                background-size: cover;
+                background-blend-mode: multiply;
+            }
+
+            header {
+                position: relative;
+                min-height: 100vh;
+                width: 100%;
+                overflow: hidden;
+                transition: all 1.25s ease-in-out;
+
+                background: url(../assets/galaxies-bg.jpg);
+                background-size: cover;
+            }
+
+            header * {
+                transition: all 0.8s ease-in-out;
+            }
+
+            @media (min-aspect-ratio: 16/9) {
+                .fullscreen-bg video {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            @media (max-aspect-ratio: 16/9) {
+                .fullscreen-bg video {
+                    width: auto;
+                    height: 100%;
+                }
+            }
+
+            header div.h-100 {
+                min-height: 100vh;
+            }
+
+            #content {
+                color: white;
+                transition: all 0.8s;
+                z-index: 100;
+            }
+
+            #content p {
+                text-indent: 2rem;
+            }
+
+            .full {
+                min-width: 100%;
                 height: 100%;
             }
-        }
-        
-        header div.h-100 {
-            min-height: 100vh;
-        }
-        
-        #content {
-            color: white;
-            transition: all 0.8s;
-            z-index: 100;
-        }
-        
-        #content p {
-            text-indent: 2rem;
-        }
-        
-        .full {
-            min-width: 100%;
-            height: 100%;
-        }
-        
-        #evo {
-            padding-top: 4%;
-            width: 100%;
-            height: 100%;
-            position: relative;
-            top: 0;
-            left: 0;
-        }
 
-        #arrow {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-            transform: translateY(15%);
-            transition: 0.25s all;
-        }
+            #evo {
+                padding-top: 4%;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                top: 0;
+                left: 0;
+            }
 
-        #arrow span {
-            display: inline-block;
-        }
+            #arrow {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                transform: translateY(15%);
+                transition: 0.25s all;
+            }
 
-        #arrow > span:hover {
-            transform: translateY(30%);
-        }
-    </style>
-</head>
+            #arrow span {
+                display: inline-block;
+            }
 
-<body>
-    <header>
-        <div class="container h-100">
-            <div class="d-flex h-100 text-center align-items-center" style="transform: translateY(-5%);">
-                <div class="w-100 text-white" style="text-shadow: 0px 3px 9px #333;">
-                    <div class="container" style="transform: translateY(25%);">
-                        <h1 class="display-3">กำเนิดและวิวัฒนาการของกาแล็กซี</h1>
-                        <p class="lead mb-0">เมล็ดพันธุ์แห่งดวงดาว</p>
+            #arrow>span:hover {
+                transform: translateY(30%);
+            }
+
+            .zoom-bright img {
+                transition: transform .3s, filter 1s ease-in-out;
+                filter: grayscale(50%);
+            }
+
+            .zoom-bright:hover img {
+                filter: grayscale(0);
+                transform: scale(1.1);
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="container h-100">
+                <div class="d-flex h-100 text-center align-items-center" style="transform: translateY(-5%);">
+                    <div class="w-100 text-white" style="text-shadow: 0px 3px 9px #333;">
+                        <div class="container" style="transform: translateY(25%);">
+                            <h1 class="display-3">กำเนิดและวิวัฒนาการของกาแล็กซี</h1>
+                            <p class="lead mb-0">เมล็ดพันธุ์แห่งดวงดาว</p>
+                        </div>
+                        <h1 id="arrow" class="display-4 mt-5">
+                            <span style="cursor: pointer;" onclick="scrollToElement(content)">▼</span>
+                        </h1>
                     </div>
-                    <h1 id="arrow" class="display-4 mt-5">
-                        <span style="cursor: pointer;" onclick="scrollToElement(content)">▼</span>
-                    </h1>
                 </div>
             </div>
-        </div>
-    </header>
-    <section id="content" class="d-block container mt-5 mb-0 py-5" role="main">
-        <div class="blockquote text-center">
-            <div class="blockquote-footer mb-5">
-                <p class="mb-0">
-                    กาแล็กซี ซึ่งมีอยู่เป็นจำนวนมากมาย นับเป็นแสนล้านกาแล็กซี <br> ในจักรวาล ประกอบด้วย ดาวฤกษ์ ก๊าซ และฝุ่นผงอวกาศเป็นส่วนใหญ่ <br>
-                    สำหรับคำเรียก กาแล็กซี จาก Galaxy นี้ มีวงการดาราศาสตร์ไทยคือ ดาราจักร <br>กาแล็กซีมีกำเนิดมาอย่างไร ตั้งแต่จุดกำเนิดของจักรวาลที่เกิดบิกแบง
-                    จนกระทั่งวิวัฒนาการต่อๆ มา เป็นกาแล็กซี
-                </p>
+        </header>
+        <section id="content" class="d-block container mt-5 mb-0 py-5" role="main">
+            <div class="blockquote text-center">
+                <div class="blockquote-footer mb-5">
+                    <p class="mb-0">
+                        กาแล็กซี ซึ่งมีอยู่เป็นจำนวนมากมาย นับเป็นแสนล้านกาแล็กซี <br> ในจักรวาล ประกอบด้วย ดาวฤกษ์ ก๊าซ และฝุ่นผงอวกาศเป็นส่วนใหญ่ <br>
+                        สำหรับคำเรียก กาแล็กซี จาก Galaxy นี้ มีวงการดาราศาสตร์ไทยคือ ดาราจักร <br>กาแล็กซีมีกำเนิดมาอย่างไร ตั้งแต่จุดกำเนิดของจักรวาลที่เกิดบิกแบง
+                        จนกระทั่งวิวัฒนาการต่อๆ มา เป็นกาแล็กซี
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-3 border-right">
-                <h1 class="display-3">จุดกำเนิดของกาแล็กซี</h1>
+            <div class="row mt-3">
+                <div class="col-3 border-right">
+                    <h1 class="display-3">จุดกำเนิดของกาแล็กซี</h1>
+                </div>
+                <div class="col-9 align-self-center" style="line-height: 2rem;">
+                    <p>
+                        ทฤษฎีของนักดาราศาสตร์เรื่องจุดกำเนิดของกาแล็กซีกล่าวว่า กลุ่มแก๊สไฮโดรเจนและฮีเลียมซึ่งถูกเหวี่ยงออกมาจากการระเบิดครั้งใหญ่ (Big Bang)
+                        เมื่อครั้งเริ่มต้นของการเกิดเอกภพ จะแตกออกมาเป็นกลุ่มๆ ภายหลังที่กลุ่มแก๊สเหล่านี้ถูกเหวี่ยงออกมาจากการระเบิดครั้งใหญ่แล้ว
+                    </p>
+                    <p>
+                        กลุ่มแก๊สเหล่านี้แต่ละกลุ่มจึงรวมตัวกัน เพราะแรงดึงดูดระหว่างละอองแก๊สด้วยกัน การรวมตัวกันของกลุ่มแก๊สจึงทำให้เกิดดวงดาวดวงแรกขึ้นมาในกลุ่มแก๊ส
+                        ต่อมาสสารของกลุ่มฝุ่นละอองแก๊สเหล่านี้จึงได้รวมตัวกันเป็นดวงดาวมีอายุน้อยกว่าดวงดาวที่อยู่ในบริเวณศูนย์กลางของกาแล็กซี
+                        ดวงอาทิตย์ของเราเป็นดวงดาวที่มีอายุน้อยกว่าดวงดาวที่อยู่ในบริเวณจุดศูนย์กลางของกาแล็กซีทางช้างเผือก
+                    </p>
+                </div>
             </div>
-            <div class="col-9 align-self-center" style="line-height: 2rem;">
-                <p>
-                    ทฤษฎีของนักดาราศาสตร์เรื่องจุดกำเนิดของกาแล็กซีกล่าวว่า กลุ่มแก๊สไฮโดรเจนและฮีเลียมซึ่งถูกเหวี่ยงออกมาจากการระเบิดครั้งใหญ่ (Big Bang)
-                    เมื่อครั้งเริ่มต้นของการเกิดเอกภพ จะแตกออกมาเป็นกลุ่มๆ ภายหลังที่กลุ่มแก๊สเหล่านี้ถูกเหวี่ยงออกมาจากการระเบิดครั้งใหญ่แล้ว
-                </p>
-                <p>
-                    กลุ่มแก๊สเหล่านี้แต่ละกลุ่มจึงรวมตัวกัน เพราะแรงดึงดูดระหว่างละอองแก๊สด้วยกัน การรวมตัวกันของกลุ่มแก๊สจึงทำให้เกิดดวงดาวดวงแรกขึ้นมาในกลุ่มแก๊ส
-                    ต่อมาสสารของกลุ่มฝุ่นละอองแก๊สเหล่านี้จึงได้รวมตัวกันเป็นดวงดาวมีอายุน้อยกว่าดวงดาวที่อยู่ในบริเวณศูนย์กลางของกาแล็กซี
-                    ดวงอาทิตย์ของเราเป็นดวงดาวที่มีอายุน้อยกว่าดวงดาวที่อยู่ในบริเวณจุดศูนย์กลางของกาแล็กซีทางช้างเผือก
-                </p>
-            </div>
-        </div>
-        
-        <video id="evo" autoplay loop muted>
-            <source src="./assets/Galaxy-Evolution.mp4" type="video/mp4" />
-        </video>
-        
-        <div class="row" style="padding-top: 4%;">
-            <div class="col text-center">
-                <h1 class="display-3">ประเภทของกาแล็กซี</h1>
-                
-            </div>
-        </div>
-        <div class="row">
-            <div class="col" style="line-height: 2rem;">
-                <p>
-                    กาแล็กซีมีรูปทรงแตกต่างกันหลายประเภท ซึ่งสามารถแบ่งเป็นประเภทใหญ่ๆ ได้ 2 ประเภทคือ กาแล็กซีปกติ (Regular galaxy)
-                    ที่มีสัณฐานรูปทรงชัดเจนสามารถแบ่งได้ตามแผนภาพส้อมเสียง (Hubble Turning Fork) ตามที่แสดงในภาพที่ 1
-                    และกาแล็กซีไม่มีรูปแบบ (Irregular Galaxy) ที่ไม่มีรูปทรงสัณฐานชัดเลย เช่น เมฆแมกเจลแลนใหญ่ เมฆแมกเจลแลนเล็ก
-                    ซึ่งเป็นกาแล็กซีบริวารของทางช้างเผือก
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <img src="./assets/type.jpg" alt="" width=60% style="margin-bottom: 4%; margin-top: 4%;">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p> ในต้นคริสศตวรรษที่ 20 เอ็ดวิน ฮับเบิล (Edwin Hubble) นักดาราศาสตร์ชาวอเมริกันได้ทำการศึกษากาแล็กซีด้วยกล้องโทรทรรศน์ขนาดใหญ่ และจำแนกประเภทของกาแล็กซีตามรูปทรงสัณฐานออกเป็น 4 ประเภท ได้แก่</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6 p-3 border-right border-bottom">
-                <h5>
-                    1. กาแล็กซีรี (Elliptical Galaxy)
-                </h5>
-                <p>
-                    มีสัณฐานเป็นทรงรี แบ่งย่อยได้ 8 แบบ ตั้งแต่ E0 - E7 โดย E0 มีความรีน้อยที่สุด และ E7 มีความรีมากที่สุด
-                </p>
-            </div>
-            <div class="col-6 p-3 border-bottom border-left">
-                <h5>
-                    2. กาแล็กซีกังหัน (Spiral Galaxy)
-                </h5>
-                <p>
-                    แบ่งย่อยเป็น 3 แบบ กาแล็กซีกังหัน Sa มีส่วนป่องหนาแน่น แขนไม่ชัดเจน, กาแล็กซีกังหัน Sb มีส่วนป่องใหญ่ แขนยาวปานกลาง, กาแล็กซีกังหัน Sc มีส่วนป่องเล็ก แขนยาวหนาแน่น
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6 p-3 border-right border-top">
-                <h5>
-                    3. กาแล็กซีกังหันแบบมีคาน หรือ กาแล็กซีกังหันบาร์ (Barred Spiral Galaxy)
-                </h5>
-                <p>
-                    แบ่งย่อยเป็น 3 แบบ กาแล็กซีกังหัน Sa มีส่วนป่องหนาแน่น แขนไม่ชัดเจน, กาแล็กซีกังหัน Sb มีส่วนป่องใหญ่ แขนยาวปานกลาง, กาแล็กซีกังหัน Sc มีส่วนป่องเล็ก แขนยาวหนาแน่น
-                </p>
-            </div>
-            <div class="col-6 p-3 border-left border-top">
-                <h5>
-                    4. กาแล็กซีลูกสะบ้า หรือ กาแล็กซีเลนส์ (Lenticular Galaxy)
-                </h5>
-                <p>
-                    เป็นกาแล็กซีที่ไม่มีลักษณะก้ำกึ่งระหว่างกาแล็กซีรีและกาแล็กซีกังหัน กล่าวคือ ส่วนโป่งขนาดใหญ่และไม่มีแขนกังหัน (แบบ S0 หรือ SB0)
-                </p>
-            </div>
-        </div>
-        
-        
-        <div class="row mt-5">
-            <div class="col-9 text-center">
-                <img src="./assets/galaxies-1.jpg" alt="" width=50%>
-            </div>
-            <div class="col-3">
-                <h1 class="display-3 border-left">การวิวัฒนาการของกาแล็กซี</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-9">
-                
-                <p>การแบ่งประเภทกาแล็กซีของฮับเบิลนำไปสู่ความเชื่อว่ากาแล็กซีรูปไข่ ( Ellipti Galaxies ) ค่อยๆวิวัฒนาการกลายเป็นกาแล็กซีรูปวงกลม ( Spiral Galaxies ) ที่มีวงแขนโค้งยื่นออกมา นอนจากนั้นรูปร่างของกาแล็กซีรูปร่างชนิดแปลกๆได้มีวิวัฒนาการกลายมาเป็นกาแล็กซีรูปทรงกลมเช่นกัน และเมื่อฝุ่นละอองและแก๊สในกาแล็กซีประเภทนี้ได้เปลี่ยนเป็นดวงดาวก็จะกลายเป็นกาแล็กซีรูปไข่ไป </p>
-            </div>
-            
-        </div>
 
-        <div style="margin: auto">
+            <video id="evo" autoplay loop muted>
+                <source src="./assets/Galaxy-Evolution.mp4" type="video/mp4" />
+            </video>
+
+            <div class="row" style="padding-top: 4%;">
                 <div class="col text-center">
-                  <a id="sols" style="cursor: pointer;" href="solarsystem.html">
-                  <button class="btn-sols">
-                  <span class="display-5">ไปท่องระบบสุริยะ</span>
-                  </button>
-                  </a>
-                </div>
-              </div>
-    </section>
+                    <h1 class="display-4">ประเภทของกาแล็กซี</h1>
 
-    <script>
-        function scrollToElement(el) {
-            window.scrollTo({
-                "behavior": "smooth",
-                "top": el.offsetTop,
-                "left": 0
-            })
-        }
-    </script>
-</body>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="line-height: 2rem;">
+                    <p>
+                        กาแล็กซีมีรูปทรงแตกต่างกันหลายประเภท ซึ่งสามารถแบ่งเป็นประเภทใหญ่ๆ ได้ 2 ประเภทคือ กาแล็กซีปกติ (Regular galaxy)
+                        ที่มีสัณฐานรูปทรงชัดเจนสามารถแบ่งได้ตามแผนภาพส้อมเสียง (Hubble Turning Fork) ตามที่แสดงในภาพที่ 1
+                        และกาแล็กซีไม่มีรูปแบบ (Irregular Galaxy) ที่ไม่มีรูปทรงสัณฐานชัดเลย เช่น เมฆแมกเจลแลนใหญ่ เมฆแมกเจลแลนเล็ก
+                        ซึ่งเป็นกาแล็กซีบริวารของทางช้างเผือก
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                        <div class="zoom-bright">
+                    <img src="./assets/type.jpg" alt="" width=60% style="margin-bottom: 4%; margin-top: 4%;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p> ในต้นคริสศตวรรษที่ 20 เอ็ดวิน ฮับเบิล (Edwin Hubble) นักดาราศาสตร์ชาวอเมริกันได้ทำการศึกษากาแล็กซีด้วยกล้องโทรทรรศน์ขนาดใหญ่ และจำแนกประเภทของกาแล็กซีตามรูปทรงสัณฐานออกเป็น 4 ประเภท ได้แก่</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 p-3 border-right border-bottom">
+                    <h5>
+                        1. กาแล็กซีรี (Elliptical Galaxy)
+                    </h5>
+                    <p>
+                        มีสัณฐานเป็นทรงรี แบ่งย่อยได้ 8 แบบ ตั้งแต่ E0 - E7 โดย E0 มีความรีน้อยที่สุด และ E7 มีความรีมากที่สุด
+                    </p>
+                </div>
+                <div class="col-6 p-3 border-bottom border-left">
+                    <h5>
+                        2. กาแล็กซีกังหัน (Spiral Galaxy)
+                    </h5>
+                    <p>
+                        แบ่งย่อยเป็น 3 แบบ กาแล็กซีกังหัน Sa มีส่วนป่องหนาแน่น แขนไม่ชัดเจน, กาแล็กซีกังหัน Sb มีส่วนป่องใหญ่ แขนยาวปานกลาง, กาแล็กซีกังหัน Sc มีส่วนป่องเล็ก แขนยาวหนาแน่น
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 p-3 border-right border-top">
+                    <h5>
+                        3. กาแล็กซีกังหันแบบมีคาน หรือ กาแล็กซีกังหันบาร์ (Barred Spiral Galaxy)
+                    </h5>
+                    <p>
+                        แบ่งย่อยเป็น 3 แบบ กาแล็กซีกังหัน Sa มีส่วนป่องหนาแน่น แขนไม่ชัดเจน, กาแล็กซีกังหัน Sb มีส่วนป่องใหญ่ แขนยาวปานกลาง, กาแล็กซีกังหัน Sc มีส่วนป่องเล็ก แขนยาวหนาแน่น
+                    </p>
+                </div>
+                <div class="col-6 p-3 border-left border-top">
+                    <h5>
+                        4. กาแล็กซีลูกสะบ้า หรือ กาแล็กซีเลนส์ (Lenticular Galaxy)
+                    </h5>
+                    <p>
+                        เป็นกาแล็กซีที่ไม่มีลักษณะก้ำกึ่งระหว่างกาแล็กซีรีและกาแล็กซีกังหัน กล่าวคือ ส่วนโป่งขนาดใหญ่และไม่มีแขนกังหัน (แบบ S0 หรือ SB0)
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="row mt-5">
+                <div class="col-9 text-center">
+                    <div class="zoom-bright">
+                        <img src="./assets/galaxies-1.jpg" alt="" width=50%>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <h1 class="display-3 border-left">การวิวัฒนาการของกาแล็กซี</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-9">
+
+                    <p>การแบ่งประเภทกาแล็กซีของฮับเบิลนำไปสู่ความเชื่อว่ากาแล็กซีรูปไข่ ( Ellipti Galaxies ) ค่อยๆวิวัฒนาการกลายเป็นกาแล็กซีรูปวงกลม ( Spiral Galaxies ) ที่มีวงแขนโค้งยื่นออกมา นอนจากนั้นรูปร่างของกาแล็กซีรูปร่างชนิดแปลกๆได้มีวิวัฒนาการกลายมาเป็นกาแล็กซีรูปทรงกลมเช่นกัน และเมื่อฝุ่นละอองและแก๊สในกาแล็กซีประเภทนี้ได้เปลี่ยนเป็นดวงดาวก็จะกลายเป็นกาแล็กซีรูปไข่ไป </p>
+                </div>
+
+            </div>
+
+            <div class="row p-5">
+                <div class="col text-center">
+                    <h2 class="display-4">กาแล็กซีทางช้างเผือก</h2>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10 text-center mb-3" style="margin: 0 auto;">
+                    <p>กาแล็กซีทางช้างเผือก (Milky Way) เป็นกาแล็กซีที่พวกเราอาศัยอยู่ แต่เนื่องจากดวงอาทิตย์ก็อยู่ภายในกาแล็กซี่แห่งนี้
+                        เราจึงไม่สามารถมองเห็นได้ว่ากาแล็กซีทางช้างเผือกมีรูปร่างเป็นอย่างไร สิ่งที่เราเห็นได้คือแถบขาวจางๆที่เหยียดตัวพาดผ่านท้องฟ้ายามค่ำคืน
+                        ชื่อ Milky Way มาจากคำว่า Via Lactea ในภาษาละติน ซึ่งแปลตรงตัวว่า “ทางน้ำนม” เมื่อเราสำรวจแถบนี้อย่างละเอียดแล้ว
+                        จะพบว่าแถบทางช้างเผือกประกอบไปด้วยดาวฤกษ์ที่อยู่ห่างไกลนับพันล้านดวง แต่แสงจากดาวฤกษ์เหล่านี้ส่วนใหญ่
+                        ถูกลดทอนด้วยฝุ่นแก๊สที่อยู่ในระนาบของกาแล็กซี</p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center pt-2" style="background: white;">
+                    <img src="./assets/Milkyway.jpg" alt="" width="100%">
+                    <p class="blockquote-footer mb-3 mt-3">ตาปลา โมเสกในดาราจักรทางช้างเผือก โค้งที่เอียงสูงทั่วท้องฟ้ายามค่ำคืนที่ถ่ายจากตำแหน่งที่ตั้งท้องฟ้ามืดใน ชิลี</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10 p-5 text-center" style="margin: 0 auto;">
+                    <p>ผลจากการสังเกตการณ์บ่งชี้ว่ากาแล็กซีทางช้างเผือกเป็นกาแล็กซีแบบกังหันมีคาน ที่มีดาวฤกษ์อยู่อย่างน้อย 2 แสนล้านดวง มีเส้นผ่านศูนย์กลางราว 100,000 ปีแสง 
+                        และมีความหนาเฉลี่ยประมาณ 1,000 ปีแสง ดวงอาทิตย์จะอยู่ในบริเวณค่อนข้างมืดมิด (มีดาวฤกษ์ค่อนข้างน้อย) ที่อยู่ห่างออกไปจากใจกลางกาแล็กซีไปราว 2/3 ของขนาดรัศมีกาแล็กซี
+                        ระนาบของกาแล็กซีทางช้างเผือกเอียงทำมุมราว 60 องศาจากระนาบสุริยวิถี (ระนาบของระบบสุริยะ) ซึ่งใจกลางของกาแล็กซีทางช้างเผือกจะปรากฏอยู่ในทิศทางของกลุ่มดาวคนยิงธนู
+                        ดวงอาทิตย์โคจรรอบใจกลางทางช้างเผือก เช่นเดียวกับโลกโคจรรอบดวงอาทิตย์ โดยอัตราเร็วในการโคจรของดวงอาทิตย์อยู่ที่ประมาณ 220 กิโลเมตร/วินาที อย่างไรก็ตาม เนื่องจากวงโคจรของดวงอาทิตย์รอบใจกลางทางช้างเผือกเป็นระยะทางที่ยาวมาก ดวงอาทิตย์จึงต้องใช้เวลาถึง 225 ล้านปีในการโคจรครบรอบ</p>
+                </div>
+            </div>
+
+            <div style="margin: auto">
+                <div class="col text-center">
+                    <a id="sols" style="cursor: pointer;" href="solarsystem.html">
+                        <button class="btn-sols">
+                            <span class="display-5">ไปท่องระบบสุริยะ</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function scrollToElement(el) {
+                window.scrollTo({
+                    "behavior": "smooth",
+                    "top": el.offsetTop,
+                    "left": 0
+                })
+            }
+        </script>
+    </body>
 
 </html>
