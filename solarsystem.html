@@ -12,8 +12,52 @@
     <link rel="shortcut icon" href="./assets/logo.ico" />
     <title>Solar System</title>
     <style>
-      html {
-        overflow: hidden;
+      .img-satellite {
+        width: 100px;
+        height: 100px;
+
+        position: relative;
+        -webkit-animation-name: example;
+        /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 4s;
+        /* Safari 4.0 - 8.0 */
+        -webkit-animation-iteration-count: infinite;
+        /* Safari 4.0 - 8.0 */
+        animation-name: example;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }
+
+      @-webkit-keyframes example {
+        0% {
+          
+          left: 180px;
+          top: 0px;
+        }
+
+        25% {
+
+          left: 200px;
+          top: 0px;
+        }
+
+        50% {
+
+          left: 180px;
+          top: 0px;
+        }
+
+        75% {
+
+          left: 200px;
+          top: 0px;
+        }
+
+        100% {
+
+          left: 180px;
+          top: 0px;
+        }
       }
     </style>
   </head>
@@ -92,14 +136,18 @@
                   <a>
                     <span>Neptune</span>
                   </a>
+
                 </li>
               </ul>
             </div>
+
           </div>
 
           <div class="col-sm-6 mt-5 pt-5 py-5">
+
             <h1 class="text-center"><b>ระบบสุริยะ (Solar System)</b></h1>
             <hr>
+
             <p>
               ประกอบด้วยดวงอาทิตย์และวัตถุอื่น ๆ ที่โคจรรอบดวงอาทิตย์เนื่องจากแรงโน้มถ่วง ได้แก่ ดาวเคราะห์ 8
               ดวงกับดวงจันทร์บริวารที่ค้นพบแล้ว 166 ดวง
@@ -117,8 +165,20 @@
                   <span class="display-5">สำรวจดวงดาวกันเลย</span>
                 </button>
               </a>
+
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-7"></div>
+            <div class="col-5">
+              <div class="img-satellite">
+                <img src="./assets/satellite.png" width="90%" alt="">
+              </div>
+              
             </div>
           </div>
+
         </div>
 
       </div>
