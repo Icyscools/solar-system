@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="shortcut icon" href="./assets/logo.ico" />
+    <title>Sattlelite</title>
+    <style>
+        html {
+            overflow: scroll;
+        }
+        
+        body {
+            scroll-behavior: smooth;
+            background: url("../assets/milky-way-background.jpg") #141618;
+            background-size: cover;
+            background-blend-mode: multiply;
+        }
+        
+        header {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            transition: all 1.25s ease-in-out;
+            background: url(../assets/spacecraft.jpg);
+            background-size: cover;
+        }
+        
+        header * {
+            transition: all 0.8s ease-in-out;
+        }
+        
+        @media (min-aspect-ratio: 16/9) {
+            .fullscreen-bg video {
+                width: 100%;
+                height: auto;
+            }
+        }
+        
+        @media (max-aspect-ratio: 16/9) {
+            .fullscreen-bg video {
+                width: auto;
+                height: 100%;
+            }
+        }
+        
+        header div.h-100 {
+            min-height: 100vh;
+        }
+        
+        #content {
+            color: white;
+            transition: all 0.8s;
+            z-index: 100;
+        }
+        
+        #content p {
+            text-indent: 2rem;
+        }
+        
+        .full {
+            min-width: 100%;
+            height: 100%;
+        }
+        
+        #evo {
+            padding-top: 4%;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #arrow {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            transform: translateY(15%);
+            transition: 0.25s all;
+        }
+
+        #arrow span {
+            display: inline-block;
+        }
+
+        #arrow > span:hover {
+            transform: translateY(30%);
+        }
+
+        .btn-sols {
+            border: 1px solid white;
+            border-radius: 3px;
+            background-color:transparent;
+        }
+        .btn-sols:hover {
+            cursor: pointer;
+            background-color: white;
+         }
+        span {
+            font-size: 14pt;
+            color: white;
+         }
+      span:hover {
+            padding: 10px;
+            transition: 0.3s;
+            color: #C7CAD0;
+      }
+      .zoom-bright img {
+            transition: transform .3s, filter 1s ease-in-out;
+            filter: grayscale(50%);
+    }
+    .zoom-bright:hover img {
+    filter: grayscale(0);
+    transform: scale(1.1);
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center" style="transform: translateY(-5%);">
+                <div class="w-100 text-white" style="text-shadow: 0px 3px 9px #333;">
+                    <div class="container" style="transform: translateY(25%);">
+                        <h1 class="display-3">เยี่ยมชมดาวเพื่อนบ้านกับยานอวกาศ</h1>
+                        <p class="lead mb-0">การสำรวจของมวลมนุษยชาติ</p>
+                    </div>
+                    <h1 id="arrow" class="display-4 mt-5">
+                        <span style="cursor: pointer;" onclick="scrollToElement(content)">▼</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="content" class="d-block container mt-5 mb-0 py-5" role="main">
+        <div class="blockquote text-center">
+            <div class="blockquote-footer mb-5">
+                <p class="mb-0">
+                    เอกภพกว้างใหญ่ไพศาล มีสิ่งที่เหล่ามนุษย์ยังไม่ค้นพบอีกมากมาย แต่การส่งยานอวกาศออกไปสำรวจดาวเพื่อนบ้าน ถือเป็นความสำเร็จอันยิ่งใหญ่ของมนุษย์<br>
+                    กล่าวคือ ถือเป็นพัฒนาการของการสำรวจอีกขั้น ในอนาคตเราอาจจะสำรวจพบดาวเคราะห์ที่มีมนุษย์อาศัยอยู่ หรือพบสิ่งที่น่าสนใจอื่น<br> 
+                    แต่ในหน้านี้เราจะนำเสนอยานอวกาศที่ถูกส่งไปทำภารกิจที่ดาวเคราะห์ต่างๆ
+                </p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-3 border-right">
+                <h1 class="display-3">การสำรวจอวกาศครั้งแรก</h1>
+            </div>
+            <div class="col-9 align-self-center" style="line-height: 2rem;">
+                <p>
+                    ย้อนกลับไปเมื่อ 62 ปี ที่แล้ว สหภาพโซเวียตประสบความสำเร็จในการส่งดาวเทียมดวงแรกของโลกชื่อ “สปุตนิก 1” (Sputnik 1) ขึ้นไปโคจรรอบโลก 
+                    เมื่อวันที่ 4 ตุลาคม พ.ศ. 2500 และเป็นจุดเริ่มต้นของยุคอวกาศ (Space age) แห่งมวลมนุษยชาติ ซึ่งก่อให้เกิดการเปลี่ยนแปลงครั้งสำคัญต่อวิถีชีวิตของชาวโลก 
+                    เหตุการณ์ครั้งนั้นถือว่าเป็นประวัติศาสตร์ที่สำคัญของโลกและยุคอวกาศก็เริ่มต้นขึ้นตั้งแต่ตอนนั้น 
+                    โดยดาวเทียมดวงนี้ใช้เวลาโคจรรอบโลกนาน 92 วัน ก่อนจะลดวงโคจรต่ำลงเรื่อยๆ จนหลุดเข้าสู่ชั้นบรรยากาศโลกและลุกไหม้ในวันที่ 3 มกราคม พ.ศ. 2501 
+                </p>
+                <p>สปุตนิก 1 เป็นดาวเทียมในโครงการสปุตนิก (Sputnik Program) ของสหภาพโซเวียต ซึ่งเป็นโครงการส่งยานอวกาศไร้คนขับขึ้นสู่วงโคจรรอบโลก 
+                    และสปุตนิก 1 คือสุดยอดความสำเร็จในการเป็นผู้นำทางด้านอวกาศของสหภาพโซเวียตในขณะนั้น โดยมีภารกิจในการทดสอบการโคจรของดาวเทียมรอบโลก ตรวจวัดความหนาแน่นของชั้นบรรยากาศโลกจากการคำนวณการเปลี่ยนแปลงวงโคจร 
+                    ทดสอบการส่งข้อมูลข่าวสารเป็นสัญญาณวิทยุผ่านชั้นบรรยากาศโลกและทดสอบหลักการของความดันในอวกาศว่าเป็นไปตามที่สังเกตการณ์ได้หรือไม่</p>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="zoom-bright">
+                    <img src="../assets/sputnik1.jpg" style="margin-top: 4%">
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 4%;">
+            <div class="col text-center">
+                <h1 class="display-3">ยานอวกาศและภารกิจอันยิ่งใหญ่</h1>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" style="line-height: 2rem;">
+                <p>
+                    กาแล็กซีมีรูปทรงแตกต่างกันหลายประเภท ซึ่งสามารถแบ่งเป็นประเภทใหญ่ๆ ได้ 2 ประเภทคือ กาแล็กซีปกติ (Regular galaxy)
+                    ที่มีสัณฐานรูปทรงชัดเจนสามารถแบ่งได้ตามแผนภาพส้อมเสียง (Hubble Turning Fork) ตามที่แสดงในภาพที่ 1
+                    และกาแล็กซีไม่มีรูปแบบ (Irregular Galaxy) ที่ไม่มีรูปทรงสัณฐานชัดเลย เช่น เมฆแมกเจลแลนใหญ่ เมฆแมกเจลแลนเล็ก
+                    ซึ่งเป็นกาแล็กซีบริวารของทางช้างเผือก
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="./assets/type.jpg" alt="" width=60% style="margin-bottom: 4%; margin-top: 4%;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p> ในต้นคริสศตวรรษที่ 20 เอ็ดวิน ฮับเบิล (Edwin Hubble) นักดาราศาสตร์ชาวอเมริกันได้ทำการศึกษากาแล็กซีด้วยกล้องโทรทรรศน์ขนาดใหญ่ และจำแนกประเภทของกาแล็กซีตามรูปทรงสัณฐานออกเป็น 4 ประเภท ได้แก่</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 p-3 border-right border-bottom">
+                <h5>
+                    1. กาแล็กซีรี (Elliptical Galaxy)
+                </h5>
+                <p>
+                    มีสัณฐานเป็นทรงรี แบ่งย่อยได้ 8 แบบ ตั้งแต่ E0 - E7 โดย E0 มีความรีน้อยที่สุด และ E7 มีความรีมากที่สุด
+                </p>
+            </div>
+            <div class="col-6 p-3 border-bottom border-left">
+                <h5>
+                    2. กาแล็กซีกังหัน (Spiral Galaxy)
+                </h5>
+                <p>
+                    แบ่งย่อยเป็น 3 แบบ กาแล็กซีกังหัน Sa มีส่วนป่องหนาแน่น แขนไม่ชัดเจน, กาแล็กซีกังหัน Sb มีส่วนป่องใหญ่ แขนยาวปานกลาง, กาแล็กซีกังหัน Sc มีส่วนป่องเล็ก แขนยาวหนาแน่น
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 p-3 border-right border-top">
+                <h5>
+                    3. กาแล็กซีกังหันแบบมีคาน หรือ กาแล็กซีกังหันบาร์ (Barred Spiral Galaxy)
+                </h5>
+                <p>
+                    แบ่งย่อยเป็น 3 แบบ กาแล็กซีกังหัน Sa มีส่วนป่องหนาแน่น แขนไม่ชัดเจน, กาแล็กซีกังหัน Sb มีส่วนป่องใหญ่ แขนยาวปานกลาง, กาแล็กซีกังหัน Sc มีส่วนป่องเล็ก แขนยาวหนาแน่น
+                </p>
+            </div>
+            <div class="col-6 p-3 border-left border-top">
+                <h5>
+                    4. กาแล็กซีลูกสะบ้า หรือ กาแล็กซีเลนส์ (Lenticular Galaxy)
+                </h5>
+                <p>
+                    เป็นกาแล็กซีที่ไม่มีลักษณะก้ำกึ่งระหว่างกาแล็กซีรีและกาแล็กซีกังหัน กล่าวคือ ส่วนโป่งขนาดใหญ่และไม่มีแขนกังหัน (แบบ S0 หรือ SB0)
+                </p>
+            </div>
+        </div>
+        
+        
+        <div class="row mt-5">
+            <div class="col-9 text-center">
+                <img src="./assets/galaxies-1.jpg" alt="" width=50%>
+            </div>
+            <div class="col-3">
+                <h1 class="display-3 border-left">การวิวัฒนาการของกาแล็กซี</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9">
+                
+                <p>การแบ่งประเภทกาแล็กซีของฮับเบิลนำไปสู่ความเชื่อว่ากาแล็กซีรูปไข่ ( Ellipti Galaxies ) ค่อยๆวิวัฒนาการกลายเป็นกาแล็กซีรูปวงกลม ( Spiral Galaxies ) ที่มีวงแขนโค้งยื่นออกมา นอนจากนั้นรูปร่างของกาแล็กซีรูปร่างชนิดแปลกๆได้มีวิวัฒนาการกลายมาเป็นกาแล็กซีรูปทรงกลมเช่นกัน และเมื่อฝุ่นละอองและแก๊สในกาแล็กซีประเภทนี้ได้เปลี่ยนเป็นดวงดาวก็จะกลายเป็นกาแล็กซีรูปไข่ไป </p>
+            </div>
+            
+        </div>
+
+        <div style="margin: auto">
+                <div class="col text-center">
+                  <a id="sols" style="cursor: pointer;" href="solarsystem.html">
+                  <button class="btn-sols">
+                  <span class="display-5">ไปท่องระบบสุริยะ</span>
+                  </button>
+                  </a>
+                </div>
+              </div>
+    </section>
+
+    <script>
+        function scrollToElement(el) {
+            window.scrollTo({
+                "behavior": "smooth",
+                "top": el.offsetTop,
+                "left": 0
+            })
+        }
+    </script>
+</body>
+
+</html>
