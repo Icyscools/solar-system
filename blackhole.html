@@ -109,6 +109,65 @@
       #arrow>span:hover {
         transform: translateY(30%);
       }
+
+      span {
+        color: white;
+      }
+
+      span:hover {
+        padding: 10px;
+        transition: 0.3s;
+        color: white;
+      }
+
+      a {
+        font-size: 16pt;
+        color: #fff;
+      }
+
+      .btn {
+        background-color: transparent;
+        border: 1px solid white;
+      }
+
+      .btn span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .btn:hover {
+        border: 2px solid white;
+      }
+
+      .btn span:after {
+        color: #fff;
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 20%;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      .btn:hover span {
+        padding-right: 25px;
+      }
+
+      .btn:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+
+      a {
+        color: #fff;
+      }
+
+      a:hover {
+        color: #fff;
+        text-decoration: none;
+      }
     </style>
   </head>
 
@@ -207,7 +266,15 @@
             </div>
           </div>
         </div>
-
+        <div class="mt-2">
+            <div class="col text-center">
+              <a id="sols" style="cursor: pointer;" href="solarsystem.html">
+                <button class="btn btn-lg">
+                  <span class="display-5">กลับไปท่องระบบสุริยะ</span>
+                </button>
+              </a>
+            </div>
+          </div>
 
       </section>
     </section>

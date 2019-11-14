@@ -15,6 +15,47 @@
       html {
         overflow: hidden;
       }
+
+      #bh {
+        animation: rotate 8s linear infinite forwards;
+        transition: ease-in-out;
+      }
+
+      #bh:hover {
+        border-radius: 25%;
+        opacity: 70%;
+        transition: ease-in-out;
+      }
+
+      #satellite {
+        /* width: 60px;
+        height: auto */
+        animation: rotateSelf 8s linear infinite forwards;
+        transition: 0.1s ease-in-out;
+      }
+
+      #satellite:hover {
+        z-index: 100;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes rotateSelf {
+        0% {
+          transform: rotate(0deg) translateX(20px);
+        }
+
+        100% {
+          transform: rotate(360deg) translateX(20px);
+        }
+      }
     </style>
   </head>
 
@@ -35,69 +76,77 @@
           </div>
         </nav>
       </header>
-      <div class="container pt-2">
+      <div class="container">
         <div class="row">
-          <div class="col-sm-6">
-            <div style="margin: auto;">
-              <ul class="solarsystem">
-                <li class="sun">
-                  <a>
-                    <span>Sun</span>
-                  </a>
-                </li>
-                <li class="mercury">
-                  <a>
-                    <span>Mercury</span>
-                  </a>
-                </li>
-                <li class="venus">
-                  <a>
-                    <span>Venus</span>
-                  </a>
-                </li>
-                <li class="earth">
-                  <a>
-                    <span>
-                      Earth
-                      <span class="moon">&amp; Moon</span>
-                    </span>
-                  </a>
-                </li>
-                <li class="mars">
-                  <a>
-                    <span>Mars</span>
-                  </a>
-                </li>
-                <li>
-                  <span>Asteroids&amp; Meteorids</span>
-                </li>
-                <li class="jupiter">
-                  <a>
-                    <span>Jupiter</span>
-                  </a>
-                </li>
-                <li class="saturn">
-                  <a>
-                    <span>
-                      Saturn&amp;
-                    </span>
-                  </a>
-                </li>
-                <li class="uranus">
-                  <a>
-                    <span>Uranus</span>
-                  </a>
-                </li>
-                <li class="neptune">
-                  <a>
-                    <span>Neptune</span>
-                  </a>
-                </li>
-              </ul>
+          <div class="col-lg-6">
+            <ul class="solarsystem">
+              <li class="sun">
+                <a>
+                  <span>Sun</span>
+                </a>
+              </li>
+              <li class="mercury">
+                <a>
+                  <span>Mercury</span>
+                </a>
+              </li>
+              <li class="venus">
+                <a>
+                  <span>Venus</span>
+                </a>
+              </li>
+              <li class="earth">
+                <a>
+                  <span>
+                    Earth
+                    <span class="moon">&amp; Moon</span>
+                  </span>
+                </a>
+              </li>
+              <li class="mars">
+                <a>
+                  <span>Mars</span>
+                </a>
+              </li>
+              <li>
+                <span>Asteroids&amp; Meteorids</span>
+              </li>
+              <li class="jupiter">
+                <a>
+                  <span>Jupiter</span>
+                </a>
+              </li>
+              <li class="saturn">
+                <a>
+                  <span>
+                    Saturn&amp;
+                  </span>
+                </a>
+              </li>
+              <li class="uranus">
+                <a>
+                  <span>Uranus</span>
+                </a>
+              </li>
+              <li class="neptune">
+                <a>
+                  <span>Neptune</span>
+                </a>
+              </li>
+            </ul>
+            <a href="blackhole.html">
+              <img src="./assets/bh.png" width="20%" alt="" id="bh">
+            </a>
+            
+            <div class="text-right bottom position-absolute mt-5 ml-5">
+              <a href="satellite.html">
+                <img src="./assets/satellite.png" width="25%" class="pt-5 pl-5" id="satellite">
+              </a>
+              
             </div>
           </div>
 
-          <div class="col-sm-6 mt-5 pt-5 py-5 px-5">
+          <div class="col-lg-6 mt-5 pt-5 py-5 px-5">
             <h5 class="text-center"><b>ระบบสุริยะ (Solar System)</b></h5>
             <hr>
             <p>
@@ -109,11 +158,12 @@
               โดยทั่วไปแล้วจะแบ่งย่านต่าง ๆ ของระบบสุริยะ นับจากดวงอาทิตย์ออกมาดังนี้คือ ดาวเคราะห์ชั้นในจำนวน 4 ดวง
               แถบดาวเคราะห์น้อย ดาวเคราะห์ขนาดใหญ่รอบนอกจำนวน 4 ดวง
               ดาวเคราะห์ชั้นเอกทั้ง 8 ดวงในระบบสุริยะ เรียงลำดับจากใกล้ดวงอาทิตย์ที่สุดออกไป มีดังนี้คือ ดาวพุธ ดาวศุกร์ โลก
-              ดาวอังคาร ดาวพฤหัสบดี ดาวเสาร์ ดาวยูเรนัส และดาวเนปจูน
+              ดาวอังคาร ดาวพฤหัสบดี ดาวเสาร์ ดาวยูเรนัส และดาวเนปจูน <br>
+              <center><b>*** อย่าลืมไปสำรวจหลุมดำ และยานอวกาศกันนะ ! *** </b></center>
             </p>
             <div class="col text-center py-2">
-              <a id="sols" style="cursor: pointer;" href="planet.html">
-                <button class="btn-sols">
+              <a style="cursor: pointer;" href="planet.html">
+                <button class="btn btn-lg">
                   <span class="display-5">สำรวจดวงดาวกันเลย</span>
                 </button>
               </a>
@@ -123,8 +173,6 @@
 
       </div>
     </div>
-
-    <script src="./js/main.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

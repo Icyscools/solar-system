@@ -94,15 +94,64 @@
                 transform: translateY(30%);
             }
 
-            .zoom-bright img {
-                transition: transform .3s, filter 1s ease-in-out;
-                filter: grayscale(50%);
-            }
+            span {
+        color: white;
+      }
 
-            .zoom-bright:hover img {
-                filter: grayscale(0);
-                transform: scale(1.1);
-            }
+      span:hover {
+        padding: 10px;
+        transition: 0.3s;
+        color: white;
+      }
+
+      a {
+        font-size: 16pt;
+        color: #fff;
+      }
+
+      .btn {
+        background-color: transparent;
+        border: 1px solid white;
+      }
+
+      .btn span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .btn:hover {
+        border: 2px solid white;
+      }
+
+      .btn span:after {
+        color: #fff;
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 20%;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      .btn:hover span {
+        padding-right: 25px;
+      }
+
+      .btn:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+
+      a {
+        color: #fff;
+      }
+
+      a:hover {
+        color: #fff;
+        text-decoration: none;
+      }
         </style>
     </head>
 
@@ -155,7 +204,7 @@
 
             <div class="row" style="padding-top: 4%;">
                 <div class="col text-center">
-                    <h1 class="display-4">ประเภทของกาแล็กซี</h1>
+                    <h1 class="display-3">ประเภทของกาแล็กซี</h1>
 
                 </div>
             </div>
@@ -171,9 +220,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                        <div class="zoom-bright">
                     <img src="./assets/type.jpg" alt="" width=60% style="margin-bottom: 4%; margin-top: 4%;">
-                    </div>
                 </div>
             </div>
             <div class="row">
@@ -221,9 +268,7 @@
 
             <div class="row mt-5">
                 <div class="col-9 text-center">
-                    <div class="zoom-bright">
-                        <img src="./assets/galaxies-1.jpg" alt="" width=50%>
-                    </div>
+                    <img src="./assets/galaxies-1.jpg" alt="" width=50%>
                 </div>
                 <div class="col-3">
                     <h1 class="display-3 border-left pl-4">การวิวัฒนาการของกาแล็กซี</h1>
@@ -237,42 +282,10 @@
 
             </div>
 
-            <div class="row p-5">
-                <div class="col text-center">
-                    <h2 class="display-4">กาแล็กซีทางช้างเผือก</h2>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10 text-center mb-3" style="margin: 0 auto;">
-                    <p>กาแล็กซีทางช้างเผือก (Milky Way) เป็นกาแล็กซีที่พวกเราอาศัยอยู่ แต่เนื่องจากดวงอาทิตย์ก็อยู่ภายในกาแล็กซี่แห่งนี้
-                        เราจึงไม่สามารถมองเห็นได้ว่ากาแล็กซีทางช้างเผือกมีรูปร่างเป็นอย่างไร สิ่งที่เราเห็นได้คือแถบขาวจางๆที่เหยียดตัวพาดผ่านท้องฟ้ายามค่ำคืน
-                        ชื่อ Milky Way มาจากคำว่า Via Lactea ในภาษาละติน ซึ่งแปลตรงตัวว่า “ทางน้ำนม” เมื่อเราสำรวจแถบนี้อย่างละเอียดแล้ว
-                        จะพบว่าแถบทางช้างเผือกประกอบไปด้วยดาวฤกษ์ที่อยู่ห่างไกลนับพันล้านดวง แต่แสงจากดาวฤกษ์เหล่านี้ส่วนใหญ่
-                        ถูกลดทอนด้วยฝุ่นแก๊สที่อยู่ในระนาบของกาแล็กซี</p>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col text-center pt-2" style="background: white;">
-                    <img src="./assets/Milkyway.jpg" alt="" width="100%">
-                    <p class="blockquote-footer mb-3 mt-3">ตาปลา โมเสกในดาราจักรทางช้างเผือก โค้งที่เอียงสูงทั่วท้องฟ้ายามค่ำคืนที่ถ่ายจากตำแหน่งที่ตั้งท้องฟ้ามืดใน ชิลี</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-10 p-5 text-center" style="margin: 0 auto;">
-                    <p>ผลจากการสังเกตการณ์บ่งชี้ว่ากาแล็กซีทางช้างเผือกเป็นกาแล็กซีแบบกังหันมีคาน ที่มีดาวฤกษ์อยู่อย่างน้อย 2 แสนล้านดวง มีเส้นผ่านศูนย์กลางราว 100,000 ปีแสง 
-                        และมีความหนาเฉลี่ยประมาณ 1,000 ปีแสง ดวงอาทิตย์จะอยู่ในบริเวณค่อนข้างมืดมิด (มีดาวฤกษ์ค่อนข้างน้อย) ที่อยู่ห่างออกไปจากใจกลางกาแล็กซีไปราว 2/3 ของขนาดรัศมีกาแล็กซี
-                        ระนาบของกาแล็กซีทางช้างเผือกเอียงทำมุมราว 60 องศาจากระนาบสุริยวิถี (ระนาบของระบบสุริยะ) ซึ่งใจกลางของกาแล็กซีทางช้างเผือกจะปรากฏอยู่ในทิศทางของกลุ่มดาวคนยิงธนู
-                        ดวงอาทิตย์โคจรรอบใจกลางทางช้างเผือก เช่นเดียวกับโลกโคจรรอบดวงอาทิตย์ โดยอัตราเร็วในการโคจรของดวงอาทิตย์อยู่ที่ประมาณ 220 กิโลเมตร/วินาที อย่างไรก็ตาม เนื่องจากวงโคจรของดวงอาทิตย์รอบใจกลางทางช้างเผือกเป็นระยะทางที่ยาวมาก ดวงอาทิตย์จึงต้องใช้เวลาถึง 225 ล้านปีในการโคจรครบรอบ</p>
-                </div>
-            </div>
-
             <div style="margin: auto">
                 <div class="col text-center">
-                    <a id="sols" style="cursor: pointer;" href="solarsystem.html">
-                        <button class="btn-sols">
+                    <a style="cursor: pointer;" href="solarsystem.html">
+                        <button class="btn btn-lg">
                             <span class="display-5">ไปท่องระบบสุริยะ</span>
                         </button>
                     </a>
