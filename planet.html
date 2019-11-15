@@ -12,6 +12,36 @@
     <link rel="stylesheet" href="./css/parallax.css" />
     <link rel="shortcut icon" href="./assets/logo.ico" />
     <title>Planets | Solar System</title>
+    <style>
+      #nav-planet a {
+        font-size: 0 !important;
+      }
+
+      #left-arrow,
+      #right-arrow {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        font-weight: bold;
+        transition: 0.25s ease-in-out;
+      }
+
+      #left-arrow h1 span,
+      #right-arrow h1 span {
+        cursor: pointer;
+        font-size: 3.5rem;
+        font-weight: bold;
+      }
+
+      #left-arrow:hover {
+        transform: translateX(-12px);
+      }
+
+      #right-arrow:hover {
+        transform: translateX(12px);
+      }
+
+    </style>
   </head>
 
   <body>
@@ -119,6 +149,18 @@
                 ...
               </p>
             </div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="left-arrow" class="col-6 text-left">
+            <h1 class="pl-3">
+              <span>﹤</span>
+            </h1>
+          </div>
+          <div id="right-arrow" class="col-6 text-right">
+            <h1 class="pr-3">
+              <span>﹥</span>
+            </h1>
           </div>
         </div>
         <div id="scene" class="h-25 mt-auto">

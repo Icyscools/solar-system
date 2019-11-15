@@ -37,6 +37,8 @@ function changePlanet(el) {
   let _imgsrc = document.getElementById("img-src");
   let _btn_indepth = document.getElementById("read-more");
   let tags = document.getElementsByClassName("card-body");
+  let lt_arrow = document.getElementById("left-arrow");
+  let rt_arrow = document.getElementById("right-arrow");
   if (el != activePlanet || activePlanet == null) {
     content.style.opacity = "0";
     setTimeout(function() {
@@ -66,6 +68,32 @@ function changePlanet(el) {
 
       activePlanet = el;
       el.parentElement.classList.add("active");
+
+      if (el.parentElement.previousElementSibling !== null) {
+        let prev_planet =
+          el.parentElement.previousElementSibling.firstElementChild;
+        lt_arrow.getElementsByTagName("span")[0].onclick = () =>
+          changePlanet(prev_planet);
+        lt_arrow.firstElementChild.style.display = "block";
+        lt_arrow.style.opacity = "1";
+      } else {
+        lt_arrow.getElementsByTagName("span")[0].onclick = "";
+        lt_arrow.firstElementChild.style.display = "none";
+        lt_arrow.style.opacity = "0";
+      }
+
+      if (el.parentElement.nextElementSibling !== null) {
+        let next_planet = el.parentElement.nextElementSibling.firstElementChild;
+        rt_arrow.getElementsByTagName("span")[0].onclick = () =>
+          changePlanet(next_planet);
+        rt_arrow.firstElementChild.style.display = "block";
+        rt_arrow.style.opacity = "1";
+      } else {
+        rt_arrow.getElementsByTagName("span")[0].onclick = "";
+        rt_arrow.firstElementChild.style.display = "none";
+        rt_arrow.style.opacity = "0";
+      }
+
       window.location.hash = planet;
     }, 1250);
   }
