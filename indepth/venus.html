@@ -1,84 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../css/style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="./css/scrollbar.css" />
     <link rel="stylesheet" href="../css/fonts.css">
-  <link rel="shortcut icon" href="../assets/logo.ico" />
+    <link rel="shortcut icon" href="../assets/logo.ico" />
 
-  <title>Venus In-Depth | Solar System</title>
-  <style>    
-    html {
-      overflow: overlay;
-    }
+    <title>Venus In-Depth | Solar System</title>
+    <style>
+      html {
+        overflow: overlay;
+      }
 
-    .indepth-pic {
-      position: absolute;
-      -webkit-transform: rotate(90deg);
-      -moz-transform: rotate(90deg);
-      transform: rotate(90deg);
-      height: 100%;
-      left: -500px;
-      -moz-user-select: none;
-      user-select: none;
-    }
+      .indepth-pic {
+        position: absolute;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        transform: rotate(90deg);
+        height: 100%;
+        left: -500px;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-    #box-content {
-      background: #FFFFFF11;
-      border-radius: 6px;
-    }
-  </style>
-</head>
+      #box-content {
+        background: #FFFFFF11;
+        border-radius: 6px;
+      }
 
-<body>
-  <div id="scene" class="h-100 w-100">
-    <header data-depth="0.02" id="nav-planet" role="navigation" class="position-absolute w-100 h-100 p-3 z-index-100" style="pointer-events: auto!important;">
-      <nav class="navbar navbar-expand navbar-dark">
-        <div class="nav-item ml-auto">
-          <a href="../planet.html#venus" class="nav-link badge text-white"><h3>< กลับไปหน้าสำรวจดาว</h3></a>
-        </div>
-      </nav>
-    </header>
-    <div data-depth="0.125" class="position-fixed h-100 w-100">
-      <img class="indepth-pic h-100 img-fluid" src="../assets/venus.png" />
-    </div>
-    <section data-depth="0.275" id="content" class="w-100 mt-5" role="main">
-      <div class="row justify-content-center ml-5">
-        <div id="box-content" class="col-6 p-3 mt-5">
-          <h1 class="text-center">ดาวศุกร์</h1>
-            <hr style="border-color: white">
-            <div class="container p-3">
-              <h5><b>ชื่ออื่น :</b>เทพีแห่งความรักของโรมัน - ROMAN GODDESS OF LOVE</h5>
-              <h5><b>ประเภท :</b>Terrestrial planet / ดาวเคราะห์หิน</h5>
-              <h5><b>อายุ : </b> ประมาณ 4.5 ล้านปี</h5>
-              <h5><b>รัศมี : </b>6,052 กิโลเมตร</h5>
-              <h5><b>ระยะห่างจากดวงอาทิตย์ : </b>67,477,887 million kilometers</h5>
-              <h5><b>ดวงจันทร์บริวาร :</b> ไม่มี</h5>
-              <h5><b>วงแหวน :</b> ไม่มี</h5>
-              <p>ดาวศุกร์เป็นหนึ่งในดาวเคราะห์หิน 4 ดวงในระบบสุริยะ หมายความว่า ดาวศุกร์จะมีความคล้ายคลึงกับโลกตรงที่มีองค์ประกอบหลักเป็นหินและมีพื้นผิวเป็นของแข็ง 
-                แต่บรรยากาศของดาวศุกร์กลับประกอบด้วยชั้นเมฆหนาทึบของแก๊สคาร์บอนไดออกไซด์ ความดันที่พื้นผิวดาวสูงถึง 92 เท่าของความดันที่พื้นผิวโลก 
-                ชั้นเมฆหนาทึบเหล่านี้ก่อให้เกิดสภาวะเรือนกระจก (Greenhouse effect) อย่างรุนแรง จนทำให้ดาวศุกร์เป็นดาวเคราะห์ที่ร้อนที่สุดในระบบสุริยะ 
-                ถึงแม้ว่าดาวพุธจะอยู่ใกล้ดวงอาทิตย์มากกว่าก็ตาม โดยพื้นผิวของดาวศุกร์ร้อนถึง 462 องศาเซลเซียส 
-                ดาวศุกร์ยังมีสภาพที่แปลกประหลาด ตรงที่มีการหมุนรอบตัวเองในทิศทางแตกต่างจากดาวเคราะห์ส่วนใหญ่</p>
-                <p>อดีตสหภาพโซเวียต สหรัฐฯ องค์การอวกาศยุโรป และญี่ปุ่นได้ส่งยานไปสำรวจดาวศุกร์ ตั้งแต่ยานมารีเนอร์ 2 (Mariner 2) ยานลำแรกที่สำรวจดาวศุกร์ในปี ค.ศ.1962 
-                  จากนั้นก็มียานไปสำรวจดาวศุกร์มากกว่า 25 ลำ โดยยานลำแรกที่โคจรรอบดาวศุกร์ คือ ยานมาเจลลัน (Magellan) ซึ่งทำภาพและแผนที่พื้นผิวดาวศุกร์ด้วยเรดาร์</p>
+    </style>
+  </head>
+
+  <body>
+    <div id="scene" class="h-100 w-100">
+      <header data-depth="0.02" id="nav-planet" role="navigation" class="position-absolute w-100 h-100 p-3 z-index-100" style="pointer-events: auto!important;">
+        <nav class="navbar navbar-expand navbar-dark">
+          <div class="nav-item ml-auto">
+            <a href="../planet.html#venus" class="nav-link badge text-white">
+              <h3>
+                < กลับไปหน้าสำรวจดาว</h3> </a> </div> </nav> </header> <div data-depth="0.125" class="position-fixed h-100 w-100">
+                  <img class="indepth-pic h-100 img-fluid" src="../assets/venus.png" />
+          </div>
+          <section data-depth="0.275" id="content" class="w-100 mt-5" role="main">
+            <div class="row justify-content-center ml-5">
+              <div id="box-content" class="col-6 p-3 mt-5">
+                <h1 class="text-center">ดาวศุกร์</h1>
+                <hr style="border-color: white">
+                <div class="container p-3">
+                  <h5><b>ชื่ออื่น :</b>เทพีแห่งความรักของโรมัน - ROMAN GODDESS OF LOVE</h5>
+                  <h5><b>ประเภท :</b>Terrestrial planet / ดาวเคราะห์หิน</h5>
+                  <h5><b>อายุ : </b> ประมาณ 4.5 ล้านปี</h5>
+                  <h5><b>รัศมี : </b>6,052 กิโลเมตร</h5>
+                  <h5><b>ระยะห่างจากดวงอาทิตย์ : </b>67,477,887 million kilometers</h5>
+                  <h5><b>ดวงจันทร์บริวาร :</b> ไม่มี</h5>
+                  <h5><b>วงแหวน :</b> ไม่มี</h5>
+                  <p>ดาวศุกร์เป็นหนึ่งในดาวเคราะห์หิน 4 ดวงในระบบสุริยะ หมายความว่า ดาวศุกร์จะมีความคล้ายคลึงกับโลกตรงที่มีองค์ประกอบหลักเป็นหินและมีพื้นผิวเป็นของแข็ง
+                    แต่บรรยากาศของดาวศุกร์กลับประกอบด้วยชั้นเมฆหนาทึบของแก๊สคาร์บอนไดออกไซด์ ความดันที่พื้นผิวดาวสูงถึง 92 เท่าของความดันที่พื้นผิวโลก
+                    ชั้นเมฆหนาทึบเหล่านี้ก่อให้เกิดสภาวะเรือนกระจก (Greenhouse effect) อย่างรุนแรง จนทำให้ดาวศุกร์เป็นดาวเคราะห์ที่ร้อนที่สุดในระบบสุริยะ
+                    ถึงแม้ว่าดาวพุธจะอยู่ใกล้ดวงอาทิตย์มากกว่าก็ตาม โดยพื้นผิวของดาวศุกร์ร้อนถึง 462 องศาเซลเซียส
+                    ดาวศุกร์ยังมีสภาพที่แปลกประหลาด ตรงที่มีการหมุนรอบตัวเองในทิศทางแตกต่างจากดาวเคราะห์ส่วนใหญ่</p>
+                  <p>อดีตสหภาพโซเวียต สหรัฐฯ องค์การอวกาศยุโรป และญี่ปุ่นได้ส่งยานไปสำรวจดาวศุกร์ ตั้งแต่ยานมารีเนอร์ 2 (Mariner 2) ยานลำแรกที่สำรวจดาวศุกร์ในปี ค.ศ.1962
+                    จากนั้นก็มียานไปสำรวจดาวศุกร์มากกว่า 25 ลำ โดยยานลำแรกที่โคจรรอบดาวศุกร์ คือ ยานมาเจลลัน (Magellan) ซึ่งทำภาพและแผนที่พื้นผิวดาวศุกร์ด้วยเรดาร์</p>
+                </div>
+              </div>
             </div>
-        </div>
-      </div>
-    </section>
-  </div>
+          </section>
+    </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.3.0/dist/lazyload.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-  <script src="../js/indepthScene.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.3.0/dist/lazyload.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="../js/indepthScene.js"></script>
+  </body>
 
 </html>

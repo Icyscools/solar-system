@@ -17,13 +17,34 @@
         font-size: 0 !important;
       }
 
+      #nav-planet li.nav-item img {
+        transition: 0.3s ease-in-out all;
+      }
+
+      #nav-planet li.nav-item:hover img {
+        transform: scale(1.45);
+      }
+
+      #nav-planet li.nav-item.active img {
+        transform: scale(1.45) !important;
+      }
+
+      #nav-planet li.nav-item.active:after {
+        content: '●';
+        position: absolute;
+        text-align: center;
+        top: 34px;
+        padding-left: 15px;
+        color: white;
+      }
+
       #left-arrow,
       #right-arrow {
         -webkit-user-select: none;
         -moz-user-select: none;
         user-select: none;
         font-weight: bold;
-        transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out all;
       }
 
       #left-arrow h1 span,
