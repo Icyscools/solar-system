@@ -12,7 +12,7 @@
 
     <style>
       html {
-        overflow: overlay;
+        overflow: hidden;
       }
 
       body {
@@ -34,7 +34,7 @@
       }
 
       header * {
-        transition: all 0.8s ease-in-out;
+        transition: all 0.6s ease-in-out;
       }
 
       .fullscreen-bg {
@@ -178,21 +178,18 @@
       <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center" style="transform: translateY(-5%);">
           <div class="w-100 text-white" style="text-shadow: 0px 3px 9px #333;">
-            <div class="container" style="transform: translateY(25%);">
+            <div id="heading" class="container" style="opacity: 0;transform: translateY(40%);">
               <h1 class="display-3">หลุมดำ</h1>
               <p class="lead mb-0">ปีศาจจอมกระหายแห่งจักรวาล</p>
             </div>
-            <h1 id="arrow" class="display-4 mt-5">
+            <h1 id="arrow" class="display-4 mt-5" style="opacity: 0;transform: translateY(-100%);">
               <span style="cursor: pointer;" onclick="scrollToElement(content)">▼</span>
             </h1>
           </div>
         </div>
       </div>
     </header>
-
-
-
-    <section id="content" class="d-flex h-100 w-100 mx-auto flex-column py-3" role="main">
+    <section id="content" class="d-flex h-100 w-100 mx-auto flex-column py-3" style="display: none!important;opacity: 0;" role="main">
       <section class="my-5">
         <div class="container">
           <div class="row">
@@ -206,9 +203,7 @@
               </p>
             </div>
           </div>
-
         </div>
-
         <video id="hole" autoplay muted loop>
           <source src="./assets/blackhole.mp4" type="video/mp4" />
         </video>
@@ -216,7 +211,6 @@
           <div class=" row p-5">
           <div class="col text-center">
             <h1 class="display-4">ประเภทของหลุมดำ</h1>
-
           </div>
         </div>
         <div class="row">
@@ -227,7 +221,6 @@
           </div>
           <div class="col-6 py-3 text-center"><img src="./assets/blackhole-4.jpg" alt="" width="80%" height="auto" style="margin-bottom: 4%;"></div>
         </div>
-
         <div class="row">
           <div class="col-6 py-3"><img src="./assets/blackhole-3.jpg" alt="" width="100%" height="auto" style="margin-bottom: 4%;"></div>
           <div class="col-6 pt-3 border align-self-center" style="margin-bottom: 4%;">
@@ -248,7 +241,6 @@
           </div>
           <div class="col-6 py-3 align-self-center text-center"><img src="./assets/blackhole-5.jpg" alt="" width="70%" height="auto" style="margin-bottom: 4%;"></div>
         </div>
-
         <div class="row">
           <div class="col mt-5 text-center">
             <h1>ทฤษฎีสัมพัทธภาพทั่วไป <br> กุญแจสู่แนวคิดและการตั้งคำถามถึงการมีอยู่ของหลุมดำ</h1>
@@ -276,73 +268,33 @@
             </a>
           </div>
         </div>
-
       </section>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/scroller.js"></script>
     <script>
-      var headingLoad = false,
-        arrowLoad = false,
-        contentLoad = false;
       window.onload = function () {
-        let video = document.getElementsByTagName("video")[0];
-
-        video.oncanplaythrough = function (ev) {
-          console.log("finish loading video")
-          let header = document.getElementById("header");
-          header.style.opacity = "1";
-        }
-
-        video.ontimeupdate = function (ev) {
-          console.log(ev.target.currentTime)
-          if (ev.target.currentTime > 5.5 && !headingLoad) {
-            headingLoad = true
-            let heading = document.getElementById("heading");
-            let arrow = document.getElementById("arrow");
-            heading.style.opacity = "1";
-          } else if (ev.target.currentTime > 8.5 && !arrowLoad) {
-            arrowLoad = true
-            let heading = document.getElementById("heading");
-            let arrow = document.getElementById("arrow");
-            heading.style.transform = "translateY(0%)";
-            arrow.style.opacity = "1";
-            arrow.style.transform = "translateY(0%)";
-          } else if (ev.target.currentTime > 10.5 && !contentLoad) {
-            contentLoad = true
-            let content = document.getElementById("content");
-            content.style.display = "block"
-            setTimeout(function () {
-              content.style.opacity = "1";
-            }, 1000);
-          }
-        }
-      }
-
-      var triggerScroll = false;
-      var lastScrollTop = 0;
-      window.onscroll = function (ev) {
+        let heading = document.getElementById("heading");
+        let arrow = document.getElementById("arrow");
         let content = document.getElementById("content");
-        var _top = window.pageYOffset || document.documentElement.scrollTop;
-        if (_top > lastScrollTop) {
-          // downscroll code
-          if (window.scrollY >= 50 && window.scrollY < 150 && !triggerScroll) {
-            scrollToElement(content)
-          }
-        } else {
-          // upscroll code
-        }
-        lastScrollTop = _top <= 0 ? 0 : _top;
-      }
-
-      function scrollToElement(el) {
-        triggerScroll = true;
-        window.scrollTo({
-          'behavior': 'smooth',
-          'left': 0,
-          'top': el.offsetTop
-        });
         setTimeout(() => {
-          triggerScroll = false
-        }, 1000)
+          heading.style.opacity = "1";
+          setTimeout(() => {
+            arrow.style.opacity = "1";
+            heading.style.transform = "translateY(10%)";
+            arrow.style.transform = "translateY(0%)";
+            setTimeout(() => {
+              document.getElementsByTagName("html")[0].style.overflow = "overlay";
+              content.style.display = "block";
+              setTimeout(function () {
+                content.style.opacity = "1";
+              }, 500);
+            }, 1500);
+          }, 1500);
+        }, 500);
       }
 
     </script>

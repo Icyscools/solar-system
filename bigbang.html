@@ -276,6 +276,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.3.0/dist/lazyload.min.js"></script>
+    <script src="./js/scroller.js"></script>
     <script>
       var headingLoad = false,
         arrowLoad = false,
@@ -315,34 +316,6 @@
             }, 1000);
           }
         }
-      }
-
-      var triggerScroll = false;
-      var lastScrollTop = 0;
-      window.onscroll = function (ev) {
-        let content = document.getElementById("content");
-        var _top = window.pageYOffset || document.documentElement.scrollTop;
-        if (_top > lastScrollTop) {
-          // downscroll code
-          if (window.scrollY >= 50 && window.scrollY < 150 && !triggerScroll) {
-            scrollToElement(content)
-          }
-        } else {
-          // upscroll code
-        }
-        lastScrollTop = _top <= 0 ? 0 : _top;
-      }
-
-      function scrollToElement(el) {
-        triggerScroll = true;
-        window.scrollTo({
-          'behavior': 'smooth',
-          'left': 0,
-          'top': el.offsetTop
-        });
-        setTimeout(() => {
-          triggerScroll = false
-        }, 1000)
       }
 
       function hideLoadingOverlay() {
